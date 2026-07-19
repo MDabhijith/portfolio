@@ -20,6 +20,11 @@ export type ContentBlock =
       items: { number: string; title: string; description: string }[];
     }
   | {
+      /** Small pill-badge tags (KEEP / REPLACE / OWN, RETIRE / BUILD / EXTEND) — distinct from the large numeral style of insightCards. */
+      type: "taggedList";
+      items: { tag: string; title: string; description: string }[];
+    }
+  | {
       type: "callout";
       eyebrow: string;
       title: string;

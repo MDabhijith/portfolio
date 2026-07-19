@@ -1,7 +1,7 @@
-export function InsightCardsBlock({
+export function TaggedListBlock({
   items,
 }: {
-  items: { number: string; title: string; description: string }[];
+  items: { tag: string; title: string; description: string }[];
 }) {
   return (
     <div className="flex flex-col">
@@ -10,9 +10,15 @@ export function InsightCardsBlock({
           key={i}
           className="flex flex-col gap-2 border-t border-line py-6 first:border-t-0 first:pt-0 sm:flex-row sm:gap-9"
         >
-          <span className="font-heading text-3xl font-semibold text-cs-label sm:w-[64px] sm:shrink-0 sm:text-4xl">
-            {item.number}
-          </span>
+          <div className="sm:w-[120px] sm:shrink-0">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-1 font-body text-xs font-semibold uppercase tracking-[0.04em] text-cs-ink">
+              <span
+                className="size-[5px] rounded-full bg-brand"
+                aria-hidden="true"
+              />
+              {item.tag}
+            </span>
+          </div>
           <div className="flex flex-col gap-2">
             <p className="font-body text-lg font-medium text-cs-ink">
               {item.title}

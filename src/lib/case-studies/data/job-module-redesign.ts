@@ -2,7 +2,7 @@ import type { CaseStudy } from "../types";
 
 export const jobModuleRedesign: CaseStudy = {
   slug: "job-module-redesign",
-  category: "Job Module Re-Design",
+  category: "Roofing CRM Job Management",
   client: "Priority Roofing",
   year: "2025",
   title:
@@ -310,15 +310,14 @@ export const jobModuleRedesign: CaseStudy = {
     },
   ],
   nextProject: {
-    href: "/work/roofing-workflow-management",
-    eyebrow: "B2B SAAS FIELD OPERATIONS",
-    title:
-      "A field-service scheduling platform for a national roofing service company in the USA",
+    href: "/work/ai-proposal-builder",
+    eyebrow: "AI ENABLED PROPOSAL BUILDER",
+    title: "AI-Enabled Proposal Builder, From Roof Inspection to Proposal",
     description:
-      "A job's customer and core details come straight from QuickBooks, while every service that used to live in Excel — orders, crews, fees, PM work, invoices — is pulled in and categorized under Job Info.",
+      "Extending the CRM into the sales side of the job: a native proposal system with an AI editor at its core, so a rep never has to leave the CRM to sell a job.",
     image: {
-      src: "/images/work/roofing-job-list.webp",
-      alt: "Priority Roofing CRM job list dashboard",
+      src: "/images/work/proposal-builder.webp",
+      alt: "AI-enabled roofing proposal builder interface",
     },
   },
 };

@@ -6,6 +6,7 @@ import { ImageBlock } from "./image-block";
 import { StatGrid } from "@/components/sections/stat-grid";
 import { PullQuote } from "@/components/sections/pull-quote";
 import { InsightCardsBlock } from "./insight-cards-block";
+import { TaggedListBlock } from "./tagged-list-block";
 import { CalloutBlock } from "./callout-block";
 import { QaPanelBlock } from "./qa-panel-block";
 
@@ -26,6 +27,8 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
       return <PullQuote quote={block.quote} attribution={block.attribution} />;
     case "insightCards":
       return <InsightCardsBlock items={block.items} />;
+    case "taggedList":
+      return <TaggedListBlock items={block.items} />;
     case "callout":
       return <CalloutBlock eyebrow={block.eyebrow} title={block.title} />;
     case "qaPanel":
