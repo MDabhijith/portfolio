@@ -19,7 +19,7 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <>
       <SiteNav />
-      <main className="flex-1 pt-32 sm:pt-40">
+      <main id="main-content" className="flex-1 pt-32 sm:pt-40">
         <Container className="flex flex-col gap-16 pb-24 sm:gap-24 sm:pb-32">
           <CaseStudyHeader caseStudy={caseStudy} />
 

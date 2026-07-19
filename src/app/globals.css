@@ -16,6 +16,7 @@
   --color-line: var(--line);
   --color-paper: var(--paper);
   --color-surface: var(--surface);
+  --color-surface-tint: var(--surface-tint);
 
   /* Brand accents */
   --color-brand: var(--brand);
@@ -125,6 +126,7 @@
   --line: #e8eaed;
   --paper: #ffffff;
   --surface: #f1efe9;
+  --surface-tint: #eaf3ec;
 
   --brand: #1a7347;
   --positive: #02542d;

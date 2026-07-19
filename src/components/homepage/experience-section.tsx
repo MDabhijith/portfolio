@@ -23,9 +23,9 @@ export function ExperienceSection() {
         className="flex flex-col gap-9 rounded-[28px] p-8 sm:p-12 lg:p-16"
         style={{
           background:
-            "radial-gradient(circle at 15% 20%, rgba(26,115,71,0.08) 0%, rgba(26,115,71,0) 40%), " +
-            "radial-gradient(circle at 85% 80%, rgba(26,115,71,0.1) 0%, rgba(26,115,71,0) 40%), " +
-            "#eaf3ec",
+            "radial-gradient(circle at 15% 20%, color-mix(in srgb, var(--brand) 8%, transparent) 0%, transparent 40%), " +
+            "radial-gradient(circle at 85% 80%, color-mix(in srgb, var(--brand) 10%, transparent) 0%, transparent 40%), " +
+            "var(--surface-tint)",
         }}
       >
         <div className="flex flex-wrap items-baseline justify-between gap-2">

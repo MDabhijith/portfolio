@@ -21,7 +21,7 @@ export function SiteNav() {
         aria-label="Primary"
         className="relative flex w-full max-w-[900px] items-center justify-between rounded-full border border-white/60 bg-white/55 px-4 py-2.5 shadow-[var(--shadow-nav)] backdrop-blur-[10px] sm:px-[27px] sm:py-[15px]"
       >
-        <Logo variant="dark" />
+        <Logo variant="dark" priority />
 
         <div className="hidden items-center gap-[30px] sm:flex">
           {links.map((link) => (

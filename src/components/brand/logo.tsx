@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils";
 export function Logo({
   variant = "dark",
   className,
+  priority = false,
 }: {
   variant?: "dark" | "light";
   className?: string;
+  priority?: boolean;
 }) {
   const mark =
     variant === "dark"
@@ -29,7 +31,7 @@ export function Logo({
         width={38}
         height={18}
         className="h-[18px] w-auto"
-        priority
+        priority={priority}
       />
       <span
         className={cn(

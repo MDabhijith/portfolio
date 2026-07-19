@@ -71,8 +71,8 @@ export function SelectedWorkSection() {
       </div>
 
       <div className="flex flex-col gap-12 sm:gap-16 lg:gap-20">
-        {caseStudies.map((cs, i) => (
-          <CaseStudyCard key={cs.href} {...cs} priority={i === 0} />
+        {caseStudies.map((cs) => (
+          <CaseStudyCard key={cs.href} {...cs} />
         ))}
       </div>
     </section>
