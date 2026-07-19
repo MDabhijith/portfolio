@@ -6,9 +6,9 @@ export function OutcomeHighlight({
   stats,
 }: OutcomeHighlightData) {
   return (
-    <div className="flex flex-col gap-8 rounded-[32px] bg-surface-tint p-8 sm:p-16">
+    <div className="flex flex-col gap-8 rounded-[32px] border border-[#B0CABB] bg-[#B0CABB] p-8 sm:p-16">
       <div className="flex flex-col gap-4">
-        <p className="font-body text-sm font-semibold uppercase tracking-[0.06em] text-cs-muted">
+        <p className="font-body text-sm font-semibold uppercase tracking-[0.06em] text-cs-body">
           {eyebrow}
         </p>
         <p className="max-w-[560px] font-heading text-2xl font-medium leading-snug text-cs-ink sm:text-3xl">
@@ -23,7 +23,7 @@ export function OutcomeHighlight({
               <p className="font-heading text-3xl font-semibold tracking-[-0.02em] text-cs-ink">
                 {stat.value}
               </p>
-              <p className="font-body text-sm leading-relaxed text-cs-muted">
+              <p className="font-body text-sm leading-relaxed text-cs-body">
                 {stat.caption}
               </p>
             </div>
