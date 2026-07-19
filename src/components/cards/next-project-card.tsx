@@ -30,7 +30,7 @@ export function NextProjectCard({
         className="group/next flex flex-col overflow-hidden rounded-2xl border border-primary-200 outline-none transition-colors duration-[var(--duration-base)] hover:border-primary-300 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 sm:flex-row"
       >
         <div className="flex flex-1 flex-col gap-2 bg-white p-8 sm:p-[50px]">
-          <p className="font-body text-sm text-primary-300">{eyebrow}</p>
+          <p className="font-body text-sm text-ink-tertiary">{eyebrow}</p>
           <h3 className="font-heading text-2xl font-semibold leading-tight text-primary-500 sm:text-h4">
             {title}
           </h3>
