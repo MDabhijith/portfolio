@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BackLink } from "@/components/ui/back-link";
 import { MetaRow } from "@/components/sections/meta-row";
+import { OutcomeHighlight } from "@/components/case-study/outcome-highlight";
 import type { CaseStudy } from "@/lib/case-studies/types";
 
 export function CaseStudyHeader({ caseStudy }: { caseStudy: CaseStudy }) {
@@ -35,6 +36,10 @@ export function CaseStudyHeader({ caseStudy }: { caseStudy: CaseStudy }) {
           className="object-cover"
         />
       </div>
+
+      {caseStudy.outcomeHighlight ? (
+        <OutcomeHighlight {...caseStudy.outcomeHighlight} />
+      ) : null}
     </header>
   );
 }

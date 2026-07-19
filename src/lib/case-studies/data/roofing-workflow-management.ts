@@ -17,6 +17,16 @@ export const roofingWorkflowManagement: CaseStudy = {
     src: "/images/work/roofing-job-list.webp",
     alt: "Priority Roofing CRM job list dashboard",
   },
+  outcomeHighlight: {
+    eyebrow: "THE OUTCOME, UP FRONT",
+    summary:
+      "One system now carries every job from the first door-knock to the final commission — the spreadsheets, the drift, and the dead-ends between tools, gone.",
+    stats: [
+      { value: "3 → 1", caption: "disconnected tools collapsed into one source of truth" },
+      { value: "100%", caption: "off spreadsheets for Back Office & PM teams" },
+      { value: "40%", caption: "faster job coordination, handoff to first action" },
+    ],
+  },
   sections: [
     {
       id: "background",

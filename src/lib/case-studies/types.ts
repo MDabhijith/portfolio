@@ -51,6 +51,12 @@ export interface CaseStudySection {
   blocks: ContentBlock[];
 }
 
+export interface OutcomeHighlight {
+  eyebrow: string;
+  summary: string;
+  stats: Stat[];
+}
+
 export interface CaseStudy {
   slug: string;
   category: string;
@@ -60,6 +66,8 @@ export interface CaseStudy {
   subtitle: string;
   meta: { label: string; value: string }[];
   heroImage: ImageRef;
+  /** Boxed "outcome up front" summary shown right after the hero image — optional, only present where Figma has it. */
+  outcomeHighlight?: OutcomeHighlight;
   sections: CaseStudySection[];
   keyDecisions?: Decision[];
   nextProject: {
