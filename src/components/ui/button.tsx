@@ -19,6 +19,11 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
+        /** Solid ink pill — primary marketing CTA ("Say hello") */
+        pill: "rounded-full bg-ink text-white font-body font-medium hover:bg-ink/85 active:translate-y-px",
+        /** Small dark pill used inside the floating nav ("Resume") */
+        "pill-nav":
+          "rounded-full bg-ink text-white font-body font-bold uppercase tracking-[0.5px] hover:bg-ink/85",
       },
       size: {
         default:
@@ -32,6 +37,10 @@ const buttonVariants = cva(
         "icon-sm":
           "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
         "icon-lg": "size-9",
+        /** Matches the hero CTA pill in Figma (30px/15px padding) */
+        "pill-lg": "h-auto px-[30px] py-[15px] text-[14.5px]",
+        /** Matches the nav "Resume" pill (16px/8px padding) */
+        "pill-sm": "h-auto px-4 py-2 text-[12.5px]",
       },
     },
     defaultVariants: {

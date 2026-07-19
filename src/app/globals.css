@@ -22,6 +22,18 @@
   --color-positive: var(--positive);
   --color-danger: var(--danger);
 
+  /* Case-study prose palette (Figma runs a slightly warmer, distinct gray
+     scale inside case studies vs. the homepage) */
+  --color-cs-ink: var(--cs-ink);
+  --color-cs-body: var(--cs-body);
+  --color-cs-muted: var(--cs-muted);
+  --color-cs-label: var(--cs-label);
+
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+
   /* Footer (dark section) */
   --color-footer: var(--footer);
   --color-footer-foreground: var(--footer-foreground);
@@ -61,6 +73,36 @@
   --radius-xl: 20px;
   --radius-2xl: 32px;
 
+  /* Type scale (Figma Global Tokens/Headings + Body) */
+  --text-display: 56px;
+  --text-display--line-height: 70px;
+  --text-h3: 46px;
+  --text-h3--line-height: 69px;
+  --text-h4: 38px;
+  --text-h4--line-height: 47.5px;
+  --text-h5: 32px;
+  --text-h5--line-height: 48px;
+  --text-h6: 26px;
+  --text-h6--line-height: 39px;
+  --text-body-lg: 17px;
+  --text-body-lg--line-height: 29.75px;
+  --text-body: 16px;
+  --text-body--line-height: 24px;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 21px;
+  --text-caption: 12px;
+  --text-caption--line-height: 18px;
+
+  /* Elevation (Figma Drop Shadow/200) */
+  --shadow-elevation: 0px 1px 4px 0px rgba(12, 12, 13, 0.05),
+    0px 1px 4px 0px rgba(12, 12, 13, 0.1);
+  --shadow-nav: 0px 8px 32px -12px rgba(31, 31, 31, 0.18);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+
   --animate-marquee: marquee 34s linear infinite;
 }
 
@@ -87,6 +129,17 @@
   --brand: #1a7347;
   --positive: #02542d;
   --danger: #900b09;
+
+  --cs-ink: #1b1a17;
+  --cs-body: #4a4843;
+  --cs-muted: #6a675f;
+  --cs-label: #757575;
+
+  /* Figma "Colors/Primary" ramp — meta rows + next-project teaser card */
+  --primary-200: #b9b9b9;
+  --primary-300: #9a9a9a;
+  --primary-400: #494949;
+  --primary-500: #242424;
 
   --footer: #0f0f0f;
   --footer-foreground: #fcfbf9;
@@ -129,5 +182,16 @@
   }
   html {
     @apply font-body scroll-smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
