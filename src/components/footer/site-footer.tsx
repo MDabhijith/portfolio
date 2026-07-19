@@ -40,7 +40,7 @@ export function SiteFooter() {
           </div>
 
           <nav aria-label="Footer navigation" className="flex flex-col gap-4">
-            <h2 className="font-body text-xs uppercase tracking-[1.2px] text-footer-foreground/45">
+            <h2 className="font-body text-xs uppercase tracking-[1.2px] text-footer-foreground/55">
               Navigate
             </h2>
             <ul className="flex flex-col gap-2.5">
@@ -60,7 +60,7 @@ export function SiteFooter() {
           </nav>
 
           <div className="flex flex-col gap-4">
-            <h2 className="font-body text-xs uppercase tracking-[1.2px] text-footer-foreground/45">
+            <h2 className="font-body text-xs uppercase tracking-[1.2px] text-footer-foreground/55">
               Contact
             </h2>
             <ul className="flex flex-col gap-2.5">

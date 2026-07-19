@@ -1,17 +1,26 @@
+import { SiteNav } from "@/components/nav/site-nav";
+import { SiteFooter } from "@/components/footer/site-footer";
 import { Container } from "@/components/layout/container";
+import { Hero } from "@/components/homepage/hero";
+import { SummarySection } from "@/components/homepage/summary-section";
+import { ExperienceSection } from "@/components/homepage/experience-section";
+import { SelectedWorkSection } from "@/components/homepage/selected-work-section";
+import { CtaSection } from "@/components/homepage/cta-section";
 
 export default function Home() {
   return (
-    <main className="flex-1">
-      <Container className="py-24">
-        <p className="font-heading text-2xl font-semibold">
-          MD Folio — foundation ready.
-        </p>
-        <p className="mt-2 text-ink-tertiary font-body">
-          Fonts, tokens, and layout are wired up. Homepage content lands in
-          Phase 3.
-        </p>
-      </Container>
-    </main>
+    <>
+      <SiteNav />
+      <main className="flex-1">
+        <Hero />
+        <Container className="flex flex-col gap-24 py-20 sm:gap-32 sm:py-28 lg:gap-36 lg:py-32">
+          <SummarySection />
+          <ExperienceSection />
+          <SelectedWorkSection />
+          <CtaSection />
+        </Container>
+      </main>
+      <SiteFooter />
+    </>
   );
 }
