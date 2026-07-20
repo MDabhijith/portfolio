@@ -32,6 +32,13 @@ export const jobModuleRedesign: CaseStudy = {
           ],
         },
         {
+          type: "browserGallery",
+          image: {
+            src: "/images/work/sheets-mockup.webp",
+            alt: "Spreadsheet tracking job and location data across multiple tabs",
+          },
+        },
+        {
           type: "quote",
           quote:
             "We use the CRM to say a job exists. Everything that actually moves the job forward is in spreadsheets.",

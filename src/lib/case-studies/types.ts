@@ -51,6 +51,11 @@ export type ContentBlock =
       type: "darkCallout";
       eyebrow: string;
       rows: { label: string; before: string; after: string }[];
+    }
+  | {
+      /** Figma's "Sheets" component — browser-chrome screenshot on a surface card with decorative gallery chrome. */
+      type: "browserGallery";
+      image: ImageRef;
     };
 
 export interface Decision {

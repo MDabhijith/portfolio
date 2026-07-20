@@ -11,6 +11,7 @@ import { CalloutBlock } from "./callout-block";
 import { QaPanelBlock } from "./qa-panel-block";
 import { SystemComparisonBlock } from "./system-comparison-block";
 import { DarkCalloutBlock } from "./dark-callout-block";
+import { BrowserGalleryBlock } from "./browser-gallery-block";
 
 /** Renders a single case-study content block by its `type` discriminant. */
 export function BlockRenderer({ block }: { block: ContentBlock }) {
@@ -46,6 +47,8 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
       return <SystemComparisonBlock items={block.items} />;
     case "darkCallout":
       return <DarkCalloutBlock eyebrow={block.eyebrow} rows={block.rows} />;
+    case "browserGallery":
+      return <BrowserGalleryBlock image={block.image} />;
     default:
       return null;
   }

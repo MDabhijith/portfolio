@@ -163,6 +163,13 @@ export const roofingWorkflowManagement: CaseStudy = {
           ],
         },
         {
+          type: "browserGallery",
+          image: {
+            src: "/images/work/sheets-mockup.webp",
+            alt: "Spreadsheet tracking job and location data across multiple tabs",
+          },
+        },
+        {
           type: "insightCards",
           items: [
             {
