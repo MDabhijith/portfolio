@@ -66,12 +66,32 @@ export const aiProposalBuilder: CaseStudy = {
           ],
         },
         {
-          type: "list",
+          type: "insightCards",
           items: [
-            "Disconnected from the CRM. Roofr had no relationship to the jobs and customers already living inside the CRM — every proposal started from a blank system.",
-            "Duplicate entry, scattered assessment data. Reps re-typed customer and job information by hand, while photos, damage notes, and documents were split across whatever tool was open at the time.",
-            "Approval disconnected from job tracking. A proposal being approved didn't mean anything to the CRM — someone still had to notice, and manually start the job.",
-            "The cost compounded. Every re-entry was a chance to introduce an error, and every manual handoff was time a rep or back-office spent not selling or building.",
+            {
+              number: "01",
+              title: "Disconnected from the CRM",
+              description:
+                "Roofr had no relationship to the jobs and customers already living inside the CRM — every proposal started from a blank system.",
+            },
+            {
+              number: "02",
+              title: "Duplicate entry, scattered assessment data",
+              description:
+                "Reps re-typed customer and job information by hand, while photos, damage notes, and documents were split across whatever tool was open at the time.",
+            },
+            {
+              number: "03",
+              title: "Approval disconnected from job tracking",
+              description:
+                "A proposal being approved didn't mean anything to the CRM — someone still had to notice, and manually start the job.",
+            },
+            {
+              number: "04",
+              title: "The cost compounded",
+              description:
+                "Every re-entry was a chance to introduce an error, and every manual handoff was time a rep or back-office spent not selling or building.",
+            },
           ],
         },
       ],
@@ -119,19 +139,19 @@ export const aiProposalBuilder: CaseStudy = {
           type: "insightCards",
           items: [
             {
-              number: "1",
+              number: "01",
               title: "The proposal was the CRM's blind spot",
               description:
                 "Everything the CRM modeled so carefully — the job, the customer, the pipeline — didn't exist yet from Roofr's point of view. The two systems described the same deal with no shared vocabulary.",
             },
             {
-              number: "2",
+              number: "02",
               title: "Approval was an event no system was listening for",
               description:
                 "A homeowner's sign-off happened inside Roofr and stayed there until a person forwarded it along. Nothing treated approval as a trigger.",
             },
             {
-              number: "3",
+              number: "03",
               title: "Assessment data had nowhere permanent to live",
               description:
                 "Photos and damage notes were only as safe as whoever's phone or laptop they were captured on — there was no job record yet to attach them to.",

@@ -84,12 +84,32 @@ export const roofingWorkflowManagement: CaseStudy = {
           ],
         },
         {
-          type: "list",
+          type: "insightCards",
           items: [
-            "Three systems, one job. The customer lived in QuickBooks, the proposal in Roofr, and everything that moved the job in Excel. No system held the whole picture.",
-            "Re-keyed at every handoff. The same job was typed into each tool in turn. Numbers and addresses drifted apart, and no version was authoritative.",
-            "No modeled lifecycle. Nothing represented the real sequence a job moves through, so status was a manual guess maintained in a spreadsheet column.",
-            "Field work was invisible. Canvassing and new leads lived on paper and phones, disconnected from the pipeline until someone re-entered them by hand.",
+            {
+              number: "01",
+              title: "Three systems, one job",
+              description:
+                "The customer lived in QuickBooks, the proposal in Roofr, and everything that moved the job in Excel. No system held the whole picture.",
+            },
+            {
+              number: "02",
+              title: "Re-keyed at every handoff",
+              description:
+                "The same job was typed into each tool in turn. Numbers and addresses drifted apart, and no version was authoritative.",
+            },
+            {
+              number: "03",
+              title: "No modeled lifecycle",
+              description:
+                "Nothing represented the real sequence a job moves through, so status was a manual guess maintained in a spreadsheet column.",
+            },
+            {
+              number: "04",
+              title: "Field work was invisible",
+              description:
+                "Canvassing and new leads lived on paper and phones, disconnected from the pipeline until someone re-entered them by hand.",
+            },
           ],
         },
       ],
@@ -146,19 +166,19 @@ export const roofingWorkflowManagement: CaseStudy = {
           type: "insightCards",
           items: [
             {
-              number: "1",
+              number: "01",
               title: "A job never lived in one place — it lived across three",
               description:
                 "Every role kept a private mental map stitching the QuickBooks customer to the Roofr proposal to the right Excel rows. Any absence or staff change tore a hole in that map instantly.",
             },
             {
-              number: "2",
+              number: "02",
               title: "The seams, not the tools, were the failure",
               description:
                 "Each tool did its job well in isolation. The cost was every handoff between them: manual re-entry, drift, and no way to trust that any record was current.",
             },
             {
-              number: "3",
+              number: "03",
               title: "Every role touched the same job through a different lens",
               description:
                 "Reps needed lead and status context; PMs needed crews and materials; back office needed audits, invoices, and commissions. One job, but no shared view of it anywhere.",

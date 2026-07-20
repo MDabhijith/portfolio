@@ -144,19 +144,19 @@ export const jobModuleRedesign: CaseStudy = {
           type: "insightCards",
           items: [
             {
-              number: "1",
+              number: "01",
               title: "Linked data lived in people's heads, not in the system",
               description:
                 "Users kept a mental map of which job linked to which customer, crew, invoice, and material order. There was no structural relationship between records — any absence or staff change created immediate knowledge gaps and risk of error.",
             },
             {
-              number: "2",
+              number: "02",
               title: "Every update was a separate manual action across multiple files",
               description:
                 "There were no triggers or linked fields. Updating a job meant independently editing cells across multiple sheets. Small inconsistencies compounded quickly — no one could be sure a record reflected the current state of a job.",
             },
             {
-              number: "3",
+              number: "03",
               title: "Each role had a different relationship to the same job data",
               description:
                 "Sales reps needed customer and status context. Project managers needed crew and materials. Office staff needed invoices and payments. Executives needed an overview. All of these users were touching the same job data but had no shared, unified view of it.",

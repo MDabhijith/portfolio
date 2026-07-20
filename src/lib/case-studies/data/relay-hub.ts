@@ -45,13 +45,38 @@ export const relayHub: CaseStudy = {
           ],
         },
         {
-          type: "list",
+          type: "insightCards",
           items: [
-            "Chat tools hold conversations, not knowledge. Chat tools are excellent at the moment of talking. None of them treat a conversation, or a meeting, as something the organization should be able to draw on later.",
-            "Documentation is scattered across drives no one tool can see. Cloud storage and docs tools each store real, current company documents, but nothing connects a document to the conversation that needed it, or surfaces it before someone has to go looking.",
-            "Knowledge stays trapped inside one-off conversations. A genuinely good answer, worked out in a thread or a meeting, rarely turns into something the next person can find. It just becomes one more thing to ask about again.",
-            "AI assistants answer generically, not organizationally. A standalone AI tool is fluent about the internet and knows nothing about this company, its policies, its customers, its own past answers.",
-            "Security was never designed for AI to have an opinion. Existing permission models govern who can open a file. None of them were built to answer the harder question of what an AI should be allowed to say about that file, and to whom.",
+            {
+              number: "01",
+              title: "Chat tools hold conversations, not knowledge",
+              description:
+                "Chat tools are excellent at the moment of talking. None of them treat a conversation, or a meeting, as something the organization should be able to draw on later.",
+            },
+            {
+              number: "02",
+              title: "Documentation is scattered across drives no one tool can see",
+              description:
+                "Cloud storage and docs tools each store real, current company documents, but nothing connects a document to the conversation that needed it, or surfaces it before someone has to go looking.",
+            },
+            {
+              number: "03",
+              title: "Knowledge stays trapped inside one-off conversations",
+              description:
+                "A genuinely good answer, worked out in a thread or a meeting, rarely turns into something the next person can find. It just becomes one more thing to ask about again.",
+            },
+            {
+              number: "04",
+              title: "AI assistants answer generically, not organizationally",
+              description:
+                "A standalone AI tool is fluent about the internet and knows nothing about this company, its policies, its customers, its own past answers.",
+            },
+            {
+              number: "05",
+              title: "Security was never designed for AI to have an opinion",
+              description:
+                "Existing permission models govern who can open a file. None of them were built to answer the harder question of what an AI should be allowed to say about that file, and to whom.",
+            },
           ],
         },
         {
