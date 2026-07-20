@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/container";
 import { CaseStudySectionNav } from "@/components/sections/case-study-section-nav";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { NextProjectCard } from "@/components/cards/next-project-card";
+import { CaseStudyBanner } from "@/components/case-study/case-study-banner";
 import { CaseStudyHeader } from "@/components/case-study/case-study-header";
 import { BlockRenderer } from "@/components/case-study/blocks/block-renderer";
 import { DecisionBlock } from "@/components/case-study/blocks/decision-block";
@@ -19,8 +20,10 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <>
       <SiteNav />
-      <main id="main-content" className="flex-1 pt-32 sm:pt-40">
-        <Container className="flex flex-col gap-16 pb-24 sm:gap-24 sm:pb-32">
+      <main id="main-content" className="flex-1">
+        <CaseStudyBanner caseStudy={caseStudy} />
+
+        <Container className="flex flex-col gap-16 pt-16 pb-24 sm:gap-24 sm:pt-24 sm:pb-32">
           <CaseStudyHeader caseStudy={caseStudy} />
 
           <div className="flex flex-col gap-16 lg:flex-row lg:gap-16">
