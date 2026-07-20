@@ -20,9 +20,14 @@ export type ContentBlock =
       items: { number: string; title: string; description: string }[];
     }
   | {
-      /** Small pill-badge tags (KEEP / REPLACE / OWN, RETIRE / BUILD / EXTEND) — distinct from the large numeral style of insightCards. */
+      /** Small colored pill tags (KEEP / REPLACE / OWN, RETIRE / BUILD / EXTEND), wrapped in one bordered card. */
       type: "taggedList";
-      items: { tag: string; title: string; description: string }[];
+      items: {
+        tag: string;
+        tone: "neutral" | "positive" | "negative";
+        title: string;
+        description: string;
+      }[];
     }
   | {
       type: "callout";
@@ -34,7 +39,18 @@ export type ContentBlock =
       eyebrow: string;
       meta: string;
       description: string;
-      items: { role: string; detail: string; question: string }[];
+      items: { role: string; detail: string; questions: string[] }[];
+    }
+  | {
+      /** Card-per-row HELD/GAP system comparison (e.g. "What a single job required across QuickBooks / Roofr / Excel"). */
+      type: "systemComparison";
+      items: { name: string; subtitle: string; held: string; gap: string }[];
+    }
+  | {
+      /** Dark full-bleed card for "THE CALL THAT SHAPED IT" style before/after decision rows. */
+      type: "darkCallout";
+      eyebrow: string;
+      rows: { label: string; before: string; after: string }[];
     };
 
 export interface Decision {

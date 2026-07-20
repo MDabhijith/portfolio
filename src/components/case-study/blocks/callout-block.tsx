@@ -6,13 +6,14 @@ export function CalloutBlock({
   title: string;
 }) {
   return (
-    <div className="flex flex-col gap-3 border-l-2 border-positive pl-6">
-      <p className="font-body text-sm font-semibold uppercase tracking-[0.08em] text-positive">
-        {eyebrow}
-      </p>
-      <p className="font-heading text-xl font-medium leading-snug text-cs-ink sm:text-2xl">
-        {title}
-      </p>
+    <div className="flex items-stretch gap-[29px]">
+      <div className="w-[3px] shrink-0 rounded-full bg-positive" aria-hidden="true" />
+      <div className="flex flex-col gap-[3px]">
+        <p className="font-body text-body-sm text-positive">{eyebrow}</p>
+        <p className="max-w-[814px] font-heading text-xl font-medium leading-snug tracking-[-0.02em] text-cs-ink sm:text-[30px] sm:leading-[39px]">
+          {title}
+        </p>
+      </div>
     </div>
   );
 }

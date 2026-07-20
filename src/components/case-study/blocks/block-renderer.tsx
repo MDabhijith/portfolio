@@ -9,6 +9,8 @@ import { InsightCardsBlock } from "./insight-cards-block";
 import { TaggedListBlock } from "./tagged-list-block";
 import { CalloutBlock } from "./callout-block";
 import { QaPanelBlock } from "./qa-panel-block";
+import { SystemComparisonBlock } from "./system-comparison-block";
+import { DarkCalloutBlock } from "./dark-callout-block";
 
 /** Renders a single case-study content block by its `type` discriminant. */
 export function BlockRenderer({ block }: { block: ContentBlock }) {
@@ -40,6 +42,10 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
           items={block.items}
         />
       );
+    case "systemComparison":
+      return <SystemComparisonBlock items={block.items} />;
+    case "darkCallout":
+      return <DarkCalloutBlock eyebrow={block.eyebrow} rows={block.rows} />;
     default:
       return null;
   }

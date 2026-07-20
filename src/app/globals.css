@@ -30,10 +30,23 @@
   --color-cs-muted: var(--cs-muted);
   --color-cs-label: var(--cs-label);
 
+  --color-primary-100: var(--primary-100);
   --color-primary-200: var(--primary-200);
   --color-primary-300: var(--primary-300);
   --color-primary-400: var(--primary-400);
   --color-primary-500: var(--primary-500);
+
+  /* Tag-pill tones (KEEP/REPLACE/OWN, RETIRE/BUILD/EXTEND) */
+  --color-tag-neutral-bg: var(--tag-neutral-bg);
+  --color-tag-neutral-fg: var(--tag-neutral-fg);
+  --color-tag-negative-bg: var(--tag-negative-bg);
+  --color-tag-positive-bg: var(--tag-positive-bg);
+
+  /* Dark "call that shaped it" callout */
+  --color-dark-callout: var(--dark-callout);
+  --color-dark-callout-eyebrow: var(--dark-callout-eyebrow);
+  --color-dark-callout-muted: var(--dark-callout-muted);
+  --color-dark-callout-label: var(--dark-callout-label);
 
   /* Footer (dark section) */
   --color-footer: var(--footer);
@@ -138,10 +151,23 @@
   --cs-label: #757575;
 
   /* Figma "Colors/Primary" ramp — meta rows + next-project teaser card */
+  --primary-100: #e9e9e9;
   --primary-200: #b9b9b9;
   --primary-300: #9a9a9a;
   --primary-400: #494949;
   --primary-500: #242424;
+
+  --tag-neutral-bg: #e9e9e9;
+  --tag-neutral-fg: #5a5a5a;
+  --tag-negative-bg: #fbe4e2;
+  --tag-positive-bg: #dde9e2;
+
+  --dark-callout: #012c1d;
+  --dark-callout-eyebrow: #81ad97;
+  /* Figma's literal #719282 measures 4.45:1 here, just under the 4.5:1 AA
+     minimum for normal text — lightened slightly to 5.12:1. */
+  --dark-callout-muted: #7c9d8c;
+  --dark-callout-label: #e9e9e9;
 
   --footer: #0f0f0f;
   --footer-foreground: #fcfbf9;

@@ -98,14 +98,20 @@ export const aiProposalBuilder: CaseStudy = {
             {
               role: "Sales Reps",
               detail: "Assessment → close",
-              question:
-                "Walk me through everything that happens between booking an assessment and sending a proposal. What do you re-type that you know already lives in the CRM? Once a proposal is sent, how do you know what happens next?",
+              questions: [
+                "Walk me through everything that happens between booking an assessment and sending a proposal.",
+                "What do you re-type that you know already lives in the CRM?",
+                "Once a proposal is sent, how do you know what happens next?",
+              ],
             },
             {
               role: "Back Office",
               detail: "Approval, contracts, job creation",
-              question:
-                "How do you find out a proposal has been approved? What has to happen before a signed deal becomes a job you can schedule? Where do assessment photos and documents end up once you need them?",
+              questions: [
+                "How do you find out a proposal has been approved?",
+                "What has to happen before a signed deal becomes a job you can schedule?",
+                "Where do assessment photos and documents end up once you need them?",
+              ],
             },
           ],
         },
@@ -157,18 +163,21 @@ export const aiProposalBuilder: CaseStudy = {
           items: [
             {
               tag: "RETIRE",
+              tone: "negative",
               title: "Roofr as the system of record for a sale",
               description:
                 "It solved assessment and proposals in isolation, but every proposal it produced started disconnected from the job it was for.",
             },
             {
               tag: "BUILD",
+              tone: "neutral",
               title: "A Proposal Management module on the CRM's own schema",
               description:
                 "Assessment, proposal, approval, and signing read and write the same job record the CRM already owns — nothing is synced, because nothing is duplicated.",
             },
             {
               tag: "EXTEND",
+              tone: "positive",
               title: "The CRM's pipeline backward, into the sale itself",
               description:
                 "The Job Cycle already carried a job from won to paid. This work extends that same idea one stage earlier, to first inspection.",
@@ -176,33 +185,33 @@ export const aiProposalBuilder: CaseStudy = {
           ],
         },
         {
-          type: "keyValue",
-          title: "The call that shaped it",
+          type: "darkCallout",
+          eyebrow: "THE CALL THAT SHAPED IT",
           rows: [
             {
               label: "Share the schema, don't sync a copy",
-              value:
-                "Assessments and proposals had no link to the job that already existed → built as an extension of the CRM's own data model.",
+              before: "Assessments and proposals had no link to the job that already existed →",
+              after: "built as an extension of the CRM's own data model.",
             },
             {
               label: "Make proposals dynamic, not just templated",
-              value:
-                "Every roofing service prices and reads differently → templates are a starting point; sections rebuild per job.",
+              before: "Every roofing service prices and reads differently →",
+              after: "templates are a starting point; sections rebuild per job.",
             },
             {
               label: "Split pricing into two catalog types",
-              value:
-                "Itemized work and full roof systems don't price the same way → two catalog structures, one estimate engine underneath.",
+              before: "Itemized work and full roof systems don't price the same way →",
+              after: "two catalog structures, one estimate engine underneath.",
             },
             {
               label: "Close the loop with signing, not a handoff",
-              value:
-                "An approved proposal used to become someone's manual task → signing happens inside the flow and creates the job directly.",
+              before: "An approved proposal used to become someone's manual task →",
+              after: "signing happens inside the flow and creates the job directly.",
             },
             {
               label: "Put an AI agent inside the builder, not beside it",
-              value:
-                "Drafting a proposal from scratch was the slowest part of a rep's day → a prompt generates the full draft, and the same agent refines any section in place.",
+              before: "Drafting a proposal from scratch was the slowest part of a rep's day →",
+              after: "a prompt generates the full draft, and the same agent refines any section in place.",
             },
           ],
         },

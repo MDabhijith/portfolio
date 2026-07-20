@@ -41,22 +41,25 @@ export const roofingWorkflowManagement: CaseStudy = {
           ],
         },
         {
-          type: "keyValue",
-          rows: [
+          type: "systemComparison",
+          items: [
             {
-              label: "QuickBooks — Accounting & finance",
-              value:
-                "HELD: Customer records, invoicing, the financial book of record. GAP: No operational data — it saw money, not work.",
+              name: "Quickbooks",
+              subtitle: "Accounting & finance",
+              held: "Customer records, invoicing, the financial book of record.",
+              gap: "No operational data and no idea a job had a lifecycle — it saw money, not work.",
             },
             {
-              label: "Roofr — Sales & estimating",
-              value:
-                "HELD: Roof measurements, proposals, and homeowner invoices. GAP: Stopped at the sale — nothing carried a won job into production.",
+              name: "Roofr",
+              subtitle: "Sales & estimating",
+              held: "Roof measurements, proposals, and homeowner invoices.",
+              gap: "Stopped at the sale. Nothing carried a won job into production.",
             },
             {
-              label: "Excel — Everything operational",
-              value:
-                "HELD: Material orders, crew scheduling, crew & office fees, PM assignments, audits, commissions, draws. GAP: Manual, unlinked, and unreadable to anyone but its author — one tab out of sync broke the job.",
+              name: "Excel",
+              subtitle: "Everything operational",
+              held: "Material orders, crew scheduling, crew & office fees, PM assignments, audits, commissions, draws.",
+              gap: "Manual, unlinked, and unreadable to anyone but its author — one tab out of sync broke the job.",
             },
           ],
         },
@@ -113,20 +116,29 @@ export const roofingWorkflowManagement: CaseStudy = {
             {
               role: "Sales Reps",
               detail: "Canvassing → close",
-              question:
-                "How does a door-knock or a lead actually become a job in the system? After you close, how do you know it moved into production? Where do you look when a homeowner calls for a status update?",
+              questions: [
+                "How does a door-knock or a lead actually become a job in the system?",
+                "After you close, how do you know it moved into production?",
+                "Where do you look when a homeowner calls for a status update?",
+              ],
             },
             {
               role: "Back Office",
               detail: "Materials, audits, commissions",
-              question:
-                "Walk me through everything you touch after a job is submitted. What still lives in a spreadsheet that no tool holds for you? How do commissions and draws get calculated and paid out?",
+              questions: [
+                "Walk me through everything you touch after a job is submitted.",
+                "What still lives in a spreadsheet that no tool holds for you?",
+                "How do commissions and draws get calculated and paid out?",
+              ],
             },
             {
               role: "Project Managers",
               detail: "Scheduling, crews, inspection",
-              question:
-                "How do you decide which job to schedule and which crew to send? When a job stalls between tools, how do you even find out? What would you need to see the moment you open a job?",
+              questions: [
+                "How do you decide which job to schedule and which crew to send?",
+                "When a job stalls between tools, how do you even find out?",
+                "What would you need to see the moment you open a job?",
+              ],
             },
           ],
         },
@@ -178,18 +190,21 @@ export const roofingWorkflowManagement: CaseStudy = {
           items: [
             {
               tag: "KEEP",
+              tone: "neutral",
               title: "QuickBooks as the financial book of record",
               description:
                 "The team trusted it and the accountant depended on it. Replacing it would start a fight we didn't need to win — so we sync from it instead.",
             },
             {
               tag: "REPLACE",
+              tone: "negative",
               title: "Roofr's post-sale gap and the Excel stack",
               description:
                 "Roofr ended at the proposal; Excel patched everything after. The CRM absorbs the entire operational middle — the part no tool truly owned.",
             },
             {
               tag: "OWN",
+              tone: "positive",
               title: "The job lifecycle, from lead to commission",
               description:
                 "One record the whole company reads the same way, carrying a job through every phase and role without ever leaving the system.",
@@ -219,6 +234,32 @@ export const roofingWorkflowManagement: CaseStudy = {
               label: "Start in the field",
               value:
                 "Capture leads where they happen — canvassing and the map — so the pipeline begins at the first knock.",
+            },
+          ],
+        },
+        {
+          type: "darkCallout",
+          eyebrow: "THE CALL THAT SHAPED IT",
+          rows: [
+            {
+              label: "Sync from QuickBooks, don't replace it",
+              before: "It was the trusted source for money →",
+              after: "keep it read-only, own everything else.",
+            },
+            {
+              label: "Make the job the atomic unit",
+              before: '"A job" was reassembled by hand from three tools →',
+              after: "one object now carries it all.",
+            },
+            {
+              label: "Begin the pipeline in the field",
+              before: "Leads were captured on paper, re-entered days later →",
+              after: "now trackable from the door.",
+            },
+            {
+              label: "Split people out as their own group",
+              before: "Crews and suppliers were duplicated inside every job →",
+              after: "now defined once, referenced everywhere.",
             },
           ],
         },

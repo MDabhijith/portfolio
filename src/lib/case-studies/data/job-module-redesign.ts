@@ -108,20 +108,29 @@ export const jobModuleRedesign: CaseStudy = {
             {
               role: "Sales Reps",
               detail: "First contact → handoff",
-              question:
-                "Once you close a deal, how do you know it actually moved forward? What do you check before telling a homeowner what happens next? Where do you look when a customer calls asking for an update?",
+              questions: [
+                "Once you close a deal, how do you know it actually moved forward?",
+                "What do you check before telling a homeowner what happens next?",
+                "Where do you look when a customer calls asking for an update?",
+              ],
             },
             {
               role: "Back Office",
               detail: "Materials, audits, commission",
-              question:
-                "Walk me through everything you touch after a job is submitted. How do you know a job is ready for you to act on? What do you keep in a spreadsheet that the CRM doesn't hold?",
+              questions: [
+                "Walk me through everything you touch after a job is submitted.",
+                "How do you know a job is ready for you to act on?",
+                "What do you keep in a spreadsheet that the CRM doesn't hold?",
+              ],
             },
             {
               role: "Project Managers",
               detail: "Scheduling, crews, inspection",
-              question:
-                "How do you decide which job to schedule next? When a job stalls, how do you find out — and from whom? What would you need to see the moment you open a job?",
+              questions: [
+                "How do you decide which job to schedule next?",
+                "When a job stalls, how do you find out — and from whom?",
+                "What would you need to see the moment you open a job?",
+              ],
             },
           ],
         },
