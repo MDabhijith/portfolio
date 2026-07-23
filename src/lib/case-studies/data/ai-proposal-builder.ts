@@ -618,8 +618,8 @@ export const aiProposalBuilder: CaseStudy = {
     description:
       "An AI-first business communication platform unifying chat, documents, and knowledge scoped by what it's allowed to see.",
     image: {
-      src: "/images/work/abstract-cover.webp",
-      alt: "Relay Hub",
+      src: "/images/work/relay-hero.webp",
+      alt: "Relay Hub open on a laptop, with a document and an ask-anything chat panel side by side",
     },
   },
 };

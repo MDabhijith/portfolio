@@ -13,12 +13,11 @@ export function SummarySection() {
 
       <div className="flex flex-1 flex-col gap-8 sm:gap-10">
         <p className="max-w-[628px] font-body text-base leading-[1.75] text-ink-secondary sm:text-[17px]">
-          Over the past four years I&rsquo;ve designed end-to-end CRMs,
-          AI-first knowledge products, and operational tooling for teams
-          previously stitching their day across disconnected tools and manual
-          re-entry. My process starts with sitting alongside the people doing
-          the work. The strongest systems come from tracing one real job
-          start to finish and designing for the seams, not just the screens.
+          Over the last 4 years, I&rsquo;ve designed products across AI, SaaS,
+          healthcare, and enterprise platforms with one goal: creating
+          experiences that people enjoy using and businesses benefit from.
+          Every design decision is guided by empathy, strategy, and measurable
+          impact.
         </p>
 
         <div className="grid grid-cols-1 gap-6 border-t border-line pt-7 sm:grid-cols-3 sm:gap-6">

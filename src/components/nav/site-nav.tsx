@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
 import { Button } from "@/components/ui/button";
+import { SlideUpLabel } from "@/components/ui/slide-up-label";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -28,14 +29,19 @@ export function SiteNav() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-body text-[12.5px] font-bold uppercase tracking-[0.75px] text-ink outline-none transition-opacity duration-[var(--duration-fast)] hover:opacity-70 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-sm"
+              className="group/roll inline-block font-body text-[12.5px] font-bold uppercase tracking-[0.75px] text-ink outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-sm"
             >
-              {link.label}
+              <SlideUpLabel label={link.label} />
             </Link>
           ))}
           <Button asChild variant="pill-nav" size="pill-sm">
-            <a href="/AbhijithMD.pdf" target="_blank" rel="noopener noreferrer">
-              Resume
+            <a
+              href="/AbhijithMD.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/roll"
+            >
+              <SlideUpLabel label="Resume" />
             </a>
           </Button>
         </div>

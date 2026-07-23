@@ -28,15 +28,14 @@ export function Hero() {
           </div>
 
           <h1 className="text-center font-heading text-4xl font-extrabold leading-[1.15] tracking-[-0.02em] text-ink sm:text-5xl lg:text-[56px] lg:leading-[70px]">
-            Solving <em className="font-extrabold italic">real</em> problems
-            through{" "}
-            <em className="font-extrabold italic">human-centered</em> design.
+            Designing for{" "}
+            <em className="font-extrabold italic">measurable outcomes</em>, not
+            just polished interfaces.
           </h1>
 
           <p className="max-w-[540px] text-center font-body text-base leading-relaxed text-ink-secondary sm:text-[16.5px]">
-            4+ years designing end-to-end B2B SaaS and AI products turning
-            messy, fragmented operations into systems that scale and that
-            people actually trust.
+            Designing user-centered products that balance human needs with
+            measurable business impact.
           </p>
         </div>
       </div>

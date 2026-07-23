@@ -34,8 +34,8 @@ export function SiteFooter() {
           <div className="flex flex-col gap-3">
             <Logo variant="light" />
             <p className="max-w-[251px] font-body text-sm leading-[1.7] text-footer-foreground/60">
-              Product &amp; UX designer turning fragmented operations into
-              systems people rely on.
+              Product &amp; UX designer turning ideas into meaningful product
+              experiences.
             </p>
           </div>
 

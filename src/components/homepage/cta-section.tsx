@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SlideUpLabel } from "@/components/ui/slide-up-label";
 
 export function CtaSection() {
   return (
@@ -26,7 +27,9 @@ export function CtaSection() {
       </p>
 
       <Button asChild variant="pill" size="pill-lg" className="mt-2">
-        <a href="mailto:abhijithmd02@gmail.com">Say hello</a>
+        <a href="mailto:abhijithmd02@gmail.com" className="group/roll">
+          <SlideUpLabel label="Say hello" />
+        </a>
       </Button>
     </section>
   );
