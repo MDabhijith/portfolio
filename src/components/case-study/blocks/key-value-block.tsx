@@ -1,10 +1,43 @@
+import { Fragment } from "react";
+
 export function KeyValueBlock({
   title,
   rows,
+  variant = "plain",
 }: {
   title?: string;
   rows: { label: string; value: string }[];
+  variant?: "plain" | "card";
 }) {
+  if (variant === "card") {
+    return (
+      <div className="flex flex-col gap-3.5">
+        {title ? (
+          <p className="font-body text-lg font-semibold text-primary-500">
+            {title}
+          </p>
+        ) : null}
+        <div className="flex flex-col gap-5 rounded-md bg-[#f7f7f7] p-6 sm:p-[34px]">
+          {rows.map((row, i) => (
+            <Fragment key={row.label}>
+              {i > 0 ? (
+                <div className="h-px w-full bg-line" aria-hidden="true" />
+              ) : null}
+              <div className="flex items-center justify-between gap-6">
+                <span className="font-body text-base font-medium text-primary-500">
+                  {row.label}
+                </span>
+                <span className="text-right font-body text-base text-primary-400">
+                  {row.value}
+                </span>
+              </div>
+            </Fragment>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col gap-4">
       {title ? (

@@ -32,6 +32,7 @@ export function CaseStudyCard({
   return (
     <Link
       href={href}
+      data-cursor-label="View case study"
       className="group/card block overflow-hidden rounded-3xl border border-line bg-white outline-none transition-shadow duration-[var(--duration-base)] ease-[var(--ease-out)] hover:shadow-[var(--shadow-elevation)] focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
     >
       <div className="relative aspect-[1118/408] w-full overflow-hidden">

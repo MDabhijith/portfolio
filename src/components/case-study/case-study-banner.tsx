@@ -3,12 +3,12 @@ import { Container } from "@/components/layout/container";
 import { BackLink } from "@/components/ui/back-link";
 import type { CaseStudy } from "@/lib/case-studies/types";
 
-/** Full-bleed gradient banner (same background as the homepage hero) holding the breadcrumb, title, and subtitle. */
+/** Full-bleed gradient banner holding the breadcrumb, title, and subtitle. Uses its own export rather than the homepage hero's — same artwork, but Figma crops it wider (1440x567), so object-cover on the taller hero file framed it differently. */
 export function CaseStudyBanner({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <section className="relative isolate overflow-hidden">
       <Image
-        src="/images/hero-bg.webp"
+        src="/images/case-study-banner-bg.webp"
         alt=""
         aria-hidden="true"
         fill

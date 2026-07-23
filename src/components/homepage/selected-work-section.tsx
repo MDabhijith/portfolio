@@ -3,10 +3,9 @@ import { CaseStudyCard } from "@/components/cards/case-study-card";
 const caseStudies = [
   {
     href: "/work/roofing-workflow-management",
-    coverImage: { src: "/images/work/abstract-cover.webp", alt: "" },
     image: {
-      src: "/images/work/roofing-job-list.webp",
-      alt: "Priority Roofing CRM job list dashboard",
+      src: "/images/work/roofing-card-cover.webp",
+      alt: "Priority Roofing CRM job list on a laptop over a colorful gradient",
     },
     category: "Roofing CRM",
     client: "Priority Roofing",
@@ -19,8 +18,8 @@ const caseStudies = [
   {
     href: "/work/job-module-redesign",
     image: {
-      src: "/images/work/job-module.webp",
-      alt: "Priority Roofing job management dashboard on laptop and phone",
+      src: "/images/work/job-module-card-cover.webp",
+      alt: "Priority Roofing job management dashboard on a laptop beside the mobile app on a phone",
     },
     category: "Job Module Re-Design",
     client: "Priority Roofing",
@@ -34,8 +33,8 @@ const caseStudies = [
   {
     href: "/work/ai-proposal-builder",
     image: {
-      src: "/images/work/proposal-builder.webp",
-      alt: "AI-enabled roofing proposal builder interface",
+      src: "/images/work/proposal-builder-card-cover.webp",
+      alt: "The AI-enabled roofing proposal builder on a laptop over a dark navy gradient",
     },
     category: "AI Enabled Proposal Builder",
     client: "Priority Roofing",
@@ -47,7 +46,10 @@ const caseStudies = [
   },
   {
     href: "/work/relay-hub",
-    image: { src: "/images/work/abstract-cover.webp", alt: "Relay Hub" },
+    image: {
+      src: "/images/work/relay-hub-card-cover.webp",
+      alt: "The Relay Hub workspace, document view, and AI chat across three windows on a blue-to-teal gradient",
+    },
     category: "AI Business Communication",
     client: "Relay Hub",
     year: "2024",

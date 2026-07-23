@@ -7,7 +7,7 @@ export const aiProposalBuilder: CaseStudy = {
   year: "2026",
   title: "AI-Enabled Proposal Builder, From Roof Inspection to Proposal",
   subtitle:
-    "The CRM gave Priority Roofing one home for a job in production. It never touched how that job was sold — every proposal still routed through Roofr, a disconnected third-party app. So we're building a native Proposal Management system with an AI editor at its core, one that drafts and restructures a proposal from a prompt, so a rep never has to leave the CRM to sell a job.",
+    "The CRM gave Priority Roofing one home for a job in production. It never touched how that job was sold. Every proposal still routed through Roofr, a disconnected third-party app. So we're building a native Proposal Management system with an AI editor at its core, one that drafts and restructures a proposal from a prompt, so a rep never has to leave the CRM to sell a job.",
   meta: [
     { label: "Company", value: "Priority Roofing (USA)" },
     { label: "Timeline", value: "Jun 2026 - 3 weeks" },
@@ -16,6 +16,27 @@ export const aiProposalBuilder: CaseStudy = {
   heroImage: {
     src: "/images/work/proposal-builder.webp",
     alt: "AI-enabled roofing proposal builder interface",
+  },
+  outcomeHighlight: {
+    eyebrow: "WHERE THIS IS TODAY",
+    summary:
+      "Not a redesign of Roofr, a native module built around an AI editor that drafts and refines a proposal from a prompt, without ever switching tools.",
+    stats: [
+      {
+        value: "1",
+        caption:
+          "AI editor that drafts a full proposal from a prompt and edits it in place",
+      },
+      {
+        value: "2",
+        caption:
+          "estimate types, itemized and roof system, built on one shared catalogue",
+      },
+      {
+        value: "6",
+        caption: "modules covering assessment through proposal delivery",
+      },
+    ],
   },
   sections: [
     {
@@ -27,21 +48,23 @@ export const aiProposalBuilder: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "Once the Roofing CRM shipped, a job had one home from the moment it was won to the moment it was paid. But a job still had to be won first — and that entire front half, the assessment and the proposal, happened outside the CRM entirely, inside a third-party platform called Roofr. Roofr did its one job well: it measured roofs and produced proposals. But it had no relationship to the CRM. A sales rep who'd just qualified a prospect inside the CRM had to leave it, rebuild the same customer and job in Roofr, run the assessment there, and — once a homeowner approved — manually carry the outcome back. The CRM had solved the job's life in production. Its life before that still lived somewhere else.",
+            "Once the Roofing CRM shipped, a job had one home from the moment it was won to the moment it was paid. But a job still had to be won first, and that entire front half, the assessment and the proposal, happened outside the CRM entirely, inside a third-party platform called Roofr. Roofr did its one job well: it measured roofs and produced proposals. But it had no relationship to the CRM. A sales rep who'd just qualified a prospect inside the CRM had to leave it, rebuild the same customer and job in Roofr, run the assessment there, and, once a homeowner approved, manually carry the outcome back. The CRM had solved the job's life in production. Its life before that still lived somewhere else.",
           ],
         },
         {
-          type: "keyValue",
-          rows: [
+          type: "systemComparison",
+          items: [
             {
-              label: "Roofr — Assessment & proposals",
-              value:
-                "HELD: Roof measurements, damage assessment, and proposal generation. GAP: Fully disconnected from the CRM, and rigid about it — Roofr's workflow couldn't bend to how Priority Roofing actually sold, which is what finally pushed us to build our own.",
+              name: "Roofr",
+              subtitle: "Assessment & proposals",
+              held: "Roof measurements, damage assessment, and proposal generation.",
+              gap: "Fully disconnected from the CRM, and rigid about it. Roofr's workflow couldn't bend to how Priority Roofing actually sold, which is what finally pushed us to build our own.",
             },
             {
-              label: "The CRM — Everything after a job is won",
-              value:
-                "HELD: Production, scheduling, materials, and commissions for a job already in motion. GAP: No way to receive a job before it existed — the front half of the sale happened somewhere else entirely.",
+              name: "The CRM",
+              subtitle: "Everything after a job is won",
+              held: "Production, scheduling, materials, and commissions for a job already in motion.",
+              gap: "No way to receive a job before it existed. The front half of the sale happened somewhere else entirely.",
             },
           ],
         },
@@ -72,7 +95,7 @@ export const aiProposalBuilder: CaseStudy = {
               number: "01",
               title: "Disconnected from the CRM",
               description:
-                "Roofr had no relationship to the jobs and customers already living inside the CRM — every proposal started from a blank system.",
+                "Roofr had no relationship to the jobs and customers already living inside the CRM, every proposal started from a blank system.",
             },
             {
               number: "02",
@@ -84,7 +107,7 @@ export const aiProposalBuilder: CaseStudy = {
               number: "03",
               title: "Approval disconnected from job tracking",
               description:
-                "A proposal being approved didn't mean anything to the CRM — someone still had to notice, and manually start the job.",
+                "A proposal being approved didn't mean anything to the CRM. Someone still had to notice and manually start the job.",
             },
             {
               number: "04",
@@ -105,7 +128,7 @@ export const aiProposalBuilder: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "Before designing a replacement for Roofr, I traced a real proposal end-to-end — from the moment a rep booked an assessment to the moment a homeowner signed — and sat with the roles on either side of it. The goal wasn't a feature-parity list against Roofr; it was seeing exactly where the handoff to the CRM broke down.",
+            "Before designing a replacement for Roofr, I traced a real proposal end-to-end, from the moment a rep booked an assessment to the moment a homeowner signed, and sat with the roles on either side of it. The goal wasn't a feature-parity list against Roofr; it was seeing exactly where the handoff to the CRM broke down.",
           ],
         },
         {
@@ -136,13 +159,20 @@ export const aiProposalBuilder: CaseStudy = {
           ],
         },
         {
+          type: "image",
+          image: {
+            src: "/images/work/proposal-audit-roofr.webp",
+            alt: "Roofr's proposals list, the disconnected third-party tool we audited",
+          },
+        },
+        {
           type: "insightCards",
           items: [
             {
               number: "01",
               title: "The proposal was the CRM's blind spot",
               description:
-                "Everything the CRM modeled so carefully — the job, the customer, the pipeline — didn't exist yet from Roofr's point of view. The two systems described the same deal with no shared vocabulary.",
+                "Everything the CRM modeled so carefully (the job, the customer, the pipeline) didn't exist yet from Roofr's point of view. The two systems described the same deal with no shared vocabulary.",
             },
             {
               number: "02",
@@ -154,7 +184,7 @@ export const aiProposalBuilder: CaseStudy = {
               number: "03",
               title: "Assessment data had nowhere permanent to live",
               description:
-                "Photos and damage notes were only as safe as whoever's phone or laptop they were captured on — there was no job record yet to attach them to.",
+                "Photos and damage notes were only as safe as whoever's phone or laptop they were captured on, there was no job record yet to attach them to.",
             },
           ],
         },
@@ -175,7 +205,7 @@ export const aiProposalBuilder: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "The first real decision wasn't a screen — it was whether to integrate with Roofr's API or absorb assessment and proposal work into the CRM's own data model. An integration would have kept two systems in sync forever; it wouldn't have removed the seam, just automated the stitching. We chose to build a native module that shares the CRM's job record directly, so a proposal isn't synced to a job — it is the job, at an earlier stage.",
+            "The first real decision wasn't a screen. It was whether to integrate with Roofr's API or absorb assessment and proposal work into the CRM's own data model. An integration would have kept two systems in sync forever; it wouldn't have removed the seam, just automated the stitching. We chose to build a native module that shares the CRM's job record directly, so a proposal isn't synced to a job, it is the job, at an earlier stage.",
           ],
         },
         {
@@ -193,7 +223,7 @@ export const aiProposalBuilder: CaseStudy = {
               tone: "neutral",
               title: "A Proposal Management module on the CRM's own schema",
               description:
-                "Assessment, proposal, approval, and signing read and write the same job record the CRM already owns — nothing is synced, because nothing is duplicated.",
+                "Assessment, proposal, approval, and signing read and write the same job record the CRM already owns, nothing is synced, because nothing is duplicated.",
             },
             {
               tag: "EXTEND",
@@ -246,7 +276,84 @@ export const aiProposalBuilder: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "A prospect leaves the CRM's qualifying stage as a scheduled assessment and doesn't surface again as a \"won job\" from somewhere else — it moves forward as the same record, through one flow, until a signed contract hands it to production.",
+            "A prospect leaves the CRM's qualifying stage as a scheduled assessment and doesn't surface again as a \"won job\" from somewhere else. It moves forward as the same record, through one flow, until a signed contract hands it to production.",
+          ],
+        },
+        {
+          type: "workflowTimeline",
+          steps: [
+            {
+              title: "Rep chooses: with or without an assessment",
+              actor: "SALES REP",
+              actorTone: "muted",
+              description:
+                "Starting a proposal is the first decision point, a rep can link it to a scheduled on-site assessment, or start a proposal directly when no assessment is needed.",
+              tags: ["Dashboard"],
+            },
+            {
+              title: "Assessment scheduled (if linked)",
+              actor: "SALES REP",
+              actorTone: "muted",
+              description:
+                "When a proposal is linked to an assessment, the qualified prospect is scheduled for an on-site property assessment first.",
+              tags: ["Dashboard"],
+            },
+            {
+              title: "Property inspected, damage recorded",
+              actor: "SALES REP",
+              actorTone: "muted",
+              description:
+                "For linked proposals, the rep inspects the property and logs damage items directly against the job.",
+              tags: ["Assessment"],
+            },
+            {
+              title: "Photos & documents captured",
+              actor: "SALES REP",
+              actorTone: "muted",
+              description:
+                "Photos and supporting documents are attached to the same record, not scattered across a phone and a laptop.",
+              tags: ["Assessment"],
+            },
+            {
+              title: "Proposal drafted, by template or by prompt",
+              actor: "SALES REP",
+              actorTone: "muted",
+              description:
+                "A rep starts from a template or describes the job to the AI agent and gets a full draft back, pulling from the linked assessment when there is one, then refines individual sections inline as needed.",
+              tags: ["Proposal", "Templates"],
+            },
+            {
+              title: "Pricing built from the catalog",
+              actor: "SALES REP",
+              actorTone: "muted",
+              description:
+                "Itemized or roof-system pricing is pulled from the standardized catalog rather than estimated by hand.",
+              tags: ["Catalog"],
+            },
+            {
+              title: "Proposal sent to the homeowner",
+              actor: "SALES REP",
+              actorTone: "muted",
+              description:
+                "The finished proposal goes to the homeowner directly from the same workflow that built it.",
+              tags: ["Proposal"],
+            },
+            {
+              title: "Homeowner approves",
+              actor: "HOMEOWNER",
+              actorTone: "accent",
+              description:
+                "Approval happens inside the proposal itself, surfacing it as a workflow event on the CRM job is part of the integration still ahead.",
+              tags: ["Proposal"],
+            },
+            {
+              title: "Job moves to production (manual, for now)",
+              actor: "BACK OFFICE",
+              actorTone: "accent",
+              description:
+                "A won proposal still becomes a job through a manual handoff today, closing this with digital signing and automatic job creation is the next milestone.",
+              tags: ["Proposal"],
+            },
           ],
         },
       ],
@@ -260,38 +367,178 @@ export const aiProposalBuilder: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "The navigation splits into the daily selling work, the configuration behind it, and the admin layer that closes the loop — each one reading and writing the same job the CRM already owns.",
+            "The navigation splits into the daily selling work, the configuration behind it, and the admin layer that closes the loop, each one reading and writing the same job the CRM already owns.",
           ],
         },
         {
-          type: "keyValue",
-          title: "Core workflow — 3 modules",
-          rows: [
+          type: "moduleNav",
+          groups: [
             {
-              label: "Dashboard",
-              value:
-                "Gives reps visibility into their pipeline — assessments completed, proposals sent, proposals approved, and projects closed — plus recent activity at a glance.",
+              eyebrow: "CORE WORKFLOW",
+              count: "3 modules",
+              modules: ["Dashboard", "Assessment", "Proposal"],
             },
             {
-              label: "Assessment",
-              value:
-                "Inspect properties, record damage items, capture and organize photos, and upload supporting documents in one structured workflow.",
-            },
-            {
-              label: "Proposal builder",
-              value:
-                "An AI agent that drafts the proposal, then stays to refine it — a rep describes the job in a prompt and gets a complete draft back, then asks the agent to rewrite a section, adjust scope language, or re-price a line item in place.",
+              eyebrow: "CONFIGURATION",
+              count: "3 modules",
+              modules: ["Templates", "Catalogue Management", "Settings"],
             },
           ],
         },
         {
-          type: "keyValue",
-          title: "Configuration — 3 modules",
-          rows: [
-            { label: "Templates", value: "Starting points for a proposal, rebuilt per job rather than filled in as-is." },
-            { label: "Catalogue Management", value: "Itemized work and full roof systems, priced through one shared estimate engine." },
-            { label: "Settings", value: "Account, team, and workspace configuration for the module." },
+          type: "moduleHeader",
+          title: "Dashboard",
+          description:
+            "Gives reps visibility into their pipeline, assessments completed, proposals sent, proposals approved, and projects closed, plus recent activity at a glance.",
+        },
+        {
+          type: "image",
+          image: {
+            src: "/images/work/proposal-dashboard.webp",
+            alt: "The proposal dashboard showing assessment, proposal, and project pipeline metrics",
+          },
+          caption: "The dashboard view with metrics.",
+        },
+        {
+          type: "moduleHeader",
+          title: "Assessment",
+          description:
+            "Inspect properties, record damage items, capture and organize photos, and upload supporting documents in one structured workflow.",
+        },
+        {
+          type: "image",
+          image: {
+            src: "/images/work/proposal-assessment-list.webp",
+            alt: "The assessment listing page",
+          },
+          caption: "Assessment listing page.",
+        },
+        {
+          type: "image",
+          image: {
+            src: "/images/work/proposal-assessment-detail.webp",
+            alt: "A detailed assessment page with damage items and captured photos",
+          },
+          caption: "Detailed Assessment page.",
+        },
+        {
+          type: "moduleHeader",
+          title: "Proposal",
+          description:
+            "A flexible builder for generating customer proposals, customizing sections per roofing service, and keeping every field linked to the CRM job it belongs to. A rep chooses upfront whether the proposal is linked to an assessment or standalone, and an inline AI agent can draft the entire proposal from a prompt either way, then refine individual sections on request as the rep edits.",
+        },
+        {
+          type: "image",
+          image: {
+            src: "/images/work/proposal-list.webp",
+            alt: "The proposal listing page",
+          },
+          caption: "The proposal listing page.",
+        },
+        {
+          type: "moduleHeader",
+          title: "Templates",
+          description:
+            "Templates keep a proposal within a specific category so it can be created faster. A rep can use one as-is, modify it, or create a new one from scratch.",
+        },
+        {
+          type: "video",
+          src: "/images/work/proposal-templates.mp4",
+          poster: "/images/work/proposal-templates.webp",
+          label:
+            "Screencast of the template listing page, showing proposals kept within a category so a rep can reuse, modify, or start one from scratch",
+          caption: "Template listing page.",
+          aspect: "2940 / 1594",
+        },
+        {
+          type: "moduleHeader",
+          title: "Catalogue Management",
+          description:
+            "The shared catalogue behind both estimate types: itemized, a line-by-line breakdown of items and price, and roof system, a build-specific estimate. Every catalogue entry carries its own set of instructions and price.",
+        },
+        {
+          type: "image",
+          image: {
+            src: "/images/work/proposal-catalog.webp",
+            alt: "The catalogue management module",
+          },
+          caption: "Catalog management module.",
+        },
+        {
+          type: "moduleHeader",
+          title: "Settings",
+          description:
+            "Centralized configuration for how assessments and proposals behave across the team.",
+        },
+        {
+          type: "video",
+          src: "/images/work/proposal-settings.mp4",
+          poster: "/images/work/proposal-settings.webp",
+          label:
+            "Screencast of the settings page, the centralized configuration for how assessments and proposals behave across the team",
+          caption: "Settings page.",
+          aspect: "2940 / 1594",
+        },
+        {
+          type: "moduleHeader",
+          title: "Digital Contract Signing",
+          description:
+            "Once a proposal is approved, rep and homeowner complete the agreement digitally, and it becomes part of the connected project inside the CRM.",
+        },
+        {
+          type: "image",
+          image: {
+            src: "/images/work/proposal-signing.webp",
+            alt: "Proposal signing enabled for the customer",
+          },
+          caption: "Proposal Signing enabled for Customer.",
+        },
+        {
+          type: "moduleHeader",
+          eyebrow: "INSIDE THE BUILDER",
+          title: "An AI agent that drafts the proposal, then stays to refine it",
+          description:
+            "The slowest part of a rep's day was never the pricing or the signature. It was staring at a blank proposal after a long inspection. A rep can now describe the job in a prompt and get a complete draft back, whether or not that proposal is linked to an assessment. The agent pulls from the assessment when one exists, and works from the prompt alone when it doesn't. From there, the agent works inline: a rep can ask it to rewrite a single section, adjust scope language, or re-price a line item, without starting the proposal over.",
+        },
+        {
+          type: "video",
+          src: "/images/work/proposal-ai-generator.mp4",
+          poster: "/images/work/proposal-ai-generator.webp",
+          label:
+            "Screencast of the AI proposal generator drafting a complete proposal from a prompt, then refining individual sections inline",
+          caption: "AI Proposal generator.",
+          aspect: "2940 / 1594",
+        },
+        {
+          type: "definitionCards",
+          items: [
+            {
+              term: "Prompt to draft",
+              description:
+                "One prompt, informed by the job's own assessment data, produces a complete first draft, sections, scope language, and starting pricing already in place.",
+            },
+            {
+              term: "Inline refinement",
+              description:
+                "The rep keeps editing by hand or asks the agent to change one specific part, the agent never rewrites what wasn't asked for.",
+            },
           ],
+        },
+        {
+          type: "moduleHeader",
+          title:
+            "The same AI editor restructures the proposal, not just its wording.",
+          description:
+            "Rewriting a paragraph was never the whole job. A proposal often needs a section added for a service the homeowner asked about, one removed because it doesn't apply, or the order changed to match how the rep is presenting. The always-on AI editor handles this the same way it handles wording: on request, in place, without the rep leaving the builder.",
+        },
+        {
+          type: "video",
+          src: "/images/work/proposal-ai-editor.mp4",
+          poster: "/images/work/proposal-ai-editor.webp",
+          label:
+            "Screencast of the AI proposal editor restructuring a proposal in place, adding, removing, and reordering sections, not just rewording",
+          caption: "AI Proposal editor.",
+          aspect: "2940 / 1594",
         },
       ],
     },
@@ -304,46 +551,59 @@ export const aiProposalBuilder: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "This has already launched and is in active use by the sales team — it isn't a pilot. From here, the work is ongoing: testing with real reps, redesigning what usage shows us doesn't work, and improving the experience iteratively. So the honest version of \"impact\" here is a status report: what's shipped, what's being refined right now, and what's still ahead.",
+            "This has already launched and is in active use by the sales team. It isn't a pilot. From here, the work is ongoing: testing with real reps, redesigning what usage shows us doesn't work, and improving the experience iteratively. So the honest version of \"impact\" here is a status report: what's shipped, what's being refined right now, and what's still ahead.",
           ],
         },
         {
-          type: "keyValue",
-          rows: [
+          type: "statusCards",
+          items: [
             {
               label: "Shipped",
-              value:
-                "Assessment module — inspection, damage capture, photos, documents. Proposal builder with itemized and roof system estimate types, linked or standalone. Templates and catalogue management. AI agent for prompt-to-draft and always-on inline editing.",
+              tone: "done",
+              bullets: [
+                "Assessment module, inspection, damage capture, photos, documents",
+                "Proposal builder with itemized and roof system estimate types, linked or standalone",
+                "Templates and catalogue management",
+                "AI agent for prompt-to-draft and always-on inline editing",
+              ],
             },
             {
               label: "In active use, refining now",
-              value:
-                "Refining the overall experience based on how reps actually use it day to day. Enhancing the AI editing experience with support for documents and reference material. Linking CompanyCam, a job-photo app, to sync assessment photos automatically. Deeper CRM data linkage beyond the property address that's already connected.",
+              tone: "active",
+              bullets: [
+                "Refining the overall experience based on how reps actually use it day to day",
+                "Enhancing the AI editing experience with support for documents and reference material",
+                "Linking CompanyCam, a job-photo app, to sync assessment photos automatically",
+                "Deeper CRM data linkage beyond the property address that's already connected",
+              ],
             },
           ],
         },
         {
-          type: "keyValue",
-          title: "What we've learned so far",
-          rows: [
+          type: "titledList",
+          eyebrow: "WHAT WE'VE LEARNED SO FAR",
+          items: [
             {
-              label: "A shared schema beats a synced copy, even when it's slower to build",
-              value:
+              title:
+                "A shared schema beats a synced copy, even when it's slower to build",
+              description:
                 "Integrating Roofr would have shipped faster. Building on the CRM's own job record took longer, but it removed the seam instead of automating it.",
             },
             {
-              label: "Flexibility has to live in the proposal, not just the template",
-              value:
+              title:
+                "Flexibility has to live in the proposal, not just the template",
+              description:
                 "Templates alone couldn't cover every roofing service. The real fix was making proposal sections rebuildable per job, with templates as a starting point.",
             },
             {
-              label: "Approval is a workflow event, not a signature",
-              value:
-                "Treating homeowner approval as a state change on the job — not an email to notice — is what let the contract-signing step trigger the job automatically.",
+              title: "Approval is a workflow event, not a signature",
+              description:
+                "Treating homeowner approval as a state change on the job, not an email to notice, is what let the contract-signing step trigger the job automatically.",
             },
             {
-              label: "Building next to a live CRM changes how you sequence work",
-              value:
+              title:
+                "Building next to a live CRM changes how you sequence work",
+              description:
                 "Every module here had to work with production data the CRM already depended on daily, which meant shipping in a different order than a greenfield build would allow.",
             },
           ],

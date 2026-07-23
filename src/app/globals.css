@@ -29,6 +29,7 @@
   --color-cs-body: var(--cs-body);
   --color-cs-muted: var(--cs-muted);
   --color-cs-label: var(--cs-label);
+  --color-cs-paper: var(--cs-paper);
 
   --color-primary-100: var(--primary-100);
   --color-primary-200: var(--primary-200);
@@ -148,7 +149,8 @@
   --cs-ink: #1b1a17;
   --cs-body: #4a4843;
   --cs-muted: #6a675f;
-  --cs-label: #757575;
+  --cs-label: #737373;
+  --cs-paper: #fcfbf9;
 
   /* Figma "Colors/Primary" ramp — meta rows + next-project teaser card */
   --primary-100: #e9e9e9;
@@ -222,4 +224,25 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* When the JS dot cursor is active (fine pointers only), hide the native one. */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Lenis smooth scroll (see components/ui/smooth-scroll.tsx). */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }

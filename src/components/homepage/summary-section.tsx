@@ -17,7 +17,7 @@ export function SummarySection() {
           AI-first knowledge products, and operational tooling for teams
           previously stitching their day across disconnected tools and manual
           re-entry. My process starts with sitting alongside the people doing
-          the work — the strongest systems come from tracing one real job
+          the work. The strongest systems come from tracing one real job
           start to finish and designing for the seams, not just the screens.
         </p>
 

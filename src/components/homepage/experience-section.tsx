@@ -2,17 +2,17 @@ const roles = [
   {
     company: "Levich Solutions Pvt Ltd",
     role: "Founding Product Designer",
-    date: "Aug 2024 — Present",
+    date: "Aug 2024 - Present",
   },
   {
     company: "Brandshark Pvt Ltd",
     role: "UI UX Designer",
-    date: "Feb 2023 — June 2023",
+    date: "Feb 2023 - June 2023",
   },
   {
     company: "InteractX Pvt Ltd",
     role: "UI UX Associate",
-    date: "Oct 2021 — July 2022",
+    date: "Oct 2021 - July 2022",
   },
 ];
 

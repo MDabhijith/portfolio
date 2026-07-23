@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { Tag } from "@/components/ui/tag";
 import { SkillsMarquee } from "@/components/marquee/skills-marquee";
+import { HeroParticles } from "@/components/homepage/hero-particles";
 
 /** Homepage hero — gradient backdrop, hero badges, headline, sub-copy, skills ticker. */
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="relative isolate flex min-h-svh flex-col overflow-hidden">
       <Image
         src="/images/hero-bg.webp"
         alt=""
@@ -15,6 +16,8 @@ export function Hero() {
         sizes="100vw"
         className="-z-10 object-cover"
       />
+
+      <HeroParticles />
 
       <div className="flex flex-col items-center justify-center px-6 pt-40 pb-20 sm:pt-48 sm:pb-24 lg:pt-[150px] lg:pb-[130px]">
         <div className="flex max-w-[666px] flex-col items-center gap-5">
@@ -38,7 +41,9 @@ export function Hero() {
         </div>
       </div>
 
-      <SkillsMarquee />
+      <div className="mt-auto mb-8 sm:mb-10">
+        <SkillsMarquee />
+      </div>
     </section>
   );
 }

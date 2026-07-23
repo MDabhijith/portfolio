@@ -49,7 +49,7 @@ export function CaseStudySectionNav({ items }: { items: SectionNavItem[] }) {
               className={cn(
                 "font-body text-sm outline-none transition-colors duration-[var(--duration-fast)] hover:text-cs-ink focus-visible:underline",
                 activeId === item.id
-                  ? "font-semibold text-cs-ink"
+                  ? "font-semibold text-positive"
                   : "text-cs-label"
               )}
             >

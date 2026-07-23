@@ -34,7 +34,7 @@ export function SiteNav() {
             </Link>
           ))}
           <Button asChild variant="pill-nav" size="pill-sm">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/AbhijithMD.pdf" target="_blank" rel="noopener noreferrer">
               Resume
             </a>
           </Button>
@@ -75,7 +75,7 @@ export function SiteNav() {
             </Link>
           ))}
           <a
-            href="/resume.pdf"
+            href="/AbhijithMD.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}

@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { SiteNav } from "@/components/nav/site-nav";
 import { SiteFooter } from "@/components/footer/site-footer";
 import { Container } from "@/components/layout/container";
@@ -20,7 +21,7 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <>
       <SiteNav />
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="flex-1 bg-cs-paper">
         <CaseStudyBanner caseStudy={caseStudy} />
 
         <Container className="flex flex-col gap-16 pt-16 pb-24 sm:gap-24 sm:pt-24 sm:pb-32">
@@ -30,34 +31,37 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
             <CaseStudySectionNav items={navItems} />
 
             <div className="flex min-w-0 flex-1 flex-col gap-20 sm:gap-28">
-              {caseStudy.sections.map((section) => (
-                <section
-                  key={section.id}
-                  id={section.id}
-                  className="flex scroll-mt-32 flex-col gap-8"
-                >
-                  <SectionHeading
-                    number={section.number}
-                    label={section.label}
-                    title={section.title}
-                  />
-                  {section.blocks.map((block, i) => (
-                    <BlockRenderer key={i} block={block} />
-                  ))}
-                </section>
-              ))}
+              {caseStudy.sections.map((section, index) => (
+                <Fragment key={section.id}>
+                  {/* Key Decisions sit just before the closing section (Impact), matching Figma's order. */}
+                  {caseStudy.keyDecisions &&
+                  index === caseStudy.sections.length - 1 ? (
+                    <section className="flex flex-col gap-10">
+                      <div className="flex items-center gap-5">
+                        <span className="whitespace-nowrap font-body text-sm text-cs-label">
+                          KEY DECISIONS
+                        </span>
+                        <div className="h-px flex-1 bg-line" aria-hidden="true" />
+                      </div>
+                      <DecisionBlock items={caseStudy.keyDecisions} />
+                    </section>
+                  ) : null}
 
-              {caseStudy.keyDecisions ? (
-                <section className="flex flex-col gap-10">
-                  <div className="flex items-center gap-5">
-                    <span className="whitespace-nowrap font-body text-sm text-cs-label">
-                      KEY DECISIONS
-                    </span>
-                    <div className="h-px flex-1 bg-line" aria-hidden="true" />
-                  </div>
-                  <DecisionBlock items={caseStudy.keyDecisions} />
-                </section>
-              ) : null}
+                  <section
+                    id={section.id}
+                    className="flex scroll-mt-32 flex-col gap-8"
+                  >
+                    <SectionHeading
+                      number={section.number}
+                      label={section.label}
+                      title={section.title}
+                    />
+                    {section.blocks.map((block, i) => (
+                      <BlockRenderer key={i} block={block} />
+                    ))}
+                  </section>
+                </Fragment>
+              ))}
             </div>
           </div>
 

@@ -4,13 +4,18 @@ import type { ImageRef } from "@/lib/case-studies/types";
 export function ImageBlock({
   image,
   caption,
+  aspect,
 }: {
   image?: ImageRef;
   caption?: string;
+  aspect?: string;
 }) {
   return (
     <figure className="flex flex-col gap-3">
-      <div className="relative aspect-[848/500] w-full overflow-hidden rounded-xl border border-line bg-surface">
+      <div
+        className="relative w-full overflow-hidden rounded-xl border border-line bg-surface"
+        style={{ aspectRatio: aspect ?? "848 / 500" }}
+      >
         {image ? (
           <Image
             src={image.src}

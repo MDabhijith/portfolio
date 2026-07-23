@@ -14,6 +14,7 @@ const dotStyles = {
 
 export function TaggedListBlock({
   items,
+  variant = "default",
 }: {
   items: {
     tag: string;
@@ -21,13 +22,24 @@ export function TaggedListBlock({
     title: string;
     description: string;
   }[];
+  variant?: "default" | "wide";
 }) {
+  const wide = variant === "wide";
+
   return (
-    <div className="flex flex-col gap-9 rounded-xl border border-primary-100 bg-white p-6 sm:p-8">
+    <div
+      className={cn(
+        "flex flex-col rounded-xl border border-primary-100 bg-white p-6 sm:p-8",
+        wide ? "gap-6" : "gap-9"
+      )}
+    >
       {items.map((item, i) => (
         <div
           key={i}
-          className="flex flex-col gap-3 border-t border-line pt-9 first:border-t-0 first:pt-0 sm:flex-row sm:items-start sm:gap-8"
+          className={cn(
+            "flex flex-col gap-3 border-t border-line first:border-t-0 first:pt-0 sm:flex-row sm:items-start",
+            wide ? "pt-6 sm:gap-12" : "pt-9 sm:gap-8"
+          )}
         >
           <span
             className={cn(
@@ -41,7 +53,12 @@ export function TaggedListBlock({
             />
             {item.tag}
           </span>
-          <div className="flex flex-col gap-2 sm:max-w-[500px]">
+          <div
+            className={cn(
+              "flex flex-col gap-2",
+              wide ? "sm:flex-1" : "sm:max-w-[500px]"
+            )}
+          >
             <p className="font-body text-lg font-semibold text-[#2c2c2c]">
               {item.title}
             </p>

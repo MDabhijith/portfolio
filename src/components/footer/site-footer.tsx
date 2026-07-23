@@ -5,7 +5,7 @@ import { Logo } from "@/components/brand/logo";
 const navigate = [
   { href: "/#work", label: "Work" },
   { href: "/#experience", label: "Experience" },
-  { href: "/resume.pdf", label: "Resume", external: true },
+  { href: "/AbhijithMD.pdf", label: "Resume", external: true },
 ];
 
 export function SiteFooter() {
