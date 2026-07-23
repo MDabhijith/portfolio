@@ -176,7 +176,7 @@ Then on Vercel: import the GitHub repo, framework preset "Next.js" (auto-detecte
 NEXT_PUBLIC_SITE_URL=https://<the-real-production-domain>
 ```
 
-(`src/lib/site-config.ts` falls back to `https://abhijithmd.com` if this isn't set — that's a placeholder, not a real assigned domain.)
+(`src/lib/site-config.ts` falls back to `https://www.abhijithmd.xyz` if this isn't set — that's a placeholder, not a real assigned domain.)
 
 Before the first real deploy, supply `public/AbhijithMD.pdf` — the Resume links in the nav, mobile menu, and footer all point to it and it doesn't exist yet.
 
