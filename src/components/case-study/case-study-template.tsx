@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { SiteNav } from "@/components/nav/site-nav";
 import { SiteFooter } from "@/components/footer/site-footer";
 import { Container } from "@/components/layout/container";
-import { Reveal } from "@/components/ui/reveal";
+import { Reveal, StaggerReveal } from "@/components/ui/reveal";
 import { CaseStudySectionNav } from "@/components/sections/case-study-section-nav";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { NextProjectCard } from "@/components/cards/next-project-card";
@@ -23,6 +23,7 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
     <>
       <SiteNav />
       <main id="main-content" className="flex-1 bg-cs-paper">
+        <StaggerReveal />
         <CaseStudyBanner caseStudy={caseStudy} />
 
         <Container className="flex flex-col gap-16 pt-16 pb-24 sm:gap-24 sm:pt-24 sm:pb-32">

@@ -237,33 +237,19 @@
   translate: none;
 }
 
-/* Scoped to an unrevealed wrapper on purpose: a staggered grid rendered outside
-   a Reveal must stay visible rather than hide forever. */
-[data-reveal]:not([data-revealed]) [data-reveal-stagger] > * {
+/* Cards hide only once StaggerReveal has marked their grid ready, so a grid
+   rendered without that component — or with JS off — is never hidden. Each card
+   is revealed individually as it scrolls in; the stagger delay is applied
+   inline, only to cards that enter together. */
+[data-reveal-stagger][data-reveal-ready] > *:not([data-revealed]) {
   opacity: 0;
   translate: 0 22px;
 }
 
-/* A block whose cards stagger stays put itself — otherwise the two fades stack. */
+/* A block whose cards animate stays put itself — otherwise the two fades stack. */
 [data-reveal]:has([data-reveal-stagger]) {
   opacity: 1;
   translate: none;
-}
-
-[data-reveal-stagger] > *:nth-child(2) {
-  transition-delay: 80ms;
-}
-[data-reveal-stagger] > *:nth-child(3) {
-  transition-delay: 160ms;
-}
-[data-reveal-stagger] > *:nth-child(4) {
-  transition-delay: 240ms;
-}
-[data-reveal-stagger] > *:nth-child(5) {
-  transition-delay: 320ms;
-}
-[data-reveal-stagger] > *:nth-child(n + 6) {
-  transition-delay: 400ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
