@@ -1,6 +1,7 @@
 import { SiteNav } from "@/components/nav/site-nav";
 import { SiteFooter } from "@/components/footer/site-footer";
 import { Container } from "@/components/layout/container";
+import { Reveal, StaggerReveal } from "@/components/ui/reveal";
 import { Hero } from "@/components/homepage/hero";
 import { SummarySection } from "@/components/homepage/summary-section";
 import { ExperienceSection } from "@/components/homepage/experience-section";
@@ -35,12 +36,20 @@ export default function Home() {
       />
       <SiteNav />
       <main id="main-content" className="flex-1">
+        <StaggerReveal />
         <Hero />
         <Container className="flex flex-col gap-24 py-20 sm:gap-32 sm:py-28 lg:gap-36 lg:py-32">
-          <SummarySection />
-          <ExperienceSection />
+          <Reveal>
+            <SummarySection />
+          </Reveal>
+          <Reveal>
+            <ExperienceSection />
+          </Reveal>
+          {/* Reveals its own heading — the cards animate individually. */}
           <SelectedWorkSection />
-          <CtaSection />
+          <Reveal>
+            <CtaSection />
+          </Reveal>
         </Container>
       </main>
       <SiteFooter />

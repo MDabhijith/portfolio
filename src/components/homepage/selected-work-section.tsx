@@ -1,4 +1,5 @@
 import { CaseStudyCard } from "@/components/cards/case-study-card";
+import { Reveal } from "@/components/ui/reveal";
 
 const caseStudies = [
   {
@@ -63,16 +64,21 @@ const caseStudies = [
 export function SelectedWorkSection() {
   return (
     <section id="work" className="flex flex-col gap-9">
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h2 className="font-heading text-2xl font-medium tracking-[-0.02em] text-ink sm:text-h5">
-          Selected work
-        </h2>
-        <span className="font-body text-[13.5px] text-ink-tertiary">
-          4 case studies
-        </span>
-      </div>
+      <Reveal>
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="font-heading text-2xl font-medium tracking-[-0.02em] text-ink sm:text-h5">
+            Selected work
+          </h2>
+          <span className="font-body text-[13.5px] text-ink-tertiary">
+            4 case studies
+          </span>
+        </div>
+      </Reveal>
 
-      <div className="flex flex-col gap-12 sm:gap-16 lg:gap-20">
+      <div
+        data-reveal-stagger
+        className="flex flex-col gap-12 sm:gap-16 lg:gap-20"
+      >
         {caseStudies.map((cs) => (
           <CaseStudyCard key={cs.href} {...cs} />
         ))}
