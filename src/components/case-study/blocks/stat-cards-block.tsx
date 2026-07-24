@@ -4,7 +4,7 @@ export function StatCardsBlock({
   items: { tag: string; value: string }[];
 }) {
   return (
-    <div className="grid gap-6 sm:grid-cols-2">
+    <div data-reveal-stagger className="grid gap-6 sm:grid-cols-2">
       {items.map((item) => (
         <div
           key={item.tag}

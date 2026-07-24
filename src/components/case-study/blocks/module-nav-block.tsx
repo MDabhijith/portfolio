@@ -4,7 +4,7 @@ export function ModuleNavBlock({
   groups: { eyebrow: string; count: string; modules: string[] }[];
 }) {
   return (
-    <div className="flex flex-col gap-6">
+    <div data-reveal-stagger className="flex flex-col gap-6">
       {groups.map((group) => (
         <div
           key={group.eyebrow}

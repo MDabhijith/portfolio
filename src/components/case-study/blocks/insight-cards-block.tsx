@@ -4,7 +4,7 @@ export function InsightCardsBlock({
   items: { number: string; title: string; description: string }[];
 }) {
   return (
-    <div className="flex flex-col">
+    <div data-reveal-stagger className="flex flex-col">
       {items.map((item, i) => (
         <div
           key={i}

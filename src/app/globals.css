@@ -117,6 +117,7 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 150ms;
   --duration-base: 250ms;
+  --duration-reveal: 700ms;
 
   --animate-marquee: marquee 34s linear infinite;
 }
@@ -215,6 +216,56 @@
   }
 }
 
+/* Scroll reveal (components/ui/reveal.tsx). The hidden state lives here rather
+   than in the component so reduced-motion and no-JS can override it without the
+   observer ever running — the failure mode that killed the Framer Motion pass
+   was content stuck at opacity 0 with no CSS escape hatch.
+   Animates `translate`, not `transform`, so card hover transforms still work. */
+[data-reveal],
+[data-reveal-stagger] > * {
+  transition: opacity var(--duration-reveal) var(--ease-out),
+    translate var(--duration-reveal) var(--ease-out);
+}
+
+[data-reveal] {
+  opacity: 0;
+  translate: 0 22px;
+}
+
+[data-reveal][data-revealed] {
+  opacity: 1;
+  translate: none;
+}
+
+/* Scoped to an unrevealed wrapper on purpose: a staggered grid rendered outside
+   a Reveal must stay visible rather than hide forever. */
+[data-reveal]:not([data-revealed]) [data-reveal-stagger] > * {
+  opacity: 0;
+  translate: 0 22px;
+}
+
+/* A block whose cards stagger stays put itself — otherwise the two fades stack. */
+[data-reveal]:has([data-reveal-stagger]) {
+  opacity: 1;
+  translate: none;
+}
+
+[data-reveal-stagger] > *:nth-child(2) {
+  transition-delay: 80ms;
+}
+[data-reveal-stagger] > *:nth-child(3) {
+  transition-delay: 160ms;
+}
+[data-reveal-stagger] > *:nth-child(4) {
+  transition-delay: 240ms;
+}
+[data-reveal-stagger] > *:nth-child(5) {
+  transition-delay: 320ms;
+}
+[data-reveal-stagger] > *:nth-child(n + 6) {
+  transition-delay: 400ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -223,6 +274,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  [data-reveal],
+  [data-reveal-stagger] > * {
+    opacity: 1 !important;
+    translate: none !important;
   }
 }
 

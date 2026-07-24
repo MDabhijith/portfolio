@@ -4,7 +4,7 @@ export function DefinitionCardsBlock({
   items: { term: string; description: string }[];
 }) {
   return (
-    <div className="flex flex-col gap-2">
+    <div data-reveal-stagger className="flex flex-col gap-2">
       {items.map((item) => (
         <div
           key={item.term}

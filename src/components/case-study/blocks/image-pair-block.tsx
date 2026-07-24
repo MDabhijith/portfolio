@@ -4,7 +4,7 @@ import type { ImageRef } from "@/lib/case-studies/types";
 export function ImagePairBlock({ images }: { images: [ImageRef, ImageRef] }) {
   const [left, right] = images;
   return (
-    <div className="flex flex-col gap-2.5 sm:flex-row">
+    <div data-reveal-stagger className="flex flex-col gap-2.5 sm:flex-row">
       <div className="relative aspect-[291/442] overflow-hidden rounded-lg bg-surface sm:w-[34.3%]">
         <Image
           src={left.src}

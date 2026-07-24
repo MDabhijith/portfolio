@@ -4,7 +4,7 @@ export function NumberedFindingsBlock({
   items: { number: string; title: string; description: string }[];
 }) {
   return (
-    <div className="flex flex-col gap-8 sm:gap-[50px]">
+    <div data-reveal-stagger className="flex flex-col gap-8 sm:gap-[50px]">
       {items.map((item, i) => (
         <div key={i} className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
           <div className="flex size-[72px] shrink-0 items-center justify-center rounded-full bg-[#f2f2f2] sm:size-[111px]">

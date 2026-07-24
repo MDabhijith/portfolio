@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { SiteNav } from "@/components/nav/site-nav";
 import { SiteFooter } from "@/components/footer/site-footer";
 import { Container } from "@/components/layout/container";
+import { Reveal } from "@/components/ui/reveal";
 import { CaseStudySectionNav } from "@/components/sections/case-study-section-nav";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { NextProjectCard } from "@/components/cards/next-project-card";
@@ -37,13 +38,20 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
                   {caseStudy.keyDecisions &&
                   index === caseStudy.sections.length - 1 ? (
                     <section className="flex flex-col gap-10">
-                      <div className="flex items-center gap-5">
-                        <span className="whitespace-nowrap font-body text-sm text-cs-label">
-                          KEY DECISIONS
-                        </span>
-                        <div className="h-px flex-1 bg-line" aria-hidden="true" />
-                      </div>
-                      <DecisionBlock items={caseStudy.keyDecisions} />
+                      <Reveal>
+                        <div className="flex items-center gap-5">
+                          <span className="whitespace-nowrap font-body text-sm text-cs-label">
+                            KEY DECISIONS
+                          </span>
+                          <div
+                            className="h-px flex-1 bg-line"
+                            aria-hidden="true"
+                          />
+                        </div>
+                      </Reveal>
+                      <Reveal>
+                        <DecisionBlock items={caseStudy.keyDecisions} />
+                      </Reveal>
                     </section>
                   ) : null}
 
@@ -51,13 +59,17 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
                     id={section.id}
                     className="flex scroll-mt-32 flex-col gap-8"
                   >
-                    <SectionHeading
-                      number={section.number}
-                      label={section.label}
-                      title={section.title}
-                    />
+                    <Reveal>
+                      <SectionHeading
+                        number={section.number}
+                        label={section.label}
+                        title={section.title}
+                      />
+                    </Reveal>
                     {section.blocks.map((block, i) => (
-                      <BlockRenderer key={i} block={block} />
+                      <Reveal key={i}>
+                        <BlockRenderer block={block} />
+                      </Reveal>
                     ))}
                   </section>
                 </Fragment>
@@ -65,7 +77,9 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
             </div>
           </div>
 
-          <NextProjectCard {...caseStudy.nextProject} />
+          <Reveal>
+            <NextProjectCard {...caseStudy.nextProject} />
+          </Reveal>
         </Container>
       </main>
       <SiteFooter />

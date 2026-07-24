@@ -6,7 +6,7 @@ export interface Stat {
 /** Impact-strip stats used at the end of every case study ("100%", "40%", ...). */
 export function StatGrid({ stats }: { stats: Stat[] }) {
   return (
-    <ul className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2">
+    <ul data-reveal-stagger className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2">
       {stats.map((stat, i) => (
         <li
           key={i}

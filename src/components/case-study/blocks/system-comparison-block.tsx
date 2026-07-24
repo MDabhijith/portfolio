@@ -4,7 +4,7 @@ export function SystemComparisonBlock({
   items: { name: string; subtitle: string; held: string; gap: string }[];
 }) {
   return (
-    <div className="flex flex-col gap-2">
+    <div data-reveal-stagger className="flex flex-col gap-2">
       {items.map((item) => (
         <div
           key={item.name}

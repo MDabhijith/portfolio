@@ -6,7 +6,7 @@ export function StatusCardsBlock({
   items: { label: string; tone: "done" | "active"; bullets: string[] }[];
 }) {
   return (
-    <div className="flex flex-col gap-6">
+    <div data-reveal-stagger className="flex flex-col gap-6">
       {items.map((item) => {
         const done = item.tone === "done";
         return (

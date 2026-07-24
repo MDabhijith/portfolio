@@ -3,7 +3,7 @@ import type { Decision } from "@/lib/case-studies/types";
 
 export function DecisionBlock({ items }: { items: Decision[] }) {
   return (
-    <div className="flex flex-col gap-14">
+    <div data-reveal-stagger className="flex flex-col gap-14">
       {items.map((item) => (
         <div key={item.title} className="flex flex-col gap-4">
           <h3 className="font-heading text-2xl font-semibold text-cs-ink">

@@ -4,7 +4,7 @@ export function ApproachGridBlock({
   columns: { number: string; title: string; description: string }[][];
 }) {
   return (
-    <div className="flex flex-col gap-8 sm:flex-row sm:gap-3.5">
+    <div data-reveal-stagger className="flex flex-col gap-8 sm:flex-row sm:gap-3.5">
       {columns.map((column, ci) => (
         <div key={ci} className="flex flex-1 flex-col gap-6 sm:gap-[50px]">
           {column.map((item, i) => (
