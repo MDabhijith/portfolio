@@ -49,7 +49,7 @@ export default function RootLayout({
       <head>
         {/* Without JS the reveal observer never runs, so unhide everything. */}
         <noscript>
-          <style>{`[data-reveal],[data-reveal-stagger] > *{opacity:1 !important;translate:none !important}`}</style>
+          <style>{`[data-reveal],[data-reveal-stagger] > *{opacity:1 !important;translate:none !important;scale:none !important}`}</style>
         </noscript>
       </head>
       <body className="min-h-full flex flex-col bg-cs-paper text-ink font-body">

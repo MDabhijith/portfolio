@@ -3,6 +3,7 @@ import { SiteFooter } from "@/components/footer/site-footer";
 import { Container } from "@/components/layout/container";
 import { Reveal, StaggerReveal } from "@/components/ui/reveal";
 import { Hero } from "@/components/homepage/hero";
+import { SkillsMarquee } from "@/components/marquee/skills-marquee";
 import { SummarySection } from "@/components/homepage/summary-section";
 import { ExperienceSection } from "@/components/homepage/experience-section";
 import { SelectedWorkSection } from "@/components/homepage/selected-work-section";
@@ -38,6 +39,7 @@ export default function Home() {
       <main id="main-content" className="flex-1">
         <StaggerReveal />
         <Hero />
+        <SkillsMarquee />
         <Container className="flex flex-col gap-24 py-20 sm:gap-32 sm:py-28 lg:gap-36 lg:py-32">
           <Reveal>
             <SummarySection />
