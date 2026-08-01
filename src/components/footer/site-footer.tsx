@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Logo } from "@/components/brand/logo";
+import { SideRays } from "@/components/ui/side-rays";
 
 const navigate = [
   { href: "/#work", label: "Work" },
@@ -13,6 +14,12 @@ export function SiteFooter() {
 
   return (
     <footer className="relative isolate overflow-hidden bg-footer text-footer-foreground">
+      {/* Sits at -z-10 rather than the component's own stacking order so the
+        * footer copy stays above the glow. */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-full max-w-[820px]">
+        <SideRays />
+      </div>
+
       {/* Decorative gradient blobs — plain <img> since SVG needs no optimization */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -96,8 +103,16 @@ export function SiteFooter() {
         </div>
       </Container>
 
+      {/* leading-none drops the inherited 1.5 line-height, whose half-leading
+        * was padding the glyphs ~80px clear of the copyright for no reason.
+        *
+        * The negative bottom margin pulls the wrapper's height in so
+        * overflow-hidden crops the footer at 80% of the letterforms. Both are em
+        * units derived from this face's own metrics — ink starts 0.1563em into
+        * the line box and runs 0.7164em, so keeping 0.1563 + 0.8 × 0.7164 leaves
+        * 0.2706em to trim, and it holds at every breakpoint's font size. */}
       <div className="relative flex justify-center overflow-hidden opacity-[0.06]" aria-hidden="true">
-        <span className="whitespace-nowrap font-heading text-[18vw] font-extrabold tracking-[-0.04em] sm:text-[220px] lg:text-[320px]">
+        <span className="-mb-[0.2706em] whitespace-nowrap font-heading text-[18vw] font-extrabold leading-none tracking-[-0.04em] sm:text-[220px] lg:text-[320px]">
           ABHIJITH M D
         </span>
       </div>
