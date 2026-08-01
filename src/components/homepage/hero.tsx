@@ -1,4 +1,5 @@
 import { HeroVideo } from "@/components/homepage/hero-video";
+import { LiquidText } from "@/components/ui/liquid-text";
 import { WordsPullUpSegments } from "@/components/ui/words-pull-up";
 
 const CREAM = "#e1e0cc";
@@ -8,6 +9,7 @@ const CREAM = "#e1e0cc";
 export function Hero() {
   return (
     <section className="h-svh w-full p-2 sm:p-3">
+      <LiquidText />
       <div className="relative h-full w-full overflow-hidden rounded-2xl bg-black md:rounded-[2rem]">
         <HeroVideo
           src="/videos/hero.mp4"
@@ -27,6 +29,7 @@ export function Hero() {
           <div className="grid grid-cols-12 items-end gap-4">
             <div className="col-span-12 lg:col-span-8">
               <h1
+                data-liquid
                 /* leading under 1 pulls the line box tighter than the glyphs, so
                  * the last line's descenders need their own room to sit flush to
                  * the edge rather than be clipped by it. */
@@ -45,6 +48,7 @@ export function Hero() {
 
             <div className="col-span-12 pb-6 lg:col-span-4 lg:pb-10">
               <p
+                data-liquid
                 className="animate-pull-up font-body text-xs leading-[1.35] sm:text-sm md:text-base"
                 style={{ animationDelay: "600ms", color: `${CREAM}b3` }}
               >
