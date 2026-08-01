@@ -53,8 +53,8 @@ export const relayHub: CaseStudy = {
         {
           type: "quote",
           quote:
-            "I qualify the lead in the CRM, then type the same customer into Roofr to actually sell them anything. If the deal closes, I copy it all back by hand.",
-          attribution: "Sales Rep, Priority Roofing",
+            "Every AI conversation I have is genuinely useful for about ten minutes, and then it's gone. Nobody else on my team ever sees it, and I'll probably ask the same question again next month.",
+          attribution: "Stakeholder interview, early discovery",
         },
       ],
     },
