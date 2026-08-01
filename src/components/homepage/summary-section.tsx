@@ -7,9 +7,9 @@ const stats = [
 export function SummarySection() {
   return (
     <section id="about" className="flex flex-col gap-8 sm:flex-row sm:gap-16">
-      <p className="shrink-0 font-body text-[13px] font-medium text-ink-tertiary sm:w-[100px]">
+      <h2 className="shrink-0 font-heading text-2xl font-medium leading-[1.2] tracking-[-0.02em] text-ink sm:w-[200px] sm:text-h5 lg:w-[240px]">
         Summary
-      </p>
+      </h2>
 
       <div className="flex flex-1 flex-col gap-8 sm:gap-10">
         <p className="max-w-[628px] font-body text-base leading-[1.75] text-ink-secondary sm:text-[17px]">
@@ -20,7 +20,10 @@ export function SummarySection() {
           impact.
         </p>
 
-        <div className="grid grid-cols-1 gap-6 border-t border-line pt-7 sm:grid-cols-3 sm:gap-6">
+        {/* justify-between rather than equal columns: the three values differ a
+          * lot in length, so equal columns left the longest one crowding its
+          * neighbour while the short ones floated in space. */}
+        <div className="flex flex-col gap-6 border-t border-line pt-7 sm:flex-row sm:justify-between sm:gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col gap-2">
               <p className="font-body text-xs text-ink-tertiary">
