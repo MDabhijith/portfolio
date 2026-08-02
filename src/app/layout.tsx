@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
+import { LoadingSplash } from "@/components/ui/loading-splash";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -47,9 +48,11 @@ export default function RootLayout({
       className={`${schibstedGrotesk.variable} ${hankenGrotesk.variable} h-full antialiased`}
     >
       <head>
-        {/* Without JS the reveal observer never runs, so unhide everything. */}
+        {/* Without JS the reveal observer never runs, so unhide everything — and
+            the loading splash is server-rendered with nothing left to unmount
+            it, so it would cover the site permanently. */}
         <noscript>
-          <style>{`[data-reveal],[data-reveal-stagger] > *{opacity:1 !important;translate:none !important;scale:none !important}`}</style>
+          <style>{`[data-reveal],[data-reveal-stagger] > *{opacity:1 !important;translate:none !important;scale:none !important}[data-splash]{display:none !important}body:has([data-splash]) [data-entrance]{animation-play-state:running !important}`}</style>
         </noscript>
       </head>
       <body className="min-h-full flex flex-col bg-cs-paper text-ink font-body">
@@ -59,6 +62,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <LoadingSplash />
         <SmoothScroll />
         {children}
         <ScrollToTop />

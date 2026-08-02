@@ -8,9 +8,18 @@ const CREAM = "#e1e0cc";
  * pulling up word by word, with the intro and CTA set against its baseline. */
 export function Hero() {
   return (
-    <section className="h-svh w-full p-2 sm:p-3">
+    // The hero opens full-bleed and settles into its padded, rounded frame once
+    // the loading splash clears — data-entrance holds both animations at frame
+    // zero until then, the same gate the headline uses.
+    <section
+      data-entrance
+      className="h-svh w-full animate-hero-unpad p-2 sm:p-3"
+    >
       <LiquidText />
-      <div className="relative h-full w-full overflow-hidden rounded-2xl bg-black md:rounded-[2rem]">
+      <div
+        data-entrance
+        className="relative h-full w-full animate-hero-unround overflow-hidden rounded-2xl bg-black md:rounded-[2rem]"
+      >
         <HeroVideo
           src="/videos/hero.mp4"
           poster="/images/hero-summit.webp"
@@ -36,7 +45,10 @@ export function Hero() {
                 className="font-heading text-[9vw] font-extrabold leading-[0.95] tracking-[-0.03em] pb-[0.14em] sm:text-[7.5vw] lg:text-[6.2vw] xl:text-[5.6vw]"
                 style={{ color: CREAM }}
               >
+                {/* Held back until the frame has finished settling, so the two
+                  * movements read as a sequence rather than collide. */}
                 <WordsPullUpSegments
+                  startDelay={1200}
                   segments={[
                     { text: "Designing for" },
                     { text: "measurable outcomes,", className: "italic" },
@@ -49,8 +61,9 @@ export function Hero() {
             <div className="col-span-12 pb-6 lg:col-span-4 lg:pb-10">
               <p
                 data-liquid
+                data-entrance
                 className="animate-pull-up font-body text-xs leading-[1.35] sm:text-sm md:text-base"
-                style={{ animationDelay: "600ms", color: `${CREAM}b3` }}
+                style={{ animationDelay: "1800ms", color: `${CREAM}b3` }}
               >
                 Designing user-centered products that balance human needs with
                 measurable business impact.

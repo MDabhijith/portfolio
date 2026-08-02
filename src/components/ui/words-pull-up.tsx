@@ -33,6 +33,7 @@ function Words({
         <span
           key={i}
           aria-hidden="true"
+          data-entrance=""
           className={cn("relative inline-block animate-pull-up", word.className)}
           style={{
             animationDelay: `${startDelay + i * stagger}ms`,

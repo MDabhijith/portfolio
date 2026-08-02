@@ -121,6 +121,8 @@
 
   --animate-marquee: marquee 34s linear infinite;
   --animate-pull-up: pull-up 600ms var(--ease-out) both;
+  --animate-hero-unpad: hero-unpad 1200ms var(--ease-out) both;
+  --animate-hero-unround: hero-unround 1200ms var(--ease-out) both;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -131,6 +133,21 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+/* Each declares only a `from`, so the implicit `to` is whatever the element's
+ * own classes specify — the responsive padding and rounding stay defined once,
+ * in the markup, instead of being mirrored into the keyframes. */
+@keyframes hero-unpad {
+  from {
+    padding: 0;
+  }
+}
+
+@keyframes hero-unround {
+  from {
+    border-radius: 0;
   }
 }
 
@@ -281,7 +298,12 @@
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    /* Collapsing duration alone still leaves staggered entrances sitting on
+       their delay — with fill-mode both that reads as missing content, not as
+       reduced motion. */
+    animation-delay: 0s !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
     scroll-behavior: auto !important;
   }
 
@@ -291,6 +313,22 @@
     translate: none !important;
     scale: none !important;
   }
+
+  /* The splash is rendered server-side and autoplays, so it has to be taken out
+     here rather than in the effect that unmounts it — by the time JS runs it
+     would already have shown. */
+  [data-splash] {
+    display: none !important;
+  }
+}
+
+/* Entrance animations are frozen at frame zero for as long as the loading splash
+   is holding, otherwise they play out unseen behind it and the hero is already
+   settled by the time it clears. Pausing rather than delaying keeps the stagger
+   intact and needs no knowledge of the splash's duration. Releasing on "fade"
+   rather than on unmount means the words rise in *through* the fade. */
+body:has([data-splash="hold"]) [data-entrance] {
+  animation-play-state: paused;
 }
 
 /* When the JS dot cursor is active (fine pointers only), hide the native one. */
