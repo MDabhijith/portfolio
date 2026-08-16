@@ -176,6 +176,9 @@
   --paper: #ffffff;
   --surface: #f1efe9;
   --surface-tint: #eaf3ec;
+  /* Warm paper-toned wash behind the frosted Summary cards. */
+  --accent-sand: #f2eee5;
+  --accent-shell: #e7e2d6;
 
   --brand: #1a7347;
   --positive: #02542d;
