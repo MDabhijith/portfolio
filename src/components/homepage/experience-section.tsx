@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const roles = [
@@ -5,38 +6,50 @@ const roles = [
     company: "Levich Solutions Pvt Ltd",
     role: "Founding Product Designer",
     date: "Aug 2024 - Present",
+    logo: "/images/logos/logo-levich.webp",
   },
   {
     company: "Brandshark Pvt Ltd",
     role: "UI UX Designer",
     date: "Feb 2023 - June 2023",
+    logo: "/images/logos/logo-brandshark.webp",
   },
   {
     company: "InteractX Pvt Ltd",
     role: "UI UX Associate",
     date: "Oct 2021 - July 2022",
+    logo: "/images/logos/logo-interactx.webp",
   },
 ];
 
 function Row({
   item,
-  index,
   light = false,
 }: {
   item: (typeof roles)[number];
-  index: number;
   light?: boolean;
 }) {
   return (
     <div className="flex flex-col gap-3 py-7 sm:flex-row sm:items-center sm:gap-8 sm:py-9">
+      {/* One box for three very different marks: two square-ish logos and one
+        * 8:1 wordmark. object-contain lets the wordmark bind on width and the
+        * marks on height, so all three read at the same optical weight. The
+        * filter flips the dark artwork to white for the inverted hover panel,
+        * where the logos would otherwise disappear into the fill. */}
       <span
         aria-hidden="true"
-        className={cn(
-          "font-body text-[13px] tabular-nums sm:w-8 sm:shrink-0",
-          light ? "text-[var(--dark-callout-eyebrow)]" : "text-ink-tertiary"
-        )}
+        className="relative block h-6 w-[104px] shrink-0 sm:h-7"
       >
-        {String(index + 1).padStart(2, "0")}
+        <Image
+          src={item.logo}
+          alt=""
+          fill
+          sizes="104px"
+          className={cn(
+            "object-contain object-left",
+            light && "brightness-0 invert"
+          )}
+        />
       </span>
 
       <div className="flex min-w-0 flex-1 flex-col gap-1.5 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/role:translate-x-3">
@@ -85,7 +98,7 @@ export function ExperienceSection() {
       </div>
 
       <ul className="flex flex-col">
-        {roles.map((item, i) => (
+        {roles.map((item) => (
           <li
             key={item.company}
             /* Deliberately no dimming of the unhovered rows: at any opacity low
@@ -93,7 +106,7 @@ export function ExperienceSection() {
              * The inverted panel is a strong enough focus signal on its own. */
             className="group/role relative border-t border-line last:border-b"
           >
-            <Row item={item} index={i} />
+            <Row item={item} />
 
             {/* The light copy rides inside the panel and is revealed with it,
               * rather than the one set of text cross-fading its colour: a colour
@@ -108,7 +121,7 @@ export function ExperienceSection() {
             >
               <div className="absolute inset-0 bg-ink" />
               <div className="relative px-4 sm:px-7">
-                <Row item={item} index={i} light />
+                <Row item={item} light />
               </div>
             </div>
           </li>
