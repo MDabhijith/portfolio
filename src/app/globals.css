@@ -726,67 +726,6 @@ body:has([data-temp-dark]) {
   }
 }
 
-/* Two washes stacked behind the glass panel, both below the card's content.
-   ::before is the resting one and is deliberately colourless — a faint grey
-   sheen whose only job is to give the refraction something to bend, since a
-   perfectly flat backdrop bends into nothing and the bevel disappears. */
-[data-temp-dark] [class~="bg-white"]::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: linear-gradient(
-      104deg,
-      transparent 18%,
-      color-mix(in srgb, white 4%, transparent) 42%,
-      transparent 66%
-    ),
-    radial-gradient(
-      62% 130% at 12% 112%,
-      color-mix(in srgb, white 3%, transparent),
-      transparent 64%
-    ),
-    radial-gradient(
-      54% 112% at 86% 98%,
-      color-mix(in srgb, white 2%, transparent),
-      transparent 66%
-    );
-}
-
-/* ::after is the purple, held at zero until hover so the resting card stays
-   grey and only warms on approach. Oversized well past the card and rotated on
-   its own centre, so what shows through the frost is a slow drift of light
-   rather than three gradients fading up in place; the card's overflow clip is
-   what keeps the corners from ever coming into view. */
-[data-temp-dark] [class~="bg-white"]::after {
-  content: "";
-  position: absolute;
-  inset: -45%;
-  z-index: -1;
-  /* Alphas are capped, not chosen by eye: where all three overlap at the
-     brightest point of the rotation, the composite under the panel fill has to
-     stay dark enough for the body copy above it to clear 4.5:1. */
-  background-image: radial-gradient(
-      34% 40% at 22% 74%,
-      color-mix(in srgb, var(--tmp-purple) 14%, transparent),
-      transparent 62%
-    ),
-    radial-gradient(
-      30% 34% at 76% 66%,
-      color-mix(in srgb, var(--tmp-purple-deep) 12%, transparent),
-      transparent 64%
-    ),
-    radial-gradient(
-      42% 46% at 50% 86%,
-      color-mix(in srgb, var(--tmp-purple) 10%, transparent),
-      transparent 68%
-    );
-  opacity: 0;
-  transition: opacity var(--duration-base) var(--ease-out);
-  animation: temp-card-aurora 18s linear infinite;
-  animation-play-state: paused;
-}
-
 /* The content panel is the frost — and it is deliberately NOT a backdrop-filter.
    Everything behind it is the card's own flat fill plus the soft washes above,
    and blurring a soft gradient returns a soft gradient, so the filter bought
@@ -815,38 +754,9 @@ body:has([data-temp-dark]) {
   mix-blend-mode: overlay;
 }
 
-/* will-change only while hovered: it buys the drift its own compositing layer
-   so rotating it never repaints the card, but leaving it on all four cards at
-   rest would hold four needless layers in memory for an effect nobody is
-   looking at. */
-[data-temp-dark] [class~="bg-white"]:hover::after,
-[data-temp-dark] [class~="bg-white"]:focus-visible::after {
-  opacity: 1;
-  animation-play-state: running;
-  will-change: transform;
-}
-
 [data-temp-dark] [class~="bg-white"]:hover > div:last-child,
 [data-temp-dark] [class~="bg-white"]:focus-visible > div:last-child {
   background-color: color-mix(in srgb, white 6%, transparent);
-}
-
-@keyframes temp-card-aurora {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* The drift is decoration on a link, so it stops outright rather than merely
-   shortening — a card that keeps moving under the pointer is the thing this
-   setting is asking not to happen. */
-@media (prefers-reduced-motion: reduce) {
-  [data-temp-dark] [class~="bg-white"]::after {
-    animation: none;
-  }
 }
 
 /* Transparency is the whole effect here, so when it is turned down the card
@@ -854,11 +764,6 @@ body:has([data-temp-dark]) {
    no wash behind the text. The hover state falls back to the card's own
    elevation, which still answers the pointer. */
 @media (prefers-reduced-transparency: reduce) {
-  [data-temp-dark] [class~="bg-white"]::before,
-  [data-temp-dark] [class~="bg-white"]::after {
-    display: none;
-  }
-
   [data-temp-dark] [class~="bg-white"] > div:last-child,
   [data-temp-dark][data-card-refract] [class~="bg-white"] > div:last-child {
     background-color: var(--tmp-dark-card);
