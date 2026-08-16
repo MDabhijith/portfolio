@@ -132,6 +132,115 @@ export const aiProposalBuilder: CaseStudy = {
           ],
         },
         {
+          type: "personaSwitcher",
+          eyebrow: "WHO A PROPOSAL PASSES THROUGH",
+          meta: "3 personas",
+          personas: [
+            {
+              id: "sales-rep",
+              label: "Sales Rep",
+              name: "Marcus Bell",
+              photo: {
+                src: "/images/work/persona-proposal-sales-rep.webp",
+                alt: "Portrait of Marcus Bell, a sales rep, in a dark suit",
+              },
+              role: "Sales Rep \u00b7 assessment \u2192 proposal sent",
+              demographics: [
+                { label: "Age", value: "31" },
+                { label: "Location", value: "Dallas, TX" },
+                { label: "Tools", value: "CRM, Roofr, phone" },
+                { label: "Tech", value: "High, phone-first" },
+              ],
+              bio: "Qualifies the lead inside the CRM, then leaves it to build the proposal in Roofr, retyping the customer and the job he just entered. Measures the roof, photographs the damage and wants the proposal out before he pulls off the driveway, because the homeowner is collecting quotes from two other companies this week.",
+              motivations: [
+                "First good proposal in the door usually wins the job",
+                "Commission depends on closing, not on quoting",
+                "Wants selling time back from data entry",
+              ],
+              goals: [
+                "Send a priced proposal before the homeowner's interest cools",
+                "Build it from the customer and job the CRM already holds",
+                "Know the moment a homeowner opens or signs it",
+              ],
+              frustrations: [
+                "Re-entering into Roofr a customer he just entered in the CRM",
+                "Assessment photos stranded on his phone with no job to attach them to",
+                "Silence after sending, so follow-up is guesswork",
+              ],
+              quote:
+                "I've already told the system who this customer is. Then I open Roofr and it asks me all over again.",
+            },
+            {
+              id: "homeowner",
+              label: "Homeowner",
+              name: "Ray Delgado",
+              photo: {
+                src: "/images/work/persona-proposal-homeowner.webp",
+                alt: "Portrait of Ray Delgado, a homeowner, in a dark green shirt",
+              },
+              role: "Homeowner \u00b7 receives \u2192 signs",
+              demographics: [
+                { label: "Age", value: "54" },
+                { label: "Location", value: "Todd Mission, TX" },
+                { label: "Tools", value: "Phone, email" },
+                { label: "Tech", value: "Casual, reads on mobile" },
+              ],
+              bio: "Storm took half the shingles off a roof he has never had to replace before. He is comparing three quotes on his phone after work, none of which describe the same scope in the same words, and he is deciding on the largest single purchase this house has needed.",
+              motivations: [
+                "Wants the roof fixed before the next storm",
+                "Needs to feel he is not being overcharged for work he cannot judge",
+                "Insurance timeline is running and he cannot stall",
+              ],
+              goals: [
+                "Understand what is being replaced and why it costs this",
+                "Compare options without decoding roofing jargon",
+                "Sign without printing, scanning or a second appointment",
+              ],
+              frustrations: [
+                "A PDF that fights him on a phone screen",
+                "Line items naming materials but not what they do",
+                "No idea what happens, or when, after he signs",
+              ],
+              quote:
+                "It's the biggest thing I've bought for this house and I'm reading it on my phone at eleven at night. If I can't follow it, I'm calling the other guy.",
+            },
+            {
+              id: "back-office",
+              label: "Back Office",
+              name: "Claire Bennett",
+              photo: {
+                src: "/images/work/persona-proposal-back-office.webp",
+                alt: "Portrait of Claire Bennett, a back office coordinator, in a black top",
+              },
+              role: "Back Office \u00b7 signature \u2192 job started",
+              demographics: [
+                { label: "Age", value: "36" },
+                { label: "Location", value: "Dallas, TX" },
+                { label: "Tools", value: "CRM, email, Roofr" },
+                { label: "Tech", value: "Expert in the CRM" },
+              ],
+              bio: "Starts the job once the homeowner signs. The signature happens inside Roofr, so she learns about it when a rep forwards the email, then opens the CRM and rebuilds a deal that was already fully specified somewhere else before she can schedule anything.",
+              motivations: [
+                "Jobs that start on the date the homeowner was told",
+                "A scope she can trust without calling the rep to confirm it",
+                "Fewer things depending on someone remembering to tell her",
+              ],
+              goals: [
+                "Learn a proposal was approved without being told",
+                "Open a signed deal as a job, not as a PDF to re-key",
+                "Find the assessment photos already attached to the job",
+              ],
+              frustrations: [
+                "Approval arrives as a forwarded email, or not at all",
+                "Re-typing a scope the rep already priced line by line",
+                "Chasing photos and documents across phones and inboxes",
+              ],
+              quote:
+                "A deal can be signed for two days before it reaches me. By then the crew calendar has already moved on without it.",
+            },
+          ],
+        },
+        {
           type: "qaPanel",
           eyebrow: "STAKEHOLDER SESSION",
           meta: "3 roles · 9 questions",

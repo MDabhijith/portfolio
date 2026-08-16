@@ -97,11 +97,11 @@ export function CaseStudyCard({
           </span>
         </div>
 
-        <h3 className="font-heading text-2xl font-semibold leading-tight text-ink sm:text-[28px]">
+        <h3 className="font-heading text-[19px] font-semibold leading-[1.3] text-ink sm:text-[28px] sm:leading-tight">
           {title}
         </h3>
 
-        <p className="font-body text-[15px] leading-relaxed text-ink-tertiary">
+        <p className="font-body text-[14.5px] leading-[1.65] text-ink-tertiary sm:text-[15px] sm:leading-relaxed">
           {description}
         </p>
 

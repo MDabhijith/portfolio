@@ -127,6 +127,115 @@ export const roofingWorkflowManagement: CaseStudy = {
           ],
         },
         {
+          type: "personaSwitcher",
+          eyebrow: "WHO THE WORK RUNS THROUGH",
+          meta: "3 personas",
+          personas: [
+            {
+              id: "sales-rep",
+              label: "Sales Rep",
+              name: "Diego Alvarez",
+              photo: {
+                src: "/images/work/persona-sales-rep.webp",
+                alt: "Portrait of Diego Alvarez, a sales rep, in a suit and tie",
+              },
+              role: "Sales Rep \u00b7 canvassing \u2192 close",
+              demographics: [
+                { label: "Age", value: "29" },
+                { label: "Location", value: "Dallas, TX" },
+                { label: "Tools", value: "Roofr, phone, texts" },
+                { label: "Tech", value: "High, phone-first" },
+              ],
+              bio: "Three years canvassing storm-damaged neighbourhoods. Builds the proposal in Roofr on a tailgate, gets the signature, and hands the job off to whoever picks up the phone. Once it leaves him there is no record he can open, so when the homeowner calls a week later he calls the office to find out what happened.",
+              motivations: [
+                "Commission is the job, and it only pays on a completed install",
+                "Referrals come from homeowners he kept informed",
+                "Wants to be the rep the office never has to chase",
+              ],
+              goals: [
+                "Turn a door-knock into a signed job without typing it twice",
+                "Confirm a closed deal actually reached production",
+                "Answer a homeowner's status call without phoning the office",
+              ],
+              frustrations: [
+                "The Roofr proposal, the QuickBooks customer and the Excel row never match",
+                "No signal when a signed job stalls after handoff",
+                "Commission is a spreadsheet he cannot see until payout day",
+              ],
+              quote:
+                "I close it, and then it disappears. The next thing I hear is the homeowner asking me when the crew is coming.",
+            },
+            {
+              id: "project-manager",
+              label: "Project Manager",
+              name: "Omar Haddad",
+              photo: {
+                src: "/images/work/persona-project-manager.webp",
+                alt: "Portrait of Omar Haddad, a project manager, in a hard hat and high-visibility vest holding a clipboard",
+              },
+              role: "Project Manager \u00b7 scheduling \u2192 install",
+              demographics: [
+                { label: "Age", value: "38" },
+                { label: "Location", value: "Dallas, TX" },
+                { label: "Tools", value: "Excel, phone, site visits" },
+                { label: "Tech", value: "Moderate, hates re-entry" },
+              ],
+              bio: "Six years running production. Decides each morning which jobs are ready and which crew goes where, working from an Excel sheet somebody else updated and a mental map of who told him what. When a job is not actually ready, he finds out from a crew standing on a driveway.",
+              motivations: [
+                "A crew that never gets sent to a job that is not ready",
+                "Installs finished on the date the homeowner was promised",
+                "Being trusted to run production without supervision",
+              ],
+              goals: [
+                "See a job's true stage before committing a crew",
+                "Catch a stalled job the day it stalls",
+                "Open one job and see materials, crew and dates together",
+              ],
+              frustrations: [
+                "Readiness lives in a spreadsheet that goes stale between updates",
+                "Chasing the back office to confirm materials were ordered",
+                "Rebuilding job context from scratch every morning",
+              ],
+              quote:
+                "I don't find out a job is blocked. I find out a crew showed up and there was nothing to install.",
+            },
+            {
+              id: "back-office",
+              label: "Back Office",
+              name: "Katie Doyle",
+              photo: {
+                src: "/images/work/persona-back-office.webp",
+                alt: "Portrait of Katie Doyle, a back office coordinator, in a light blazer",
+              },
+              role: "Back Office \u00b7 materials \u2192 commissions",
+              demographics: [
+                { label: "Age", value: "34" },
+                { label: "Location", value: "Dallas, TX" },
+                { label: "Tools", value: "Excel, QuickBooks, Roofr" },
+                { label: "Tech", value: "Expert in spreadsheets" },
+              ],
+              bio: "Five years holding the record together. She is the only person who knows which QuickBooks customer maps to which Roofr proposal and which Excel row, and she rebuilds that mapping by hand for every job. When she takes a week off, nobody else can answer where a job stands.",
+              motivations: [
+                "Numbers that survive an audit without a week of reconciling",
+                "Ordering materials she will not have to re-order",
+                "Not being the single point of failure for the whole company",
+              ],
+              goals: [
+                "Keep one clean, auditable record per job",
+                "Order materials from figures she can trust",
+                "Close out commissions and draws without manual reconciliation",
+              ],
+              frustrations: [
+                "Re-keying the same job into QuickBooks, Roofr and Excel",
+                "Silent drift between the three copies of every record",
+                "Her own absence erasing the only map between the systems",
+              ],
+              quote:
+                "Half my week is making three systems agree on a job that only ever happened once.",
+            },
+          ],
+        },
+        {
           type: "qaPanel",
           eyebrow: "STAKEHOLDER SESSION",
           meta: "3 roles · 9 questions",

@@ -162,6 +162,75 @@
   }
 }
 
+/* Mesh dot field: a dot grid faded out radially so it dissolves into the page
+   rather than ending on a hard edge. */
+.mesh-dots {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--ink) 30%, transparent) 1.5px,
+    transparent 1.6px
+  );
+  background-size: 20px 20px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 80% at 50% 50%,
+    #000 25%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 80% at 50% 50%,
+    #000 25%,
+    transparent 78%
+  );
+}
+
+/* Conic ring that sweeps around the CTA pill. */
+@keyframes halo-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.halo-ring::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--brand) 60deg,
+    var(--surface-tint) 130deg,
+    transparent 200deg
+  );
+  animation: halo-spin 4s linear infinite;
+}
+
+/* Selected Work sits on its own band. The cards are white on a near-white
+   page, so their edges were doing all the work of separating them; a slightly
+   darker ground gives them something to sit on instead.
+
+   The band reaches the viewport edges from inside the padded container. The
+   overhang that 50vw creates on platforms drawing a classic scrollbar is
+   contained by `overflow-x: clip` on the body — clip rather than hidden, since
+   clip makes no scroll container and so leaves the sticky case-study nav
+   working. It cannot go on the band itself: that would clip the very bleed it
+   is meant to allow. */
+body {
+  overflow-x: clip;
+}
+
+.work-band {
+  position: relative;
+  isolation: isolate;
+}
+
+.work-band::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-block: calc(-1 * var(--work-band-bleed, 3.5rem));
+  inset-inline: calc(50% - 50vw);
+  background-color: var(--surface);
+}
+
 /* Fine-grained film grain, generated rather than shipped as an image asset. */
 .noise-overlay {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");

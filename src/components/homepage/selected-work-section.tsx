@@ -67,7 +67,7 @@ const caseStudies = [
 
 export function SelectedWorkSection() {
   return (
-    <section id="work" className="flex flex-col gap-9">
+    <section id="work" className="work-band flex flex-col gap-9">
       <Reveal>
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="font-heading text-2xl font-medium tracking-[-0.02em] text-ink sm:text-h5">

@@ -114,8 +114,196 @@ export const relayHub: CaseStudy = {
       ],
     },
     {
-      id: "approach",
+      id: "research-audit",
       number: "03",
+      label: "RESEARCH & AUDIT",
+      title: "Following a question, not an org chart",
+      blocks: [
+        {
+          type: "prose",
+          paragraphs: [
+            "The gap between tools is easy to describe and hard to feel. So rather than audit the stack, I followed single questions through the company and watched what each role had to do to answer them. The same question cost a different amount of work depending on who was asking, and that difference is where the product lives.",
+          ],
+        },
+        {
+          type: "personaSwitcher",
+          eyebrow: "WHO THE WORK RUNS THROUGH",
+          meta: "3 personas",
+          personas: [
+            {
+              id: "office-hr",
+              label: "Office HR",
+              name: "Elena Marsh",
+              photo: {
+                src: "/images/work/persona-relay-hr.webp",
+                alt: "Portrait of Elena Marsh, the office HR lead, in a dark blazer",
+              },
+              role: "Office HR \u00b7 policy \u2192 onboarding",
+              demographics: [
+                { label: "Age", value: "41" },
+                { label: "Location", value: "Austin, TX" },
+                { label: "Tools", value: "Chat, docs, drives" },
+                { label: "Tech", value: "High, non-technical" },
+              ],
+              bio: "Owns the policy documents and answers questions about them one thread at a time. The answers are all written down and have been for years; people ask her anyway, because asking her is faster than finding the current version across three drives.",
+              motivations: [
+                "Wants her time back from questions she has already answered",
+                "Being the person new hires trust in their first week",
+                "Policy applied consistently rather than remembered differently",
+              ],
+              goals: [
+                "Answer a policy question once and have it stay answered",
+                "Point people to the current version, not a stale copy",
+                "Get new hires productive without a week of hand-holding",
+              ],
+              frustrations: [
+                "The same five questions arrive every week in five threads",
+                "Nobody can tell which copy of a policy is current",
+                "A generic AI answers confidently and gets the policy wrong",
+              ],
+              quote:
+                "The answer is written down. It has been written down for two years. People still ask me, because finding it is harder than asking me.",
+            },
+            {
+              id: "research-team",
+              label: "Research Team",
+              name: "James Holloway",
+              photo: {
+                src: "/images/work/persona-relay-researcher.webp",
+                alt: "Portrait of James Holloway, a research team member, in a light grey suit",
+              },
+              role: "Research Team \u00b7 sources \u2192 findings",
+              demographics: [
+                { label: "Age", value: "28" },
+                { label: "Location", value: "Austin, TX" },
+                { label: "Tools", value: "Drives, docs, AI chat" },
+                { label: "Tech", value: "Expert, AI-native" },
+              ],
+              bio: "Works across long documents and prior findings and already leans on AI for most of it. Every good answer is worked out in a private session that closes and takes the reasoning with it, so the same ground gets covered again next quarter by someone else.",
+              motivations: [
+                "Doing new work rather than re-deriving old work",
+                "Being able to show where a finding came from",
+                "Building on what the team already established",
+              ],
+              goals: [
+                "Ask across everything the company knows, not one folder",
+                "Keep a useful AI answer where the next person can find it",
+                "Stop re-deriving what a colleague already worked out",
+              ],
+              frustrations: [
+                "AI sessions evaporate the moment the tab closes",
+                "Source documents live in drives the AI cannot see",
+                "No way to tell whether an answer was grounded or invented",
+              ],
+              quote:
+                "I'll spend an hour getting to a genuinely good answer, and next month someone on my team will spend the same hour getting to the same one.",
+            },
+            {
+              id: "manager",
+              label: "Manager",
+              name: "Tom Whitfield",
+              photo: {
+                src: "/images/work/persona-relay-manager.webp",
+                alt: "Portrait of Tom Whitfield, a manager, in a charcoal blazer",
+              },
+              role: "Manager \u00b7 oversight \u2192 access",
+              demographics: [
+                { label: "Age", value: "45" },
+                { label: "Location", value: "Austin, TX" },
+                { label: "Tools", value: "Chat, summaries, email" },
+                { label: "Tech", value: "Moderate, time-poor" },
+              ],
+              bio: "Needs the state of things without reading everything, and is the person who has to sign off before an AI goes anywhere near company documents. Every proposal to connect the drives stalls on the same unanswered question: what is it allowed to say, and to whom.",
+              motivations: [
+                "Decisions made on current information, not last week's",
+                "Giving the team AI without owning a data-leak incident",
+                "Fewer status meetings that exist only to catch up",
+              ],
+              goals: [
+                "See where things stand without chasing four threads",
+                "Let the team use AI without opening the whole drive",
+                "Trust that an answer respects who asked it",
+              ],
+              frustrations: [
+                "Context arrives as a scroll-back, never as a summary",
+                "Permission models cover files, not what AI may say about them",
+                "No audit trail for what the AI told whom",
+              ],
+              quote:
+                "I'm not worried about the AI being wrong. I'm worried about it being right to the wrong person.",
+            },
+          ],
+        },
+        {
+          type: "qaPanel",
+          eyebrow: "STAKEHOLDER SESSION",
+          meta: "3 roles · 9 questions",
+          description:
+            "I sat with each role and walked a real question through their actual day rather than a documented process, anchoring every session on how the answer was found, kept, and shared.",
+          items: [
+            {
+              role: "Office HR",
+              detail: "Policy, onboarding",
+              questions: [
+                "Walk me through the last policy question someone asked you.",
+                "Where does the current version of that answer actually live?",
+                "What happens to your answer after you send it?",
+              ],
+            },
+            {
+              role: "Research Team",
+              detail: "Documents, findings",
+              questions: [
+                "Show me how you'd answer a question spanning several documents.",
+                "What do you do with a good AI answer once you have it?",
+                "How would you know if an answer came from our documents or not?",
+              ],
+            },
+            {
+              role: "Managers",
+              detail: "Oversight, access",
+              questions: [
+                "How do you catch up on what your team worked out this week?",
+                "What would have to be true before AI could read company files?",
+                "Who decides what the AI is allowed to say, and to whom?",
+              ],
+            },
+          ],
+        },
+        {
+          type: "insightCards",
+          items: [
+            {
+              number: "01",
+              title: "The answer existed; finding it cost more than asking",
+              description:
+                "Almost every question traced back to a document that already held the answer. The failure was never authorship, it was retrieval, so the fix had to be a way in rather than more content.",
+            },
+            {
+              number: "02",
+              title: "Good answers died at the end of a session",
+              description:
+                "The most valuable reasoning in the company happened inside private AI chats and one-off threads, and none of it survived into a form the next person could reach.",
+            },
+            {
+              number: "03",
+              title: "Permission was the gate on everything else",
+              description:
+                "Every role wanted the same capability and every manager stalled at the same question. Until AI access could be scoped per person, no amount of usefulness would get it approved.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          eyebrow: "THE GUIDING QUESTION",
+          title:
+            "What would it take for a question to be answered once, kept where the next person will find it, and shown only to whoever is allowed to see it?",
+        },
+      ],
+    },
+    {
+      id: "approach",
+      number: "04",
       label: "APPROACH",
       title: "Six decisions, one idea: an agent for every task",
       blocks: [
@@ -175,7 +363,7 @@ export const relayHub: CaseStudy = {
     },
     {
       id: "workflow",
-      number: "04",
+      number: "05",
       label: "WORKFLOW AND USERFLOW",
       title: "One continuous path: a question to a grounded, permissioned answer",
       blocks: [
@@ -242,7 +430,7 @@ export const relayHub: CaseStudy = {
     },
     {
       id: "the-system",
-      number: "05",
+      number: "06",
       label: "THE SYSTEM",
       title: "One shared knowledge layer, an agent built for every task",
       blocks: [
@@ -404,7 +592,7 @@ export const relayHub: CaseStudy = {
     },
     {
       id: "impact",
-      number: "06",
+      number: "07",
       label: "IMPACT",
       title: "What agents built for the job are worth, measured where it counts.",
       blocks: [
