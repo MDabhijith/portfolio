@@ -69,25 +69,6 @@ export type ContentBlock =
       title: string;
     }
   | {
-      /** Chip-switched persona profiles — one chip per persona, showing goals, frustrations, and the moment that mattered. */
-      type: "personaSwitcher";
-      eyebrow: string;
-      meta: string;
-      personas: {
-        id: string;
-        /** Short role label shown on the switcher chip. */
-        label: string;
-        name: string;
-        photo: ImageRef;
-        role: string;
-        demographics: { label: string; value: string }[];
-        summary: string;
-        goals: string[];
-        frustrations: string[];
-        quote: string;
-      }[];
-    }
-  | {
       type: "qaPanel";
       eyebrow: string;
       meta: string;

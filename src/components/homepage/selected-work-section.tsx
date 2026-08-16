@@ -6,9 +6,8 @@ const caseStudies = [
     href: "/work/roofing-workflow-management",
     image: {
       src: "/images/work/roofing-card-cover.webp",
-      alt: "The Priority Roofing CRM dashboard on a laptop beside the mobile app on a phone, over a dark iridescent gradient",
+      alt: "Priority Roofing CRM job list on a laptop over a colorful gradient",
     },
-    mobileImage: { src: "/images/work/roofing-card-cover-mobile.webp" },
     category: "Roofing CRM",
     client: "Priority Roofing",
     year: "2025",
@@ -21,9 +20,8 @@ const caseStudies = [
     href: "/work/job-module-redesign",
     image: {
       src: "/images/work/job-module-card-cover.webp",
-      alt: "The redesigned Priority Roofing job detail view open on a laptop against a deep purple backdrop",
+      alt: "Priority Roofing job management dashboard on a laptop beside the mobile app on a phone",
     },
-    mobileImage: { src: "/images/work/job-module-card-cover-mobile.webp" },
     category: "Job Module Re-Design",
     client: "Priority Roofing",
     year: "2025",
@@ -37,9 +35,8 @@ const caseStudies = [
     href: "/work/ai-proposal-builder",
     image: {
       src: "/images/work/proposal-builder-card-cover.webp",
-      alt: "The AI-enabled roofing proposal builder showing a proposal cover page on a laptop against a soft green backdrop",
+      alt: "The AI-enabled roofing proposal builder on a laptop over a dark navy gradient",
     },
-    mobileImage: { src: "/images/work/proposal-builder-card-cover-mobile.webp" },
     category: "AI Enabled Proposal Builder",
     client: "Priority Roofing",
     year: "2026",
@@ -54,7 +51,6 @@ const caseStudies = [
       src: "/images/work/relay-hub-card-cover.webp",
       alt: "The Relay Hub workspace, document view, and AI chat across three windows on a blue-to-teal gradient",
     },
-    mobileImage: { src: "/images/work/relay-hub-card-cover-mobile.webp" },
     category: "AI Business Communication",
     client: "Relay Hub",
     year: "2024",
@@ -67,14 +63,7 @@ const caseStudies = [
 
 export function SelectedWorkSection() {
   return (
-    /* TEMPORARY dark styling — see the marked block in app/globals.css for how
-       to revert. The band itself is painted there by a pseudo-element that
-       reaches the edges of the screen; all this adds is the room for it. */
-    <section
-      id="work"
-      data-temp-dark
-      className="flex flex-col gap-9 py-16 sm:py-20 lg:py-24"
-    >
+    <section id="work" className="flex flex-col gap-9">
       <Reveal>
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="font-heading text-2xl font-medium tracking-[-0.02em] text-ink sm:text-h5">
