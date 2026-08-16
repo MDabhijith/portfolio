@@ -127,6 +127,103 @@ export const roofingWorkflowManagement: CaseStudy = {
           ],
         },
         {
+          type: "personaSwitcher",
+          eyebrow: "WHO THE WORK RUNS THROUGH",
+          meta: "3 personas",
+          personas: [
+            {
+              id: "sales-rep",
+              label: "Sales Rep",
+              name: "Diego Alvarez",
+              photo: {
+                src: "/images/work/persona-sales-rep.webp",
+                alt: "Portrait of Diego Alvarez, a sales rep, in a suit and tie",
+              },
+              role: "Sales Rep · canvassing → close",
+              demographics: [
+                { label: "Age", value: "29" },
+                { label: "Tenure", value: "3 yrs" },
+                { label: "Works from", value: "His truck" },
+                { label: "Tech comfort", value: "High, phone-first" },
+              ],
+              summary:
+                "Lives on a phone between driveways. Closes the deal, then loses sight of the job the moment it leaves his hands, but is still the one the homeowner calls for updates.",
+              goals: [
+                "Turn a door-knock into a job without re-typing it into three tools",
+                "Know a signed deal actually reached production",
+                "Answer a homeowner's status call without phoning the office",
+              ],
+              frustrations: [
+                "Proposal, customer record, and job status live in different systems",
+                "No signal when a closed job stalls after handoff",
+                "Commission math is invisible until payout day",
+              ],
+              quote:
+                "I close it, and then it disappears. The next thing I hear is the homeowner asking me when the crew is coming.",
+            },
+            {
+              id: "project-manager",
+              label: "Project Manager",
+              name: "Omar Haddad",
+              photo: {
+                src: "/images/work/persona-project-manager.webp",
+                alt: "Portrait of Omar Haddad, a project manager, in a hard hat and high-visibility vest holding a clipboard",
+              },
+              role: "Project Manager · scheduling, crews, inspections",
+              demographics: [
+                { label: "Age", value: "38" },
+                { label: "Tenure", value: "6 yrs" },
+                { label: "Works from", value: "Office + job sites" },
+                { label: "Tech comfort", value: "Moderate, hates re-entry" },
+              ],
+              summary:
+                "Holds the production calendar together. Decides what gets built when and by whom, working from a mental map of which job is really ready.",
+              goals: [
+                "See every job's true stage before committing a crew",
+                "Catch a stalled job the day it stalls, not a week later",
+                "Open one job and see materials, crew, and dates together",
+              ],
+              frustrations: [
+                "Readiness lives in spreadsheets that go stale between updates",
+                "Chasing the back office to confirm materials landed",
+                "Rebuilding job context from scratch every morning",
+              ],
+              quote:
+                "I don't find out a job is blocked. I find out a crew showed up and there was nothing to install.",
+            },
+            {
+              id: "back-office",
+              label: "Back Office",
+              name: "Katie Doyle",
+              photo: {
+                src: "/images/work/persona-back-office.webp",
+                alt: "Portrait of Katie Doyle, a back office coordinator, in a light blazer",
+              },
+              role: "Back Office Coordinator · materials, audits, commissions",
+              demographics: [
+                { label: "Age", value: "34" },
+                { label: "Tenure", value: "5 yrs" },
+                { label: "Works from", value: "Head office desk" },
+                { label: "Tech comfort", value: "Expert in spreadsheets" },
+              ],
+              summary:
+                "The last line of defense on data quality. Reconciles what sales promised against what production did, and turns both into orders, invoices, and payouts.",
+              goals: [
+                "Get one clean, auditable record per job",
+                "Order materials off numbers they can trust",
+                "Close out commissions and draws without manual reconciliation",
+              ],
+              frustrations: [
+                "Re-keying the same job into QuickBooks, Roofr, and Excel",
+                "Silent drift between the three copies of every record",
+                "Absence or turnover erases the only person who knew the mapping",
+              ],
+              quote:
+                "Half my week is making three systems agree on a job that only ever happened once.",
+            },
+          ],
+        },
+        {
           type: "qaPanel",
           eyebrow: "STAKEHOLDER SESSION",
           meta: "3 roles · 9 questions",

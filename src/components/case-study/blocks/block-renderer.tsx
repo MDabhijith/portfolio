@@ -27,6 +27,7 @@ import { StatCardsBlock } from "./stat-cards-block";
 import { VideoBlock } from "./video-block";
 import { WorkflowTimelineBlock } from "./workflow-timeline-block";
 import { BeforeAfterBlock } from "./before-after-block";
+import { PersonaSwitcherBlock } from "./persona-switcher-block";
 
 /** Renders a single case-study content block by its `type` discriminant. */
 export function BlockRenderer({ block }: { block: ContentBlock }) {
@@ -61,6 +62,14 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
       return <TaggedListBlock items={block.items} variant={block.variant} />;
     case "callout":
       return <CalloutBlock eyebrow={block.eyebrow} title={block.title} />;
+    case "personaSwitcher":
+      return (
+        <PersonaSwitcherBlock
+          eyebrow={block.eyebrow}
+          meta={block.meta}
+          personas={block.personas}
+        />
+      );
     case "qaPanel":
       return (
         <QaPanelBlock

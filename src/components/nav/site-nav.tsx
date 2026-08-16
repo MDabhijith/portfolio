@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, type PointerEvent } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
 import { Button } from "@/components/ui/button";
+import { useGlassRefraction } from "@/components/ui/glass-refraction";
 import { SlideUpLabel } from "@/components/ui/slide-up-label";
 import { cn } from "@/lib/utils";
 
@@ -13,14 +14,42 @@ const links = [
   { href: "/#work", label: "Work" },
 ];
 
+function trackSpecular(event: PointerEvent<HTMLElement>) {
+  const bounds = event.currentTarget.getBoundingClientRect();
+  event.currentTarget.style.setProperty(
+    "--glass-x",
+    `${event.clientX - bounds.left}px`
+  );
+  event.currentTarget.style.setProperty(
+    "--glass-y",
+    `${event.clientY - bounds.top}px`
+  );
+}
+
 export function SiteNav() {
   const [open, setOpen] = useState(false);
+  const [condensed, setCondensed] = useState(false);
+  const bar = useGlassRefraction("site-nav-glass");
+  const panel = useGlassRefraction("site-nav-panel-glass");
+
+  useEffect(() => {
+    const onScroll = () => setCondensed(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
+      {bar.filter}
+      {panel.filter}
       <nav
+        ref={bar.ref as React.RefObject<HTMLElement>}
+        {...bar.props}
         aria-label="Primary"
-        className="relative flex w-full max-w-[900px] items-center justify-between rounded-full border border-white/60 bg-white/55 px-4 py-2.5 shadow-[var(--shadow-nav)] backdrop-blur-[10px] sm:px-[27px] sm:py-[15px]"
+        data-condensed={condensed || undefined}
+        onPointerMove={trackSpecular}
+        className="liquid-glass flex w-full max-w-[900px] items-center justify-between rounded-full px-4 py-2.5 sm:px-[27px] sm:py-[15px]"
       >
         <Logo variant="dark" priority />
 
@@ -63,8 +92,12 @@ export function SiteNav() {
 
         <div
           id="mobile-nav-panel"
+          ref={panel.ref as React.RefObject<HTMLDivElement>}
+          {...panel.props}
+          data-solid=""
+          onPointerMove={trackSpecular}
           className={cn(
-            "absolute inset-x-0 top-[calc(100%+8px)] flex flex-col gap-1 rounded-2xl border border-white/60 bg-white/90 p-3 shadow-[var(--shadow-nav)] backdrop-blur-[10px] transition-all duration-[var(--duration-base)] ease-[var(--ease-out)] sm:hidden",
+            "liquid-glass absolute inset-x-0 top-[calc(100%+8px)] flex flex-col gap-1 rounded-2xl p-3 transition-all duration-[var(--duration-base)] ease-[var(--ease-out)] sm:hidden",
             open
               ? "pointer-events-auto translate-y-0 opacity-100"
               : "pointer-events-none -translate-y-2 opacity-0"
