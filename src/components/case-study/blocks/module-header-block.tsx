@@ -7,7 +7,7 @@ export function ModuleHeaderBlock({
   eyebrow?: string;
   eyebrowTrailing?: string;
   title?: string;
-  description: string;
+  description?: string;
 }) {
   return (
     <div className="flex flex-col gap-5">
@@ -33,7 +33,9 @@ export function ModuleHeaderBlock({
           ) : null}
         </div>
       ) : null}
-      <p className="font-body text-base text-cs-body">{description}</p>
+      {description ? (
+        <p className="font-body text-base text-cs-body">{description}</p>
+      ) : null}
     </div>
   );
 }

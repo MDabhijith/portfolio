@@ -4,13 +4,13 @@ export const roofingWorkflowManagement: CaseStudy = {
   slug: "roofing-workflow-management",
   category: "Roofing CRM",
   client: "Priority Roofing",
-  year: "2025",
+  year: "2024",
   title: "A Product-First Approach to Roofing Workflow Management",
   subtitle:
     "Priority Roofing ran its entire operation across QuickBooks, Roofr, and a stack of Excel sheets, none of which talked to each other. We designed and built a single CRM that carries a job from a knock on the door to a paid commission.",
   meta: [
     { label: "Company", value: "Priority Roofing (USA)" },
-    { label: "Timeline", value: "Jun 2024 - 4 weeks" },
+    { label: "Timeline", value: "Jun 2024 - 8 weeks" },
     { label: "Team", value: "Developers, Stakeholders, Tester, Product Designer" },
   ],
   heroImage: {
@@ -37,6 +37,7 @@ export const roofingWorkflowManagement: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
+            "As the sole product designer on this project, I led research, information architecture, and UI design; developers built to spec. “We” below refers to the wider project team on the decisions we made together.",
             "Priority Roofing is a residential and insurance roofing contractor operating in the United States. Their business runs the full trade cycle, canvassing neighborhoods for storm and replacement work, estimating and closing homeowners, ordering materials, dispatching crews, passing inspections, and settling insurance claims and rep commissions. As volume grew, that operation outpaced the tools running it. A single job's truth was scattered across disconnected software, each good at one slice of the work, none aware of the others, plus whatever lived in someone's head. No one place could tell you where a job actually stood.",
           ],
         },
@@ -639,6 +640,27 @@ export const roofingWorkflowManagement: CaseStudy = {
         },
         {
           type: "moduleHeader",
+          eyebrow: "THE DESIGN SYSTEM",
+          title: "Decide it once, not again on every screen",
+        },
+        {
+          type: "prose",
+          paragraphs: [
+            "I built the design system to create a shared foundation for the product and reduce the time spent solving the same design problems across screens. Reusable components, patterns, and tokens helped me streamline repetitive tasks while keeping the experience visually consistent and making it easier to maintain as the product evolved.",
+            "It also improved how I worked with developers and stakeholders. With clearly defined components, variants, and usage guidelines, I could communicate design decisions more clearly and hand off work with less ambiguity. This created better alignment between design and development, reduced inconsistencies, and made future changes much more efficient to implement.",
+          ],
+        },
+        {
+          type: "video",
+          src: "/images/work/roofing-design-system.mp4",
+          poster: "/images/work/roofing-design-system.webp",
+          label:
+            "Screencast of the Roofing CRM design system in Figma: the variable collections and token table, a Button component with its Type, State, Size, and Icon properties, the color, typography, and border and radius foundation sheets, and the shared component library",
+          caption: "The design system: tokens, components, and foundations.",
+          aspect: "1920 / 1080",
+        },
+        {
+          type: "moduleHeader",
           eyebrow: "SUMMARY AND DECISION MAKING",
           title:
             "Before it shipped company-wide, we asked the team if it actually worked",
@@ -649,7 +671,7 @@ export const roofingWorkflowManagement: CaseStudy = {
           type: "executiveSummary",
           title: "Executive summary",
           description:
-            "Priority Roofing's operations ran on three disconnected tools patched together by spreadsheets no system owned. We traced one job end-to-end, audited the stack, and evaluated four off-the-shelf CRMs before concluding a focused custom build was the only option that could absorb the team's real workflow. We shipped a pilot to the three roles that touch a job daily, measured confidence and trust before and after, and used that evidence, not just our own conviction, to greenlight the full rollout.",
+            "Priority Roofing's operations ran on three disconnected tools patched together by spreadsheets no system owned. I traced one job end-to-end, audited the stack, and evaluated four off-the-shelf CRMs before concluding a focused custom build was the only option that could absorb the team's real workflow. We shipped a pilot to the three roles that touch a job daily, measured confidence and trust before and after, and used that evidence, not just our own conviction, to greenlight the full rollout.",
         },
         {
           type: "moduleHeader",

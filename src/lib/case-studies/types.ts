@@ -123,7 +123,7 @@ export type ContentBlock =
       eyebrow?: string;
       eyebrowTrailing?: string;
       title?: string;
-      description: string;
+      description?: string;
     }
   | {
       /** Nav-overview card grouping module-name pills under a green eyebrow + count (Figma's "two groups" system map). */
