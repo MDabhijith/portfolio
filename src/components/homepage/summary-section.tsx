@@ -2,7 +2,7 @@ import { Building2, Clock3, Layers } from "lucide-react";
 
 const stats = [
   { label: "Experience", value: "4.3 years", Icon: Clock3 },
-  { label: "Focus", value: "Product & UX, design systems", Icon: Layers },
+  { label: "Focus", value: "Product & UX, AI, design systems", Icon: Layers },
   { label: "Business", value: "B2B SaaS, B2C", Icon: Building2 },
 ];
 
@@ -15,10 +15,13 @@ export function SummarySection() {
         </h2>
 
         <p className="max-w-[628px] font-body text-base leading-[1.75] text-ink-secondary sm:text-[17px]">
-          Over the last 4 years, I&rsquo;ve designed products across AI, SaaS,
-          healthcare, and enterprise platforms with one goal: creating
-          experiences that people enjoy using and businesses benefit from. Every
-          design decision is guided by empathy, strategy, and measurable impact.
+          Product Designer focused on building intelligent, scalable products
+          across AI, SaaS, healthcare, and enterprise. Over 4 years, I&rsquo;ve
+          turned complex workflows into simple experiences by combining product
+          thinking, user insight, and emerging AI capabilities. I design not
+          just interfaces, but the systems, interactions, and decisions behind
+          them creating products that work better for people and drive
+          meaningful business outcomes.
         </p>
       </div>
 
