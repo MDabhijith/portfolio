@@ -1,4 +1,5 @@
 import { HeroVideo } from "@/components/homepage/hero-video";
+import { CursorMark, FrameMark, NodeMark } from "@/components/ui/design-marks";
 import { LiquidText } from "@/components/ui/liquid-text";
 import { PixelScatter } from "@/components/ui/pixel-scatter";
 import { WordsPullUpSegments } from "@/components/ui/words-pull-up";
@@ -12,7 +13,7 @@ export function Hero() {
       <LiquidText />
 
       {/* Flipped so the dense corner lands in the bottom-left, over the green
-        * wash, and thins out toward the middle of the section. */}
+       * wash, and thins out toward the middle of the section. */}
       <PixelScatter
         data-entrance
         columns={34}
@@ -24,13 +25,13 @@ export function Hero() {
 
       <div className="mx-auto flex min-h-svh w-full max-w-[1440px] flex-col px-4 pt-24 pb-8 sm:px-6 md:px-10 lg:pt-28 lg:pb-12">
         {/* 12 columns only from lg: at mobile widths the 11 gutters of a
-          * 12-track grid add up to more than the viewport itself. */}
+         * 12-track grid add up to more than the viewport itself. */}
         <div className="grid flex-1 grid-cols-1 items-center gap-y-10 py-8 lg:grid-cols-12 lg:items-start lg:gap-x-14">
           {/* isolate so the field's -z-10 lands behind this column's own text
-            * rather than behind the section background, which would hide it. */}
+           * rather than behind the section background, which would hide it. */}
           <div className="relative isolate flex min-w-0 flex-col gap-6 lg:col-span-7 lg:gap-8 lg:pt-6">
             {/* Behind the headline, bled off the top-left corner so the dense
-              * end runs out of frame rather than terminating on an edge. */}
+             * end runs out of frame rather than terminating on an edge. */}
             <PixelScatter
               data-entrance
               columns={32}
@@ -54,22 +55,42 @@ export function Hero() {
               </span>
             </div>
 
-            <h1
-              data-liquid
-              /* leading under 1 pulls the line box tighter than the glyphs, so
-               * the last line's descenders need their own room rather than
-               * being clipped by the box. */
-              className="pb-[0.14em] font-heading text-[13vw] leading-[0.95] font-extrabold tracking-[-0.03em] text-hero-ink sm:text-[9vw] lg:text-[5.6vw] xl:text-[5vw]"
-            >
-              <WordsPullUpSegments
-                startDelay={400}
-                segments={[
-                  { text: "Design that moves the" },
-                  { text: "numbers,", className: "italic" },
-                  { text: "not just the pixels." },
-                ]}
+            {/* Marks sit against the headline block, so they travel with it as
+             * the type reflows rather than being pinned to the column. */}
+            <div className="relative">
+              <CursorMark
+                data-entrance
+                className="absolute -top-1 right-[10%] hidden animate-pull-up text-brand/70 md:block"
+                style={{ animationDelay: "1300ms" }}
               />
-            </h1>
+              <NodeMark
+                data-entrance
+                className="absolute bottom-[4%] left-[70%] hidden animate-pull-up text-hero-ink/25 md:block"
+                style={{ animationDelay: "1450ms" }}
+              />
+              <FrameMark
+                data-entrance
+                className="absolute -bottom-3 right-[4%] hidden animate-pull-up text-hero-ink/25 md:block"
+                style={{ animationDelay: "1600ms" }}
+              />
+
+              <h1
+                data-liquid
+                /* leading under 1 pulls the line box tighter than the glyphs, so
+                 * the last line's descenders need their own room rather than
+                 * being clipped by the box. */
+                className="pb-[0.14em] font-heading text-[13vw] leading-[0.95] font-extrabold tracking-[-0.03em] text-hero-ink sm:text-[9vw] lg:text-[5.6vw] xl:text-[5vw]"
+              >
+                <WordsPullUpSegments
+                  startDelay={400}
+                  segments={[
+                    { text: "Design that moves the" },
+                    { text: "numbers,", className: "italic" },
+                    { text: "not just the pixels." },
+                  ]}
+                />
+              </h1>
+            </div>
 
             <p
               data-liquid
@@ -89,7 +110,7 @@ export function Hero() {
             style={{ animationDelay: "600ms" }}
           >
             {/* Capped below lg so the portrait crop doesn't tower over a
-              * tablet once the columns stack. */}
+             * tablet once the columns stack. */}
             <div className="relative mx-auto aspect-4/5 w-full max-w-[440px] overflow-hidden rounded-3xl bg-black md:rounded-[2rem] lg:max-w-none">
               <HeroVideo
                 src="/videos/hero.mp4"
@@ -99,7 +120,7 @@ export function Hero() {
               <div className="noise-overlay pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay" />
 
               {/* Scrim rather than a flat tint: the footage is brightest along
-                * the horizon, which is exactly where the quote sits. */}
+               * the horizon, which is exactly where the quote sits. */}
               <div
                 className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/85 via-black/45 to-transparent"
                 aria-hidden="true"
@@ -117,7 +138,6 @@ export function Hero() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
