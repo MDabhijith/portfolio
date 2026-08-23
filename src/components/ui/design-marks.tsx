@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 
 /** Small design-tool marks for scattering around the headline — a pointer, a
- * vector anchor, and a selection corner. Decorative only, so each one is
- * hidden from assistive tech and inert to the pointer. */
+ * bezier path with its anchors, and a selected object. Decorative only, so
+ * each is hidden from assistive tech and inert to the pointer. */
 
 function Mark({
   className,
@@ -28,7 +28,7 @@ function Mark({
 
 /** The tool every design file opens with. */
 export function CursorMark({
-  size = 22,
+  size = 26,
   ...props
 }: React.ComponentProps<"svg"> & { size?: number }) {
   return (
@@ -41,40 +41,55 @@ export function CursorMark({
   );
 }
 
-/** A vector anchor point, the kind you drag a curve out of. */
-export function NodeMark({
-  size = 18,
-  ...props
-}: React.ComponentProps<"svg"> & { size?: number }) {
-  return (
-    <Mark size={size} {...props}>
-      <path d="M12 2v20M2 12h20" stroke="currentColor" strokeWidth="1.4" />
-      <rect
-        x="8"
-        y="8"
-        width="8"
-        height="8"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-    </Mark>
-  );
-}
-
-/** The corner handle of a selection box. */
-export function FrameMark({
-  size = 20,
+/** A bezier curve with an anchor at each end — pen-tool work mid-edit. */
+export function PathMark({
+  size = 26,
   ...props
 }: React.ComponentProps<"svg"> & { size?: number }) {
   return (
     <Mark size={size} {...props}>
       <path
-        d="M22 3H3v19"
+        d="M3.5 19.5C3.5 11 9.5 4.5 20.5 4.5"
         stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="square"
+        strokeWidth="1.5"
+        strokeLinecap="round"
       />
+      <rect x="1.4" y="17.4" width="4.4" height="4.4" fill="currentColor" />
+      <rect x="18.3" y="2.4" width="4.4" height="4.4" fill="currentColor" />
+    </Mark>
+  );
+}
+
+/** An object with its selection handles showing. */
+export function SelectionMark({
+  size = 28,
+  ...props
+}: React.ComponentProps<"svg"> & { size?: number }) {
+  return (
+    <Mark size={size} {...props}>
+      <rect
+        x="4.5"
+        y="6.5"
+        width="15"
+        height="11"
+        stroke="currentColor"
+        strokeWidth="1.2"
+      />
+      {[
+        [4.5, 6.5],
+        [19.5, 6.5],
+        [4.5, 17.5],
+        [19.5, 17.5],
+      ].map(([x, y]) => (
+        <rect
+          key={`${x}-${y}`}
+          x={x - 1.6}
+          y={y - 1.6}
+          width="3.2"
+          height="3.2"
+          fill="currentColor"
+        />
+      ))}
     </Mark>
   );
 }

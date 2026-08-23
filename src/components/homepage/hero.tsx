@@ -1,5 +1,9 @@
 import { HeroVideo } from "@/components/homepage/hero-video";
-import { CursorMark, FrameMark, NodeMark } from "@/components/ui/design-marks";
+import {
+  CursorMark,
+  PathMark,
+  SelectionMark,
+} from "@/components/ui/design-marks";
 import { LiquidText } from "@/components/ui/liquid-text";
 import { PixelScatter } from "@/components/ui/pixel-scatter";
 import { WordsPullUpSegments } from "@/components/ui/words-pull-up";
@@ -58,19 +62,19 @@ export function Hero() {
             {/* Marks sit against the headline block, so they travel with it as
              * the type reflows rather than being pinned to the column. */}
             <div className="relative">
-              <CursorMark
+              <PathMark
                 data-entrance
-                className="absolute -top-1 right-[10%] hidden animate-pull-up text-brand/70 md:block"
+                className="absolute -top-11 left-[54%] hidden animate-pull-up text-hero-ink/35 md:block"
                 style={{ animationDelay: "1300ms" }}
               />
-              <NodeMark
+              <CursorMark
                 data-entrance
-                className="absolute bottom-[4%] left-[70%] hidden animate-pull-up text-hero-ink/25 md:block"
+                className="absolute top-[16%] right-[7%] hidden animate-pull-up text-brand/80 md:block"
                 style={{ animationDelay: "1450ms" }}
               />
-              <FrameMark
+              <SelectionMark
                 data-entrance
-                className="absolute -bottom-3 right-[4%] hidden animate-pull-up text-hero-ink/25 md:block"
+                className="absolute -bottom-1 right-[18%] hidden animate-pull-up text-hero-ink/30 md:block"
                 style={{ animationDelay: "1600ms" }}
               />
 
