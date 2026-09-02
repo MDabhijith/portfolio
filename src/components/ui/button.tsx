@@ -24,6 +24,9 @@ const buttonVariants = cva(
         /** Small dark pill used inside the floating nav ("Resume") */
         "pill-nav":
           "rounded-full bg-ink text-white font-body font-bold uppercase tracking-[0.5px] hover:bg-ink/85",
+        /** Same pill inverted, for the nav while it sits on a dark section */
+        "pill-nav-invert":
+          "rounded-full bg-white text-ink font-body font-bold uppercase tracking-[0.5px] hover:bg-white/85",
       },
       size: {
         default:

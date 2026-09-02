@@ -33,7 +33,7 @@ export default async function Image({
             display: "flex",
             fontSize: 24,
             fontWeight: 700,
-            color: "#1a7347",
+            color: "#2951e4",
             textTransform: "uppercase",
             letterSpacing: "0.04em",
           }}

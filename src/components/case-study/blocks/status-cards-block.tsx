@@ -14,14 +14,14 @@ export function StatusCardsBlock({
             key={item.label}
             className={`flex flex-col gap-4 rounded-md border p-6 sm:flex-row sm:gap-20 ${
               done
-                ? "border-primary-100 bg-[#ebf0eb]"
+                ? "border-primary-100 bg-[#f0f0f0]"
                 : "border-positive bg-white"
             }`}
           >
             <div className="flex items-center gap-2 sm:w-[150px] sm:shrink-0">
               <span
                 className={`flex size-7 shrink-0 items-center justify-center rounded-full ${
-                  done ? "bg-positive text-white" : "bg-[#ebf0eb] text-positive"
+                  done ? "bg-positive text-white" : "bg-[#f0f0f0] text-positive"
                 }`}
               >
                 {done ? (

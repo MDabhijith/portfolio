@@ -17,11 +17,11 @@ export function PilotSurveyChartBlock({
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 font-body text-sm font-semibold text-black">
-              <span className="size-2 rounded-sm bg-[#dad4c8]" aria-hidden="true" />
+              <span className="size-2 rounded-sm bg-[#d4d4d4]" aria-hidden="true" />
               Before pilot
             </span>
             <span className="flex items-center gap-1.5 font-body text-sm font-semibold text-black">
-              <span className="size-2 rounded-sm bg-[#00714b]" aria-hidden="true" />
+              <span className="size-2 rounded-sm bg-[#2c2c2c]" aria-hidden="true" />
               After pilot
             </span>
           </div>
@@ -37,7 +37,7 @@ export function PilotSurveyChartBlock({
                     {cat.before.toFixed(1)}
                   </span>
                   <div
-                    className="w-full rounded-t bg-[#dad4c8]"
+                    className="w-full rounded-t bg-[#d4d4d4]"
                     style={{ height: `${(cat.before / max) * 140}px` }}
                   />
                 </div>
@@ -46,7 +46,7 @@ export function PilotSurveyChartBlock({
                     {cat.after.toFixed(1)}
                   </span>
                   <div
-                    className="w-full rounded-t bg-[#00714b]"
+                    className="w-full rounded-t bg-[#2c2c2c]"
                     style={{ height: `${(cat.after / max) * 140}px` }}
                   />
                 </div>

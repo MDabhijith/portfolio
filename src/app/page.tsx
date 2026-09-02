@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/container";
 import { Reveal, StaggerReveal } from "@/components/ui/reveal";
 import { Hero } from "@/components/homepage/hero";
 import { SkillsMarquee } from "@/components/marquee/skills-marquee";
-import { SummarySection } from "@/components/homepage/summary-section";
+import { AboutSection } from "@/components/homepage/about-section";
 import { ExperienceSection } from "@/components/homepage/experience-section";
 import { SelectedWorkSection } from "@/components/homepage/selected-work-section";
 import { CtaSection } from "@/components/homepage/cta-section";
@@ -41,14 +41,14 @@ export default function Home() {
         <Hero />
         <SkillsMarquee />
         <Container className="flex flex-col gap-24 py-20 sm:gap-32 sm:py-28 lg:gap-36 lg:py-32">
-          <Reveal>
-            <SummarySection />
-          </Reveal>
+          {/* Reveals its own heading — the cards animate individually. */}
+          <SelectedWorkSection />
           <Reveal>
             <ExperienceSection />
           </Reveal>
-          {/* Reveals its own heading — the cards animate individually. */}
-          <SelectedWorkSection />
+          <Reveal>
+            <AboutSection />
+          </Reveal>
           <Reveal>
             <CtaSection />
           </Reveal>

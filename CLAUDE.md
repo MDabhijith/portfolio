@@ -106,10 +106,14 @@ All tokens live in `src/app/globals.css`, defined once in `@theme inline` (Tailw
 **Color** — two distinct gray palettes exist because Figma itself uses two:
 - `ink` / `ink-secondary` / `ink-tertiary` — homepage text
 - `cs-ink` / `cs-body` / `cs-muted` / `cs-label` — case-study text (slightly warmer, e.g. `#1b1a17` not `#1f1f1f`)
-- `brand` (`#1a7347`, homepage accent) vs. `positive` (`#02542d`, case-study section-number accent) — these are visually similar greens but are *different, real* colors in the source file. Don't merge them.
+- `brand` (`#2951e4`, **primary** — blue) + `brand-secondary` (`#6a31c0`, **secondary** — purple). The two ends of the reference gradient, used as a pair (blue leads, purple accents) and **only on the homepage/hero surface**: the hero ground and the CTA halo. Don't reach for them inside a case study.
+- **Both heroes share one surface.** The homepage hero and the case-study banner use `.hero-dark` and carry `data-nav-dark`, which is what flips the floating nav to its dark glass. Add that attribute to any new dark section and the nav follows automatically.
+- `positive` is `var(--cs-ink)` — **case-study content is deliberately monochrome.** Project content carries no brand colour; the ink scale plus the work's own screenshots supply all of it. If you add a case-study block, tone it with `cs-ink` / `cs-body` / `cs-muted` / `cs-label`, never with `brand` or `brand-secondary`. `danger` (red) survives as a semantic state colour for GAP/negative labels, and the browser-chrome mockup keeps its macOS traffic-light dots — those are illustration, not brand.
+- **The palette has moved twice** — originally green (`#1a7347` / `#02542d`), then purple, now this blue/purple pair. Any green in Figma should be read as its current counterpart, never restored.
+- **Every accent pairing here is AA-verified**, not eyeballed. `brand` is 6.2:1 on white and as a button ground with white text; `positive` is 7.5:1; `positive` on `tag-positive-bg` is 5.7:1; both callout tones clear 6:1 on `dark-callout`. If you change any of these values, re-check the pairing it sits in before shipping — several of them (`dark-callout-muted` especially) have historically landed just under 4.5:1.
 - `primary-200`..`primary-500` — a separate Figma "Colors/Primary" ramp used only in `MetaRow` and `NextProjectCard`.
 - `footer` / `footer-foreground` — the dark footer section's own palette.
-- `surface` (`#f1efe9`, neutral image-placeholder bg) vs. `surface-tint` (`#eaf3ec`, the mint Experience-card bg).
+- `surface` (`#f1efe9`, neutral image-placeholder bg) vs. `surface-tint` (`#e7ebfc`, pale periwinkle — brand-tinted, so homepage only). The CTA halo sweeps `brand` → `brand-secondary`.
 
 **Type scale** — named tokens (`text-display`, `text-h3`..`text-h6`, `text-body-lg`, `text-body`, `text-body-sm`, `text-caption`) exist and are used for headings. Body copy throughout uses **arbitrary values** for Figma's "humanized" sizes (12.5px, 13.5px, 14.5px, 15px, 16.5px) that don't map to the named scale — this is an intentional, documented decision (see CHANGELOG Phase 6), not an oversight. If you add new body text, matching an existing arbitrary size (`text-[13.5px]` etc.) is more consistent with the rest of the codebase than inventing a new one.
 

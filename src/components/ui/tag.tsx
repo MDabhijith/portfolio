@@ -15,10 +15,14 @@ const tagVariants = cva(
         tint: "bg-brand/7 text-brand",
         /** Outlined neutral pill — skill tags ("Product Design") */
         outline: "border border-line text-ink-secondary font-normal",
+        /** Letterspaced mono chip on a soft ground — case-study card tags.
+         * Squared off rather than a pill, so it reads as a label not a badge. */
+        mono: "rounded-md bg-surface font-mono font-normal uppercase tracking-[0.1em] text-ink-secondary",
       },
       size: {
         sm: "px-3 py-[6px] text-xs",
         md: "px-[15px] py-[7px] text-[12.5px]",
+        lg: "px-4 py-2.5 text-[12px] sm:text-[13px]",
       },
     },
     defaultVariants: {

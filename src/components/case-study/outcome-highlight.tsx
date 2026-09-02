@@ -1,7 +1,9 @@
 import type { OutcomeHighlight as OutcomeHighlightData } from "@/lib/case-studies/types";
 
 /**
- * Matches Figma node 314:611 exactly: bg #ebf0eb, border #b0cabb, radius 20px (Radius/5).
+ * Matches Figma node 314:611, with its mint restated as neutral — case-study
+ * content carries no brand colour:
+ * bg #f5f5f5, border #e0e0e0, radius 20px (Radius/5).
  * One deliberate deviation: Figma's caption color (#767676) measures 3.94:1 against this
  * background, below the 4.5:1 AA minimum — darkened to #626262 (5.29:1) to stay accessible.
  */
@@ -11,7 +13,7 @@ export function OutcomeHighlight({
   stats,
 }: OutcomeHighlightData) {
   return (
-    <div className="flex flex-col gap-[21px] rounded-xl border border-[#b0cabb] bg-[#ebf0eb] p-8 sm:p-16">
+    <div className="flex flex-col gap-[21px] rounded-xl border border-[#e0e0e0] bg-[#f5f5f5] p-8 sm:p-16">
       <div className="flex flex-col gap-[10px]">
         <p className="font-body text-body-sm text-positive">{eyebrow}</p>
         <p className="max-w-[837px] font-heading text-2xl font-semibold text-black sm:text-h5">

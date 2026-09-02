@@ -55,7 +55,7 @@ export default function RootLayout({
           <style>{`[data-reveal],[data-reveal-stagger] > *{opacity:1 !important;translate:none !important;scale:none !important}[data-splash]{display:none !important}body:has([data-splash]) [data-entrance]{animation-play-state:running !important}`}</style>
         </noscript>
       </head>
-      <body className="min-h-full flex flex-col bg-cs-paper text-ink font-body">
+      <body className="min-h-full flex flex-col bg-paper text-ink font-body">
         <a
           href="#main-content"
           className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:top-4 focus-visible:left-4 focus-visible:z-[100] focus-visible:rounded-full focus-visible:bg-ink focus-visible:px-5 focus-visible:py-3 focus-visible:text-sm focus-visible:font-medium focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Tag } from "@/components/ui/tag";
-import { ArrowRight } from "lucide-react";
 
 export interface CaseStudyCardProps {
   href: string;
@@ -36,15 +35,15 @@ export function CaseStudyCard({
     <Link
       href={href}
       data-cursor-label="View case study"
-      className="group/card block overflow-hidden rounded-3xl border border-line bg-white outline-none transition-shadow duration-[var(--duration-base)] ease-[var(--ease-out)] hover:shadow-[var(--shadow-elevation)] focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+      className="group/card block rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-4"
     >
-      {/* The mobile art is framed at 16:11 — the 1118/408 desktop ratio
-       * collapses to a letterbox sliver at phone widths. */}
+      {/* The mobile art is framed at 4:3 — the 12/5 desktop ratio collapses to
+       * a letterbox sliver at phone widths. */}
       <div
         className={
           mobileImage
-            ? "relative aspect-[16/11] w-full overflow-hidden sm:aspect-[1118/408]"
-            : "relative aspect-[1118/408] w-full overflow-hidden"
+            ? "relative aspect-4/3 w-full overflow-hidden rounded-lg sm:aspect-[12/5]"
+            : "relative aspect-[12/5] w-full overflow-hidden rounded-lg"
         }
       >
         {coverImage ? (
@@ -80,46 +79,41 @@ export function CaseStudyCard({
             sizes="(min-width: 1024px) 1120px, 100vw"
             className={
               coverImage
-                ? "object-contain scale-[1.08] object-center drop-shadow-2xl transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/card:scale-[1.1] motion-reduce:group-hover/card:scale-[1.08]"
+                ? "object-contain scale-[1.08] object-center transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/card:scale-[1.1] motion-reduce:group-hover/card:scale-[1.08]"
                 : "object-cover transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/card:scale-[1.02] motion-reduce:group-hover/card:scale-100"
             }
           />
         )}
       </div>
 
-      <div className="flex flex-col items-start gap-5 p-6 sm:p-11">
-        <div className="flex flex-wrap items-center gap-3">
-          <Tag variant="tint" size="sm">
-            {category}
-          </Tag>
-          <span className="font-body text-[12.5px] text-ink-tertiary">
+      {/* No card padding: the copy hangs directly off the image's left edge,
+       * so the image and the text share one alignment rather than the text
+       * being inset inside a box. */}
+      <div className="flex flex-col items-start gap-4 pt-5 sm:pt-6">
+        {/* Chips lead the row, the client and year close it — the two ends of
+         * one rule rather than a stacked meta block. Below sm the chips wrap
+         * onto two lines and push the meta down, so the phone gets the meta
+         * line on its own instead. */}
+        <div className="flex w-full flex-wrap items-center justify-between gap-x-4 gap-y-3">
+          <div className="hidden flex-wrap gap-2 sm:flex">
+            {[category, ...tags].map((tag) => (
+              <Tag key={tag} variant="mono" size="sm">
+                {tag}
+              </Tag>
+            ))}
+          </div>
+          <span className="font-mono text-[11px] tracking-[0.16em] whitespace-nowrap text-ink-tertiary uppercase">
             {client} · {year}
           </span>
         </div>
 
-        <h3 className="font-heading text-[19px] font-semibold leading-[1.3] text-ink sm:text-[28px] sm:leading-tight">
+        <h3 className="font-heading text-[22px] leading-[1.2] font-semibold tracking-[-0.02em] text-ink sm:text-[28px] lg:text-[32px]">
           {title}
         </h3>
 
-        <p className="font-body text-[14.5px] leading-[1.65] text-ink-tertiary sm:text-[15px] sm:leading-relaxed">
+        <p className="max-w-[68ch] font-body text-[15px] leading-[1.55] text-ink-tertiary sm:text-[17px] lg:text-[18px]">
           {description}
         </p>
-
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <Tag key={tag} variant="outline" size="sm">
-              {tag}
-            </Tag>
-          ))}
-        </div>
-
-        <span className="inline-flex items-center gap-1.5 font-body text-[13.5px] font-semibold text-ink">
-          Read case study
-          <ArrowRight
-            aria-hidden="true"
-            className="size-[15px] transition-transform duration-[var(--duration-fast)] ease-[var(--ease-out)] group-hover/card:translate-x-1 motion-reduce:group-hover/card:translate-x-0"
-          />
-        </span>
       </div>
     </Link>
   );

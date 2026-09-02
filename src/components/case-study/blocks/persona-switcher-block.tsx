@@ -84,7 +84,7 @@ export function PersonaSwitcherBlock({
         className="overflow-hidden rounded-xl border border-line bg-surface"
       >
         <div className="flex items-center gap-4 border-b border-line bg-white p-6 sm:gap-5 sm:p-8">
-          <div className="relative flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-surface-tint sm:size-20">
+          <div className="relative flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-surface sm:size-20">
             {active.photo ? (
               <Image
                 src={active.photo.src}

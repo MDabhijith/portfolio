@@ -25,10 +25,12 @@
   --color-hero-ink: var(--hero-ink);
   --color-hero-body: var(--hero-body);
   --color-hero-line: var(--hero-line);
+  --color-hero-accent: var(--hero-accent);
 
   /* Brand accents */
   --color-brand: var(--brand);
   --color-positive: var(--positive);
+  --color-brand-secondary: var(--brand-secondary);
   --color-danger: var(--danger);
 
   /* Case-study prose palette (Figma runs a slightly warmer, distinct gray
@@ -184,24 +186,25 @@
   }
 }
 
-/* Hero ground: the cream lift from the reference, with a green breath pulled
-   into the bottom-left and top-right corners. Layered here rather than as an
-   arbitrary utility because three stacked gradients are unreadable inline —
-   and the green is --brand, not a new literal. */
-.hero-wash {
+/* Hero ground: near-black lifted along the top-left, carrying the reference
+   gradient's own two hues — primary blue into one corner, secondary purple
+   into the opposite one. Layered here rather than inline because three stacked
+   gradients are unreadable as arbitrary utilities, and because the hues are
+   --brand and --positive rather than new literals. */
+.hero-dark {
   background-color: var(--hero-bg);
   background-image:
     radial-gradient(
-      68% 52% at 0% 100%,
-      color-mix(in srgb, var(--brand) 16%, transparent) 0%,
-      transparent 70%
+      74% 58% at 4% 0%,
+      color-mix(in srgb, var(--brand) 26%, transparent) 0%,
+      transparent 66%
     ),
     radial-gradient(
-      58% 48% at 100% 0%,
-      color-mix(in srgb, var(--brand) 13%, transparent) 0%,
+      66% 54% at 100% 100%,
+      color-mix(in srgb, var(--brand-secondary) 22%, transparent) 0%,
       transparent 70%
     ),
-    radial-gradient(120% 85% at 12% 0%, var(--hero-lift) 0%, var(--hero-bg) 58%);
+    linear-gradient(166deg, var(--hero-lift) 0%, var(--hero-bg) 58%);
 }
 
 /* Mesh dot field: a dot grid faded out radially so it dissolves into the page
@@ -224,6 +227,46 @@
   );
 }
 
+/* About statement card. Near-black, with a low breath of each brand hue in
+   opposite corners — the same restraint as the hero ground rather than the
+   saturated pair, which reads as glare across a panel this size. */
+.about-card {
+  background-color: var(--hero-bg);
+  background-image:
+    radial-gradient(
+      78% 62% at 4% 0%,
+      color-mix(in srgb, var(--brand) 20%, transparent) 0%,
+      transparent 68%
+    ),
+    radial-gradient(
+      68% 58% at 100% 100%,
+      color-mix(in srgb, var(--brand-secondary) 17%, transparent) 0%,
+      transparent 72%
+    ),
+    linear-gradient(160deg, var(--hero-lift) 0%, var(--hero-bg) 62%);
+}
+
+/* Detail tiles. The card's own ground lifted with a little white and a touch
+   more hue, so they read as raised panes of the same dark surface rather than
+   as a second colour. */
+.about-tile {
+  background-image: linear-gradient(
+    150deg,
+    color-mix(
+        in srgb,
+        white 7%,
+        color-mix(in srgb, var(--brand) 22%, var(--hero-bg))
+      )
+      0%,
+    color-mix(
+        in srgb,
+        white 5%,
+        color-mix(in srgb, var(--brand-secondary) 18%, var(--hero-bg))
+      )
+      100%
+  );
+}
+
 /* Conic ring that sweeps around the CTA pill. */
 @keyframes halo-spin {
   to {
@@ -239,38 +282,17 @@
     from 0deg,
     transparent 0deg,
     var(--brand) 60deg,
-    var(--surface-tint) 130deg,
+    var(--brand-secondary) 130deg,
     transparent 200deg
   );
   animation: halo-spin 4s linear infinite;
 }
 
-/* Selected Work sits on its own band. The cards are white on a near-white
-   page, so their edges were doing all the work of separating them; a slightly
-   darker ground gives them something to sit on instead.
-
-   The band reaches the viewport edges from inside the padded container. The
-   overhang that 50vw creates on platforms drawing a classic scrollbar is
-   contained by `overflow-x: clip` on the body — clip rather than hidden, since
-   clip makes no scroll container and so leaves the sticky case-study nav
-   working. It cannot go on the band itself: that would clip the very bleed it
-   is meant to allow. */
+/* Contains the full-bleed overhang that `calc(50% - 50vw)` creates on
+   platforms drawing a classic scrollbar — clip rather than hidden, since clip
+   makes no scroll container and so leaves the sticky case-study nav working. */
 body {
   overflow-x: clip;
-}
-
-.work-band {
-  position: relative;
-  isolation: isolate;
-}
-
-.work-band::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset-block: calc(-1 * var(--work-band-bleed, 3.5rem));
-  inset-inline: calc(50% - 50vw);
-  background-color: var(--surface);
 }
 
 /* Fine-grained film grain, generated rather than shipped as an image asset. */
@@ -286,20 +308,30 @@ body {
   --line: #e8eaed;
   --paper: #ffffff;
   --surface: #f1efe9;
-  --surface-tint: #eaf3ec;
+  --surface-tint: #e7ebfc;
   /* Warm paper-toned wash behind the frosted Summary cards. */
   --accent-sand: #f2eee5;
   --accent-shell: #e7e2d6;
 
-  /* Hero split layout */
-  --hero-bg: #f4f4e9;
-  --hero-lift: #fbfbf3;
-  --hero-ink: #141410;
-  --hero-body: #4b4a42;
-  --hero-line: #dededa;
+  /* Hero split layout — a dark section of its own, not a dark *mode*: these
+     five are read only by the hero, so they carry its inversion without the
+     rest of the site needing a theme. --hero-accent exists because --brand is
+     a mid violet that all but vanishes against --hero-bg. */
+  --hero-bg: #0a0b12;
+  --hero-lift: #141827;
+  --hero-ink: #eef0f8;
+  --hero-body: #9a9db0;
+  --hero-line: #242a3d;
+  --hero-accent: #8ea2ff;
 
-  --brand: #1a7347;
-  --positive: #02542d;
+  --brand: #2951e4;
+  /* Secondary half of the reference gradient. Lives separately from --positive
+     because the brand pair is a homepage/hero device — case-study content is
+     deliberately monochrome. */
+  --brand-secondary: #6a31c0;
+  /* Case-study accent. Ink rather than a hue: project content carries no brand
+     colour, only the ink scale, so the work is what supplies the colour. */
+  --positive: var(--cs-ink);
   --danger: #900b09;
 
   --cs-ink: #1b1a17;
@@ -318,13 +350,13 @@ body {
   --tag-neutral-bg: #e9e9e9;
   --tag-neutral-fg: #5a5a5a;
   --tag-negative-bg: #fbe4e2;
-  --tag-positive-bg: #dde9e2;
+  --tag-positive-bg: #e4e4e4;
 
-  --dark-callout: #012c1d;
-  --dark-callout-eyebrow: #81ad97;
-  /* Figma's literal #719282 measures 4.45:1 here, just under the 4.5:1 AA
-     minimum for normal text — lightened slightly to 5.12:1. */
-  --dark-callout-muted: #7c9d8c;
+  --dark-callout: #161616;
+  --dark-callout-eyebrow: #a8a8a8;
+  /* 8.3:1 against --dark-callout — this tone has landed under AA twice, so
+     re-measure it if --dark-callout ever changes. */
+  --dark-callout-muted: #b0b0b0;
   --dark-callout-label: #e9e9e9;
 
   --footer: #0f0f0f;

@@ -31,8 +31,8 @@ export function TestimonialCardBlock({
         </p>
 
         <div className="flex items-center gap-3">
-          <div className="flex size-[53px] shrink-0 items-center justify-center rounded-full bg-[#154231]">
-            <span className="font-body text-base font-semibold text-[#7ecca6]">
+          <div className="flex size-[53px] shrink-0 items-center justify-center rounded-full bg-[#2a2a2a]">
+            <span className="font-body text-base font-semibold text-[#c8c8c8]">
               {initials}
             </span>
           </div>
@@ -46,22 +46,22 @@ export function TestimonialCardBlock({
           <div className="flex items-center gap-4">
             <span
               aria-hidden="true"
-              className="flex size-10 items-center justify-center rounded-full border border-[#3b574a] text-dark-callout-label"
+              className="flex size-10 items-center justify-center rounded-full border border-[#3a3a3a] text-dark-callout-label"
             >
               <ArrowIcon className="rotate-180" />
             </span>
             <span
               aria-hidden="true"
-              className="flex size-10 items-center justify-center rounded-full border border-[#3b574a] text-dark-callout-label"
+              className="flex size-10 items-center justify-center rounded-full border border-[#3a3a3a] text-dark-callout-label"
             >
               <ArrowIcon />
             </span>
           </div>
           <div className="flex items-center gap-1" aria-hidden="true">
             <span className="h-1.5 w-4 rounded-full bg-dark-callout-eyebrow" />
-            <span className="size-1.5 rounded-full bg-[#486255]" />
-            <span className="size-1.5 rounded-full bg-[#486255]" />
-            <span className="size-1.5 rounded-full bg-[#486255]" />
+            <span className="size-1.5 rounded-full bg-[#4a4a4a]" />
+            <span className="size-1.5 rounded-full bg-[#4a4a4a]" />
+            <span className="size-1.5 rounded-full bg-[#4a4a4a]" />
           </div>
         </div>
       </div>

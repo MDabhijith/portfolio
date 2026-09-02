@@ -22,7 +22,7 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <>
       <SiteNav />
-      <main id="main-content" className="flex-1 bg-cs-paper">
+      <main id="main-content" className="flex-1 bg-paper">
         <StaggerReveal />
         <CaseStudyBanner caseStudy={caseStudy} />
 
@@ -32,7 +32,10 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
           <div className="flex flex-col gap-16 lg:flex-row lg:gap-16">
             <CaseStudySectionNav items={navItems} />
 
-            <div className="flex min-w-0 flex-1 flex-col gap-20 sm:gap-28">
+            {/* The column matches the hero frame's width, which is far wider than
+                a readable measure — so running text is capped here, once, while
+                images, galleries and comparison grids keep the full width. */}
+            <div className="flex min-w-0 flex-1 flex-col gap-20 [&_p]:max-w-[68ch] sm:gap-28">
               {caseStudy.sections.map((section, index) => (
                 <Fragment key={section.id}>
                   {/* Key Decisions sit just before the closing section (Impact), matching Figma's order. */}
