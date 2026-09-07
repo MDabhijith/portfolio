@@ -17,7 +17,7 @@ const tagVariants = cva(
         outline: "border border-line text-ink-secondary font-normal",
         /** Letterspaced mono chip on a soft ground — case-study card tags.
          * Squared off rather than a pill, so it reads as a label not a badge. */
-        mono: "rounded-md bg-surface font-mono font-normal uppercase tracking-[0.1em] text-ink-secondary",
+        mono: "rounded-md bg-muted font-mono font-normal uppercase tracking-[0.1em] text-ink-secondary",
       },
       size: {
         sm: "px-3 py-[6px] text-xs",

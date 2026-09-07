@@ -1,6 +1,6 @@
-import { Schibsted_Grotesk, Hanken_Grotesk } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 
-export const schibstedGrotesk = Schibsted_Grotesk({
+export const schibstedGrotesk = Inter({
   subsets: ["latin"],
   variable: "--font-heading",
   weight: "variable",
@@ -8,10 +8,17 @@ export const schibstedGrotesk = Schibsted_Grotesk({
   display: "swap",
 });
 
-export const hankenGrotesk = Hanken_Grotesk({
+export const hankenGrotesk = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   weight: "variable",
-  style: ["normal"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+export const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: "variable",
   display: "swap",
 });

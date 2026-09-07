@@ -21,7 +21,7 @@ export function PilotSurveyChartBlock({
               Before pilot
             </span>
             <span className="flex items-center gap-1.5 font-body text-sm font-semibold text-black">
-              <span className="size-2 rounded-sm bg-[#2c2c2c]" aria-hidden="true" />
+              <span className="size-2 rounded-sm bg-brand" aria-hidden="true" />
               After pilot
             </span>
           </div>
@@ -46,7 +46,7 @@ export function PilotSurveyChartBlock({
                     {cat.after.toFixed(1)}
                   </span>
                   <div
-                    className="w-full rounded-t bg-[#2c2c2c]"
+                    className="w-full rounded-t bg-brand"
                     style={{ height: `${(cat.after / max) * 140}px` }}
                   />
                 </div>

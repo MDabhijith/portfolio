@@ -11,6 +11,7 @@ import { CalloutBlock } from "./callout-block";
 import { QaPanelBlock } from "./qa-panel-block";
 import { SystemComparisonBlock } from "./system-comparison-block";
 import { DarkCalloutBlock } from "./dark-callout-block";
+import { ScopeDecisionsBlock } from "./scope-decisions-block";
 import { BrowserGalleryBlock } from "./browser-gallery-block";
 import { ApproachGridBlock } from "./approach-grid-block";
 import { ModuleHeaderBlock } from "./module-header-block";
@@ -28,6 +29,7 @@ import { VideoBlock } from "./video-block";
 import { WorkflowTimelineBlock } from "./workflow-timeline-block";
 import { BeforeAfterBlock } from "./before-after-block";
 import { PersonaSwitcherBlock } from "./persona-switcher-block";
+import { ZoomableImageBlock } from "./zoomable-image-block";
 
 /** Renders a single case-study content block by its `type` discriminant. */
 export function BlockRenderer({ block }: { block: ContentBlock }) {
@@ -80,9 +82,11 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
         />
       );
     case "systemComparison":
-      return <SystemComparisonBlock items={block.items} />;
+      return <SystemComparisonBlock items={block.items} image={block.image} />;
     case "darkCallout":
       return <DarkCalloutBlock eyebrow={block.eyebrow} rows={block.rows} />;
+    case "scopeDecisions":
+      return <ScopeDecisionsBlock items={block.items} />;
     case "browserGallery":
       return <BrowserGalleryBlock images={block.images} />;
     case "approachGrid":
@@ -155,6 +159,8 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
           aspect={block.aspect}
         />
       );
+    case "zoomableImage":
+      return <ZoomableImageBlock image={block.image} />;
     default:
       return null;
   }

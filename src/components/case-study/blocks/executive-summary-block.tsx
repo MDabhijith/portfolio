@@ -6,11 +6,11 @@ export function ExecutiveSummaryBlock({
   description: string;
 }) {
   return (
-    <div className="flex flex-col gap-4 rounded-xl bg-dark-callout p-8 sm:p-10">
-      <p className="font-body text-lg font-semibold text-dark-callout-label">
+    <div className="flex flex-col gap-4 rounded-xl border border-line bg-gradient-to-br from-brand/10 via-white to-brand-secondary/10 p-8 sm:p-10">
+      <p className="font-body text-lg font-semibold text-cs-ink">
         {title}
       </p>
-      <p className="font-body text-sm leading-relaxed text-dark-callout-muted">
+      <p className="font-body text-sm leading-relaxed text-cs-muted">
         {description}
       </p>
     </div>

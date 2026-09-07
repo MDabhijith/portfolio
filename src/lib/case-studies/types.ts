@@ -49,7 +49,13 @@ export type ContentBlock =
   | { type: "quote"; quote: string; attribution: string }
   | {
       type: "insightCards";
-      items: { number: string; title: string; description: string }[];
+      items: {
+        number: string;
+        title: string;
+        description: string;
+        /** Optional illustration shown above the card content (368/247 aspect). */
+        image?: { src: string; alt: string };
+      }[];
     }
   | {
       /** Small colored pill tags (KEEP / REPLACE / OWN, RETIRE / BUILD / EXTEND, or 01/02/03), wrapped in one bordered card. */
@@ -87,6 +93,9 @@ export type ContentBlock =
         goals: string[];
         frustrations: string[];
         quote: string;
+        /** When present, the panel renders this full designed card image in
+         * place of the structured layout above. */
+        cardImage?: ImageRef & { aspect?: string };
       }[];
     }
   | {
@@ -100,12 +109,30 @@ export type ContentBlock =
       /** Card-per-row HELD/GAP system comparison (e.g. "What a single job required across QuickBooks / Roofr / Excel"). */
       type: "systemComparison";
       items: { name: string; subtitle: string; held: string; gap: string }[];
+      /** Optional designed illustration replacing the built-in table (1208/696 aspect). */
+      image?: { src: string; alt: string };
     }
   | {
       /** Dark full-bleed card for "THE CALL THAT SHAPED IT" style before/after decision rows. */
       type: "darkCallout";
       eyebrow: string;
       rows: { label: string; before: string; after: string }[];
+    }
+  | {
+      /** A small number (2–3) of distilled key decisions: a card per item
+       * with a pill label, an optional image/illustration, description text,
+       * and a "prompt pill" title overlapping the bottom edge. Replaces
+       * stacking a full taggedList + darkCallout when the section only
+       * needs its most important calls, not every point. */
+      type: "scopeDecisions";
+      items: {
+        tag: string;
+        tone: "neutral" | "positive" | "negative";
+        title: string;
+        description: string;
+        /** Optional screenshot/illustration shown inside the card, above the description. */
+        image?: ImageRef;
+      }[];
     }
   | {
       /** Figma's "Sheets" component — browser-chrome screenshots on a surface card, cycled via prev/next and dots. */
@@ -197,6 +224,11 @@ export type ContentBlock =
         description: string;
         tags: string[];
       }[];
+    }
+  | {
+      /** A large designed diagram (e.g. a full user-flow/process map) shown in a fixed-height viewport the reader can zoom/pan inside, so the outer card stays on-screen while the detail underneath can be explored. */
+      type: "zoomableImage";
+      image: ImageRef;
     };
 
 /** Silent, muted autoplay-loop screencast standing in for a static screenshot. */

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { schibstedGrotesk, hankenGrotesk } from "@/lib/fonts";
+import { schibstedGrotesk, hankenGrotesk, geistMono } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site-config";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { CustomCursor } from "@/components/ui/custom-cursor";
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${schibstedGrotesk.variable} ${hankenGrotesk.variable} h-full antialiased`}
+      className={`${schibstedGrotesk.variable} ${hankenGrotesk.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
         {/* Without JS the reveal observer never runs, so unhide everything — and

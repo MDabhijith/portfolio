@@ -40,17 +40,17 @@ export function CaseStudySectionNav({ items }: { items: SectionNavItem[] }) {
       aria-label="Case study sections"
       className="hidden lg:sticky lg:top-32 lg:block lg:h-fit lg:w-[145px] lg:shrink-0"
     >
-      <ul className="flex flex-col gap-3 border-l border-line pl-4">
+      <ul className="flex flex-col gap-2.5">
         {items.map((item) => (
           <li key={item.id}>
             <a
               href={`#${item.id}`}
               aria-current={activeId === item.id ? "location" : undefined}
               className={cn(
-                "font-body text-sm outline-none transition-colors duration-[var(--duration-fast)] hover:text-cs-ink focus-visible:underline",
+                "font-body text-xs outline-none transition-colors duration-[var(--duration-fast)] hover:text-cs-ink focus-visible:underline",
                 activeId === item.id
-                  ? "font-semibold text-positive"
-                  : "text-cs-label"
+                  ? "font-medium text-cs-ink"
+                  : "text-ink/25"
               )}
             >
               {item.label}

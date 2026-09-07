@@ -42,8 +42,8 @@ export function CaseStudyCard({
       <div
         className={
           mobileImage
-            ? "relative aspect-4/3 w-full overflow-hidden rounded-lg sm:aspect-[12/5]"
-            : "relative aspect-[12/5] w-full overflow-hidden rounded-lg"
+            ? "relative aspect-4/3 w-full overflow-hidden rounded-lg border border-line bg-surface sm:aspect-[16/10]"
+            : "relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-line bg-surface"
         }
       >
         {coverImage ? (
@@ -67,7 +67,7 @@ export function CaseStudyCard({
               loading={priority ? "eager" : "lazy"}
               decoding="async"
               fetchPriority={priority ? "high" : "auto"}
-              className="absolute inset-0 size-full object-cover transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/card:scale-[1.02] motion-reduce:group-hover/card:scale-100"
+              className="absolute inset-0 size-full object-contain transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/card:scale-[1.02] motion-reduce:group-hover/card:scale-100"
             />
           </picture>
         ) : (
@@ -80,7 +80,7 @@ export function CaseStudyCard({
             className={
               coverImage
                 ? "object-contain scale-[1.08] object-center transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/card:scale-[1.1] motion-reduce:group-hover/card:scale-[1.08]"
-                : "object-cover transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/card:scale-[1.02] motion-reduce:group-hover/card:scale-100"
+                : "object-contain transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/card:scale-[1.02] motion-reduce:group-hover/card:scale-100"
             }
           />
         )}
@@ -90,30 +90,25 @@ export function CaseStudyCard({
        * so the image and the text share one alignment rather than the text
        * being inset inside a box. */}
       <div className="flex flex-col items-start gap-4 pt-5 sm:pt-6">
-        {/* Chips lead the row, the client and year close it — the two ends of
-         * one rule rather than a stacked meta block. Below sm the chips wrap
-         * onto two lines and push the meta down, so the phone gets the meta
-         * line on its own instead. */}
-        <div className="flex w-full flex-wrap items-center justify-between gap-x-4 gap-y-3">
-          <div className="hidden flex-wrap gap-2 sm:flex">
-            {[category, ...tags].map((tag) => (
-              <Tag key={tag} variant="mono" size="sm">
-                {tag}
-              </Tag>
-            ))}
-          </div>
-          <span className="font-mono text-[11px] tracking-[0.16em] whitespace-nowrap text-ink-tertiary uppercase">
-            {client} · {year}
-          </span>
-        </div>
+        <span className="font-mono text-[11px] tracking-[0.16em] whitespace-nowrap text-ink-tertiary uppercase">
+          {client} · {year}
+        </span>
 
-        <h3 className="font-heading text-[22px] leading-[1.2] font-semibold tracking-[-0.02em] text-ink sm:text-[28px] lg:text-[32px]">
+        <h3 className="font-heading text-[20px] leading-[1.2] font-semibold tracking-[-0.02em] text-ink lowercase first-letter:uppercase sm:text-[22px] lg:text-[24px]">
           {title}
         </h3>
 
         <p className="max-w-[68ch] font-body text-[15px] leading-[1.55] text-ink-tertiary sm:text-[17px] lg:text-[18px]">
           {description}
         </p>
+
+        <div className="flex flex-wrap gap-2">
+          {[category, ...tags].map((tag) => (
+            <Tag key={tag} variant="mono" size="sm">
+              {tag}
+            </Tag>
+          ))}
+        </div>
       </div>
     </Link>
   );

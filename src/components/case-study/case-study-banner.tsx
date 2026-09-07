@@ -29,7 +29,7 @@ export function CaseStudyBanner({ caseStudy }: { caseStudy: CaseStudy }) {
             </span>{" "}
             {caseStudy.category}
           </p>
-          <h1 className="max-w-[900px] font-heading text-3xl leading-tight font-semibold text-hero-ink sm:text-h3">
+          <h1 className="max-w-[900px] font-heading text-2xl leading-tight text-hero-ink sm:text-[32px]">
             {caseStudy.title}
           </h1>
           <p className="max-w-[68ch] font-body text-base leading-relaxed text-hero-body sm:text-[17px]">

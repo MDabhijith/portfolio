@@ -8,8 +8,8 @@ export function MetaRow({ items }: { items: MetaItem[] }) {
   return (
     <dl className="flex flex-wrap gap-x-16 gap-y-6">
       {items.map((item) => (
-        <div key={item.label} className="flex flex-col gap-1">
-          <dt className="font-body text-lg font-semibold text-primary-500">
+        <div key={item.label} className="flex flex-col gap-1.5">
+          <dt className="font-mono text-xs tracking-[0.16em] text-primary-500 uppercase">
             {item.label}
           </dt>
           <dd className="font-body text-base text-primary-400">

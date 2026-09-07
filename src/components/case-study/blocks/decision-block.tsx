@@ -5,18 +5,30 @@ export function DecisionBlock({ items }: { items: Decision[] }) {
   return (
     <div data-reveal-stagger className="flex flex-col gap-14">
       {items.map((item) => (
-        <div key={item.title} className="flex flex-col gap-4">
+        <div key={item.title} className="flex flex-col gap-5">
           <h3 className="font-heading text-2xl font-semibold text-cs-ink">
             {item.title}
           </h3>
-          <p className="font-body text-[15px] leading-relaxed text-cs-body">
-            <span className="font-semibold text-cs-ink">Problem. </span>
-            {item.problem}
-          </p>
-          <p className="font-body text-[15px] leading-relaxed text-cs-body">
-            <span className="font-semibold text-cs-ink">Decision. </span>
-            {item.decision}
-          </p>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="flex flex-col gap-2 rounded-lg border border-line bg-gradient-to-br from-danger/5 to-white p-6">
+              <p className="font-body text-sm font-semibold text-danger">
+                Problem
+              </p>
+              <p className="font-body text-[15px] leading-relaxed text-cs-body">
+                {item.problem}
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 rounded-lg border border-line bg-gradient-to-br from-brand/5 to-white p-6">
+              <p className="font-body text-sm font-semibold text-brand">
+                Decision
+              </p>
+              <p className="font-body text-[15px] leading-relaxed text-cs-body">
+                {item.decision}
+              </p>
+            </div>
+          </div>
+
           {item.video ? (
             <div
               className="relative mt-2 w-full overflow-hidden rounded-xl border border-line bg-surface"

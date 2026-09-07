@@ -14,13 +14,10 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn("flex flex-col gap-2", className)}>
-      <div className="flex items-center gap-1">
-        <span className="font-body text-lg font-semibold text-positive">
-          {number}
-        </span>
-        <span className="font-body text-base text-cs-label">{label}</span>
+      <div className="flex items-center gap-2 font-mono text-xs tracking-[0.16em] uppercase">
+        <span className="text-brand">{label}</span>
       </div>
-      <h2 className="font-heading text-[28px] font-semibold leading-tight text-cs-ink sm:text-h4">
+      <h2 className="font-heading text-xl leading-tight text-cs-ink sm:text-2xl">
         {title}
       </h2>
     </div>

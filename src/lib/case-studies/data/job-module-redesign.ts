@@ -6,16 +6,16 @@ export const jobModuleRedesign: CaseStudy = {
   client: "Priority Roofing",
   year: "2025",
   title:
-    "Rebuilding a roofing CRM's Job module into an operational command center",
+    "Turning a Plain Job Record Into a Screen Teams Actually Work From",
   subtitle:
-    "We built Priority Roofing a CRM from scratch then reworked its plain Job Details record into a structured workflow teams could actually run a job from.",
+    "We built Priority Roofing a CRM from scratch, then rebuilt its plain Job Details page into a real workflow, one teams could run a job from instead of just reading about it.",
   meta: [
     { label: "Company", value: "Priority Roofing (USA)" },
     { label: "Timeline", value: "Jun 2025 - 3 weeks" },
     { label: "Team", value: "Developers, Stakeholders, Tester, Product Designer" },
   ],
   heroImage: {
-    src: "/images/work/job-module-hero.webp",
+    src: "/images/work/job-module-banner.png",
     alt: "The Priority Roofing CRM job list on a laptop, showing customers, job types, statuses, and sales reps",
   },
   sections: [
@@ -23,12 +23,13 @@ export const jobModuleRedesign: CaseStudy = {
       id: "background",
       number: "01",
       label: "BACKGROUND",
-      title: "A roofing business running on spreadsheets it had outgrown",
+      title: "The CRM Launched. The Job Page Stayed Simple.",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "Priority Roofing ran on two disconnected systems. Customer and job information lived in QuickBooks, while every job action and service (material orders, materials, crew details, crew and office fees, PM assignments, invoices) ran through a stack of Excel sheets. We built the CRM to tie them together, but the Job Details module shipped as a plain record. Reworking it into something teams could actually run a job from is what this project covers.",
+            "Priority Roofing used to run on two disconnected systems: customer and job info in QuickBooks, everything else, material orders, crew details, fees, invoices, scattered across a stack of Excel sheets. We built them a CRM to tie it together, and it shipped.",
+            "To hit that launch date, one screen stayed intentionally simple: the Job Details page, the record every role opens dozens of times a day. It shipped as a plain record, the right fields in one place, nothing more. That was a deliberate tradeoff to launch on time, not an oversight. The plan was always to come back to it once the CRM was live and real usage existed to design from.",
           ],
         },
         {
@@ -60,20 +61,20 @@ export const jobModuleRedesign: CaseStudy = {
       id: "problem",
       number: "02",
       label: "PROBLEM",
-      title: "Job data had no single home",
+      title: "The Plain Record Didn't Hold Up",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "It wasn't a missing feature. Every detail that should belong together was split across separate sheets, updated by hand, and prone to drifting out of sync, so seeing one job whole meant opening many files and trusting someone's memory.",
+            "Once the CRM was live, the Job Details page did exactly what it was built to do: show a job's fields in one place. What it didn't do was tell anyone what to do next. Status, ownership, sequence, the things that actually move a job forward, were still something people worked out from memory or a spreadsheet on the side.",
           ],
         },
         {
           type: "list",
           items: [
-            "Job data scattered across 5+ spreadsheet tabs with no single source of truth.",
-            "Manual updates led to errors, records drifted out of sync across files.",
-            "No structural way to link a job to its crew, materials, invoices, and customer.",
+            "The page showed fields, not progress, there was no sense of where a job actually stood.",
+            "A manual status dropdown could say anything, whether or not it matched reality.",
+            "Teams kept their old spreadsheets open right next to the CRM, just to know what to do next.",
           ],
         },
         {
@@ -95,24 +96,24 @@ export const jobModuleRedesign: CaseStudy = {
       id: "research-audit",
       number: "03",
       label: "RESEARCH & AUDIT",
-      title: "Mapping the workflow before opening a design tool",
+      title: "Auditing How the Live CRM Was Actually Being Used",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "I mapped the existing Excel system end-to-end, every sheet of job actions and services, the data it held, and how teams moved between them. Customer and job records sat in QuickBooks; everything that moved a job lived in at least five disconnected sheets, with no structure or links back to the job.",
+            "This wasn't a blank-canvas redesign, it started with an audit of how people actually used the live CRM, spreadsheets and all. Customer and job records now sat correctly in the CRM. Everything that actually moved a job forward still lived in habits and side-spreadsheets nobody had been able to retire.",
           ],
         },
         {
           type: "keyValue",
           variant: "card",
-          title: "What a single job required across the spreadsheet system",
+          title: "What the Live Job Page Still Didn't Capture",
           rows: [
-            { label: "Job tracker sheet", value: "Status updated manually" },
-            { label: "Crew schedule sheet", value: "Separate from job record" },
-            { label: "Materials & inventory sheet", value: "No link to job or cost" },
-            { label: "Invoice & payments sheet", value: "Updated ad-hoc, prone to gaps" },
-            { label: "Customer info sheet", value: "Duplicated across records" },
+            { label: "Job tracker sheet", value: "Still updated manually, alongside the CRM" },
+            { label: "Crew schedule sheet", value: "Still kept separate from the job record" },
+            { label: "Materials & inventory sheet", value: "Still no link to the job or its cost" },
+            { label: "Invoice & payments sheet", value: "Still updated ad-hoc, prone to gaps" },
+            { label: "Customer info sheet", value: "Still duplicated outside the CRM" },
           ],
         },
       ],
@@ -121,12 +122,12 @@ export const jobModuleRedesign: CaseStudy = {
       id: "approach",
       number: "04",
       label: "APPROACH",
-      title: "How people actually worked, not what was documented",
+      title: "How People Actually Worked, Not What Was Documented",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "Stakeholder walkthroughs with every role surfaced the workarounds and mental shortcuts. Three findings shaped everything that followed.",
+            "Walking through each role's actual day, now that the CRM was part of it, surfaced the workarounds and shortcuts people relied on to get real work done. Three findings shaped everything that followed.",
           ],
         },
         {
@@ -134,7 +135,7 @@ export const jobModuleRedesign: CaseStudy = {
           eyebrow: "STAKEHOLDER SESSION",
           meta: "3 roles · 9 questions",
           description:
-            "I sat with each role and walked their actual day rather than a documented process, anchoring every session on a few core questions about how work really moved.",
+            "I sat with each role and walked their actual day, not a documented process, anchoring every session on a few core questions about how work really moved.",
           items: [
             {
               role: "Sales Reps",
@@ -169,28 +170,28 @@ export const jobModuleRedesign: CaseStudy = {
           type: "callout",
           eyebrow: "THE GUIDING QUESTION",
           title:
-            "How might we give every role a shared, reliable view of a job without adding complexity to their workflow?",
+            "How do we give every role one reliable view of a job, without making their day harder?",
         },
         {
           type: "numberedFindings",
           items: [
             {
               number: "1",
-              title: "Linked data lived in people's heads, not in the system",
+              title: "The links between records only lived in people's heads",
               description:
-                "Users kept a mental map of which job linked to which customer, crew, invoice, and material order. There was no structural relationship between records. Any absence or staff change created immediate knowledge gaps and risk of error.",
+                "People kept a mental map of which job linked to which customer, crew, invoice, and material order, because nothing in the system actually connected them. Any absence or staff change created an immediate knowledge gap and a real risk of error.",
             },
             {
               number: "2",
-              title: "Every update was a separate manual action across multiple files",
+              title: "Every update meant editing several files by hand",
               description:
-                "There were no triggers or linked fields. Updating a job meant independently editing cells across multiple sheets. Small inconsistencies compounded quickly. No one could be sure a record reflected the current state of a job.",
+                "Nothing was linked or automatic. Updating a job meant editing cells across multiple sheets separately, and small mistakes added up fast. No one could be sure a record reflected the real, current state of a job.",
             },
             {
               number: "3",
-              title: "Each role had a different relationship to the same job data",
+              title: "Every role needed something different from the same job",
               description:
-                "Sales reps needed customer and status context. Project managers needed crew and materials. Office staff needed invoices and payments. Executives needed an overview. All of these users were touching the same job data but had no shared, unified view of it.",
+                "Sales reps needed customer and status info. Project managers needed crew and materials. Office staff needed invoices and payments. Everyone touched the same job data, but nobody had one shared view of it.",
             },
           ],
         },
@@ -200,12 +201,12 @@ export const jobModuleRedesign: CaseStudy = {
       id: "solution",
       number: "05",
       label: "SOLUTION",
-      title: "Make the Job Detail page where work happens",
+      title: "Make the Job Detail Page Where Work Actually Happens",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "A job's customer and core details come straight from QuickBooks, while every service that used to live in Excel (orders, crews, fees, PM work, invoices) is pulled in and categorized under Job Info. The Job Details page works like a home screen for the job, not a flat form: open it and every answer is one place away.",
+            "A job's customer and core details now come straight from QuickBooks, while everything that used to live in Excel, orders, crews, fees, PM work, invoices, is pulled in and grouped under Job Info. The Job Details page works like a home screen for the job, not a flat form: open it, and every answer is one click away.",
           ],
         },
         {
@@ -214,16 +215,16 @@ export const jobModuleRedesign: CaseStudy = {
             {
               label: "Visibility",
               value:
-                'Anyone should answer "where is this job and what happens next?" in under five seconds.',
+                'Anyone should be able to answer "where is this job, and what happens next?" in under five seconds.',
             },
             {
               label: "Sequence",
-              value: "The operational lifecycle has a real order. The interface should reflect it.",
+              value: "A job moves through real stages in a real order. The interface should show that order.",
             },
             {
               label: "Containment",
               value:
-                "Everything tied to a job, documents, notes, requests, estimates, photos, lives inside the job.",
+                "Everything tied to a job, documents, notes, requests, estimates, photos, should live inside the job.",
             },
           ],
         },
@@ -239,7 +240,7 @@ export const jobModuleRedesign: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "The first version captured everything as a feed, every event timestamped, with a manual status dropdown on top. It looked organized and shipped fast. But once live, usage data showed it was documenting jobs, not moving them.",
+            "The first redesign attempt logged everything as a feed, every event timestamped, with a manual status dropdown on top. It looked organized and shipped fast. But once it was live, the usage data showed it was recording jobs, not moving them forward, a better-dressed version of the same plain record.",
           ],
         },
         {
@@ -259,24 +260,24 @@ export const jobModuleRedesign: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            'The feed answered "what is this job?" but never "what happens next, and whose move is it?" so teams kept the spreadsheet open beside it, and the problem we set out to solve was still unsolved.',
+            'The feed answered "what is this job?" but never "what happens next, and whose job is it?" So teams kept the spreadsheet open next to it anyway, and the problem we set out to fix was still unfixed.',
           ],
         },
         {
           type: "keyValue",
-          title: "The approach the data pointed to",
+          title: "What the Data Told Us to Do",
           rows: [
             {
-              label: "Make it forward-looking",
-              value: 'Stop logging what happened and start surfacing the next action, promote "Next Step" to a first-class field.',
+              label: "Look forward, not back",
+              value: 'Stop logging what already happened and start showing the next action. Make "Next Step" its own clear field.',
             },
             {
-              label: "One source of truth",
-              value: "Derive status from the pipeline itself, retiring the manual dropdown so state can never disagree with reality.",
+              label: "One true status",
+              value: "Get rid of the manual dropdown. Read status straight from the pipeline, so it can never disagree with reality.",
             },
             {
-              label: "Assign every stage",
-              value: "Give each of the seven stages a single clear owner, so handoffs are explicit and nothing stalls unseen.",
+              label: "Give every stage an owner",
+              value: "Each of the seven stages gets one clear owner, so handoffs are obvious and nothing stalls without anyone noticing.",
             },
           ],
         },
@@ -291,7 +292,7 @@ export const jobModuleRedesign: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            'The feed became a horizontal pipeline of the seven real operational stages, rendered as a stepper across the top of every job. The current stage is unmistakable, "Next Step" is promoted to a first-class field, and each stage carries a single clear owner.',
+            'The feed became a horizontal pipeline of the seven real stages a job goes through, shown as a stepper across the top of every job. The current stage is unmistakable, "Next Step" is its own clear field, and each stage has one clear owner.',
           ],
         },
       ],
@@ -300,12 +301,12 @@ export const jobModuleRedesign: CaseStudy = {
       id: "impact",
       number: "06",
       label: "IMPACT",
-      title: "Jobs that sat silently in a spreadsheet became visible",
+      title: "Jobs That Sat Silently in a Spreadsheet Became Visible",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            'Bottlenecks at "Audit Work Order" surfaced operational issues leadership didn\'t know they had. The qualitative shift mattered as much as the numbers: the work finally had a single, shared home.',
+            'Slowdowns at the "Audit Work Order" stage revealed operational problems leadership didn\'t even know they had. But the biggest shift wasn\'t in the numbers: the work finally had one shared home.',
           ],
         },
         {
@@ -322,10 +323,10 @@ export const jobModuleRedesign: CaseStudy = {
   ],
   keyDecisions: [
     {
-      title: "Job Cycle as a stepper, not a checklist",
-      problem: "How do we visually represent the operational lifecycle?",
+      title: "Show the Job Cycle as a Stepper, Not a Checklist",
+      problem: "How do we show a job's real stages at a glance?",
       decision:
-        "Horizontal stepper. Its linearity communicates sequence at a glance, and placing it atop every Job Detail screen makes the workflow the frame the user reads everything else through. Stages stay re-openable for jobs that kick back.",
+        "A horizontal stepper. Its left-to-right order shows sequence instantly, and putting it at the top of every Job Detail screen makes it the first thing people read. Stages can still be reopened for jobs that get kicked back.",
       video: {
         src: "/images/work/job-decision-stepper.mp4",
         poster: "/images/work/job-decision-pipeline.webp",
@@ -335,11 +336,11 @@ export const jobModuleRedesign: CaseStudy = {
       },
     },
     {
-      title: '"Next Step" as a first-class field',
+      title: 'Give "Next Step" Its Own Field',
       problem:
-        "Users opened the job to find out what to do next, the CRM made them deduce it from status.",
+        "People opened a job to find out what to do next, and the CRM made them guess it from the status.",
       decision:
-        "Hybrid. The next step is computed from the Job Cycle by default, but the right roles can override it when reality diverges, reliable in the 90% case, with room for the edge cases.",
+        "A hybrid. The next step is worked out from the Job Cycle by default, but the right roles can override it when reality doesn't match. Reliable for the normal case, flexible for the exceptions.",
       video: {
         src: "/images/work/job-decision-next-step-vid.mp4",
         poster: "/images/work/job-decision-next-step.webp",
@@ -349,11 +350,11 @@ export const jobModuleRedesign: CaseStudy = {
       },
     },
     {
-      title: "Categorize post-submittal work under Job Info",
+      title: "Group Everything After Submittal Under Job Info",
       problem:
-        "After a job was submitted, the work it generated (material orders, scheduling, audits, COC, commission) had nowhere structured to live, so it spilled back into spreadsheets.",
+        "Once a job was submitted, the work it created, material orders, scheduling, audits, invoicing, commission, had nowhere structured to live, so it spilled back into spreadsheets.",
       decision:
-        "Everything a job produces after submittal is grouped under a single Job Info area, organized by category instead of scattered fields so the record grows with the job rather than sprawling across files.",
+        "Everything a job produces after submittal now sits in one Job Info area, grouped by category instead of scattered fields, so the record grows with the job instead of sprawling across files.",
       video: {
         src: "/images/work/job-decision-job-info-vid.mp4",
         poster: "/images/work/job-decision-job-info.webp",
@@ -363,11 +364,11 @@ export const jobModuleRedesign: CaseStudy = {
       },
     },
     {
-      title: "Sync customer & job info from QuickBooks, own the operations",
+      title: "Sync Customer Info From QuickBooks, Own the Rest",
       problem:
-        "Customer and job information lived in QuickBooks and the team trusted it. Duplicating or replacing it would create two sources of truth and a political fight.",
+        "Customer and job info lived in QuickBooks and the team already trusted it. Duplicating or replacing it would create two conflicting records and a fight nobody wanted.",
       decision:
-        "One-way sync. Customer and job details flow in from QuickBooks as read-only fields, while every operational service that used to live in Excel (materials, crew, fees, PM, invoicing) moves into the Job module the CRM owns.",
+        "A one-way sync. Customer and job details flow in from QuickBooks as read-only fields, while everything operational that used to live in Excel, materials, crew, fees, PM work, invoicing, moves into the Job module the CRM owns.",
       image: {
         src: "/images/work/job-decision-quickbooks.webp",
         alt: "The Commission Details view with financials synced alongside QuickBooks",

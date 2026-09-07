@@ -44,14 +44,21 @@ export function AboutSection() {
        * `group` drives the detail panel below: it rests half out of the card's
        * bottom edge and rises fully into view on hover. */}
       <div className="group about-card relative overflow-hidden rounded-2xl px-6 py-9 sm:px-12 sm:pt-14 sm:pb-[150px] lg:px-16 lg:pt-16">
-        <p className="font-heading text-xl leading-[1.45] font-medium tracking-[-0.015em] text-white sm:text-[26px] sm:leading-[1.4] lg:text-[30px] lg:leading-[1.38]">
+        <p className="font-heading text-xl leading-[1.45] font-medium tracking-[-0.015em] text-ink-tertiary sm:text-[26px] sm:leading-[1.4] lg:text-[30px] lg:leading-[1.38]">
           Product Designer focused on building intelligent, scalable products
-          across AI, SaaS, healthcare, and enterprise. Over 4 years, I&rsquo;ve
-          turned complex workflows into simple experiences by combining product
-          thinking, user insight, and emerging AI capabilities. I design not
-          just interfaces, but the systems, interactions, and decisions behind
-          them creating products that work better for people and drive
-          meaningful business outcomes.
+          across{" "}
+          <span className="bg-gradient-to-r from-brand to-brand-secondary bg-clip-text font-semibold text-transparent">
+            AI, SaaS, healthcare, and enterprise
+          </span>
+          . Over{" "}
+          <span className="bg-gradient-to-r from-brand to-brand-secondary bg-clip-text font-semibold text-transparent">
+            4 years
+          </span>
+          , I&rsquo;ve turned complex workflows into simple experiences by
+          combining product thinking, user insight, and emerging AI
+          capabilities. I design not just interfaces, but the systems,
+          interactions, and decisions behind them creating products that work
+          better for people and drive meaningful business outcomes.
         </p>
 
         {/* Each tile carries its own hover, so only the one under the pointer
@@ -69,8 +76,8 @@ export function AboutSection() {
               role="group"
               aria-label={term}
               className={cn(
-                "about-tile flex flex-col gap-3.5 rounded-lg border border-white/50 px-5 py-4 shadow-[0_14px_36px_-18px_rgba(0,0,0,0.9)] outline-none",
-                "ring-white/70 focus-visible:ring-2",
+                "about-tile flex flex-col gap-3.5 rounded-lg border border-white bg-clip-padding px-5 py-4 shadow-[0_18px_40px_-16px_rgba(41,81,228,0.35)] outline-none ring-1 ring-ink/[0.06]",
+                "focus-visible:ring-2 focus-visible:ring-brand/50",
                 // Anchored to the card's bottom edge and always cropped by it:
                 // 58% of the tile hangs below at rest, 20% still does when
                 // raised. The tile is taller than its content so that band is
@@ -82,17 +89,17 @@ export function AboutSection() {
               )}
             >
               <div className="flex items-center gap-2.5">
-                <span className="flex size-7 items-center justify-center rounded-lg border border-white/25 bg-white/10">
+                <span className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand to-brand-secondary shadow-[0_4px_12px_-2px_rgba(41,81,228,0.45)]">
                   <Icon
-                    className="size-3.5 text-white"
+                    className="size-4 text-white"
                     strokeWidth={1.75}
                     aria-hidden="true"
                   />
                 </span>
-                <span className="font-mono text-[10.5px] tracking-[0.16em] text-white/70 uppercase">
+                <span className="font-mono text-[10.5px] tracking-[0.16em] text-ink-secondary uppercase">
                   {term}
                 </span>
-                <span className="ml-auto font-mono text-[10.5px] text-white/45 tabular-nums">
+                <span className="ml-auto font-mono text-[10.5px] text-ink-tertiary tabular-nums">
                   {String(items.length).padStart(2, "0")}
                 </span>
               </div>
@@ -101,7 +108,7 @@ export function AboutSection() {
                 {items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-md border border-white/25 bg-white/10 px-2 py-1 font-body text-[11.5px] leading-none text-white/90"
+                    className="rounded-md border border-ink/10 bg-white/70 px-2 py-1 font-body text-[11.5px] leading-none text-ink-secondary"
                   >
                     {item}
                   </li>

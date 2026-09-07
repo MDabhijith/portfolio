@@ -10,7 +10,25 @@ import { CaseStudyBanner } from "@/components/case-study/case-study-banner";
 import { CaseStudyHeader } from "@/components/case-study/case-study-header";
 import { BlockRenderer } from "@/components/case-study/blocks/block-renderer";
 import { DecisionBlock } from "@/components/case-study/blocks/decision-block";
-import type { CaseStudy } from "@/lib/case-studies/types";
+import type { CaseStudy, ContentBlock } from "@/lib/case-studies/types";
+import { cn } from "@/lib/utils";
+
+/** Chunks a section's flat block list into topic runs: each `moduleHeader`
+ * starts a new run that swallows every block up to the next `moduleHeader`.
+ * Rendered with a tight internal gap so a heading + its description + its
+ * screenshot/video read as one section, while the section's own block gap
+ * still separates one topic from the next. */
+function groupModuleHeaderRuns(blocks: ContentBlock[]): ContentBlock[][] {
+  const groups: ContentBlock[][] = [];
+  for (const block of blocks) {
+    if (block.type === "moduleHeader" || groups.length === 0) {
+      groups.push([block]);
+    } else {
+      groups[groups.length - 1].push(block);
+    }
+  }
+  return groups;
+}
 
 /** Fully data-driven case-study page — every case study renders through this one template. */
 export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
@@ -70,9 +88,18 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
                         title={section.title}
                       />
                     </Reveal>
-                    {section.blocks.map((block, i) => (
-                      <Reveal key={i}>
-                        <BlockRenderer block={block} />
+                    {groupModuleHeaderRuns(section.blocks).map((group, gi) => (
+                      <Reveal key={gi}>
+                        <div
+                          className={cn(
+                            "flex flex-col gap-6",
+                            gi > 0 && "mt-8 sm:mt-12"
+                          )}
+                        >
+                          {group.map((block, bi) => (
+                            <BlockRenderer key={bi} block={block} />
+                          ))}
+                        </div>
                       </Reveal>
                     ))}
                   </section>

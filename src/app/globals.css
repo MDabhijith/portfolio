@@ -65,6 +65,7 @@
 
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -227,44 +228,50 @@
   );
 }
 
-/* About statement card. Near-black, with a low breath of each brand hue in
-   opposite corners — the same restraint as the hero ground rather than the
-   saturated pair, which reads as glare across a panel this size. */
+/* About statement card. A soft, near-white wash of each brand hue in
+   opposite corners — same restraint as before, just lifted from near-black
+   to a light surface so the panel reads as airy rather than a second hero. */
 .about-card {
-  background-color: var(--hero-bg);
+  background-color: #fbfbfd;
   background-image:
     radial-gradient(
       78% 62% at 4% 0%,
-      color-mix(in srgb, var(--brand) 20%, transparent) 0%,
+      color-mix(in srgb, var(--brand) 12%, transparent) 0%,
       transparent 68%
     ),
     radial-gradient(
       68% 58% at 100% 100%,
-      color-mix(in srgb, var(--brand-secondary) 17%, transparent) 0%,
+      color-mix(in srgb, var(--brand-secondary) 10%, transparent) 0%,
       transparent 72%
     ),
-    linear-gradient(160deg, var(--hero-lift) 0%, var(--hero-bg) 62%);
+    linear-gradient(160deg, var(--surface-tint) 0%, #fbfbfd 62%);
 }
 
-/* Detail tiles. The card's own ground lifted with a little white and a touch
-   more hue, so they read as raised panes of the same dark surface rather than
-   as a second colour. */
+/* Detail tiles. Solid white ground so a dot-grid pattern reads crisply, with
+   a gradient wash layered on top and a corner glow to give each tile its own
+   presence rather than blending into the card behind it. */
 .about-tile {
-  background-image: linear-gradient(
-    150deg,
-    color-mix(
-        in srgb,
-        white 7%,
-        color-mix(in srgb, var(--brand) 22%, var(--hero-bg))
-      )
-      0%,
-    color-mix(
-        in srgb,
-        white 5%,
-        color-mix(in srgb, var(--brand-secondary) 18%, var(--hero-bg))
-      )
-      100%
-  );
+  background-color: white;
+  background-image:
+    radial-gradient(
+      circle at 1px 1px,
+      color-mix(in srgb, var(--ink) 12%, transparent) 1px,
+      transparent 0
+    ),
+    radial-gradient(
+      120% 100% at 100% 0%,
+      color-mix(in srgb, var(--brand-secondary) 16%, transparent) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      150deg,
+      color-mix(in srgb, white 88%, var(--brand)) 0%,
+      color-mix(in srgb, white 92%, var(--brand-secondary)) 100%
+    );
+  background-size:
+    14px 14px,
+    100% 100%,
+    100% 100%;
 }
 
 /* Conic ring that sweeps around the CTA pill. */
@@ -400,6 +407,14 @@ body {
   }
   html {
     @apply font-body scroll-smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-medium tracking-tight;
   }
 }
 

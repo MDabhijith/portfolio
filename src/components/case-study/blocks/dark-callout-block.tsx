@@ -6,25 +6,26 @@ export function DarkCalloutBlock({
   rows: { label: string; before: string; after: string }[];
 }) {
   return (
-    <div className="flex flex-col gap-8 rounded-xl bg-dark-callout p-8 sm:gap-12 sm:p-20">
+    <div className="flex flex-col gap-8 rounded-xl border border-line bg-gradient-to-br from-brand/10 via-white to-brand-secondary/10 p-8 sm:gap-12 sm:p-20">
       <div className="flex items-center gap-5">
-        <p className="whitespace-nowrap font-body text-body-sm text-dark-callout-eyebrow">
+        <p className="whitespace-nowrap font-body text-body-sm text-cs-label">
           {eyebrow}
         </p>
-        <div className="h-px flex-1 bg-white/15" aria-hidden="true" />
+        <div className="h-px flex-1 bg-line" aria-hidden="true" />
       </div>
 
       <div className="flex flex-col">
         {rows.map((row, i) => (
           <div
             key={i}
-            className="flex flex-col gap-3 border-t border-white/10 py-8 first:border-t-0 first:pt-0 sm:flex-row sm:gap-16"
+            className="flex flex-col gap-3 border-t border-line py-8 first:border-t-0 first:pt-0 sm:flex-row sm:gap-16"
           >
-            <p className="font-body text-lg font-semibold text-dark-callout-label sm:w-[271px] sm:shrink-0">
+            <p className="font-body text-lg font-semibold text-cs-ink sm:w-[271px] sm:shrink-0">
               {row.label}
             </p>
-            <p className="font-body text-body-sm leading-relaxed text-dark-callout-muted">
-              {row.before} <span className="text-white">{row.after}</span>
+            <p className="font-body text-body-sm leading-relaxed text-cs-label">
+              {row.before}{" "}
+              <span className="font-semibold text-cs-ink">{row.after}</span>
             </p>
           </div>
         ))}

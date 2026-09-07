@@ -10,24 +10,24 @@ export function ModuleHeaderBlock({
   description?: string;
 }) {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-2">
       {eyebrow || title ? (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
           {eyebrow ? (
             <div className="flex items-center gap-5">
-              <span className="shrink-0 font-body text-sm whitespace-nowrap text-positive">
+              <span className="shrink-0 font-body text-xs whitespace-nowrap text-positive">
                 {eyebrow}
               </span>
               <div className="h-px flex-1 bg-line" aria-hidden="true" />
               {eyebrowTrailing ? (
-                <span className="shrink-0 font-body text-sm whitespace-nowrap text-cs-label">
+                <span className="shrink-0 font-body text-xs whitespace-nowrap text-cs-label">
                   {eyebrowTrailing}
                 </span>
               ) : null}
             </div>
           ) : null}
           {title ? (
-            <h3 className="font-heading text-h6 font-semibold text-cs-ink">
+            <h3 className="font-heading text-2xl font-semibold text-cs-ink">
               {title}
             </h3>
           ) : null}
