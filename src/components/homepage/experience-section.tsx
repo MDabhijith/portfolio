@@ -5,7 +5,7 @@ const roles = [
   {
     company: "Levich Solutions Pvt Ltd",
     role: "Founding Product Designer",
-    date: "Aug 2024 - Present",
+    date: "Aug 2023 - Present",
     logo: "/images/logos/logo-levich.webp",
   },
   {
