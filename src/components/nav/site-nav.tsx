@@ -9,8 +9,8 @@ import { SlideUpLabel } from "@/components/ui/slide-up-label";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/#about", label: "About" },
   { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
 ];
 
 /** Above this the bar is always shown: retracting it in the first screenful
