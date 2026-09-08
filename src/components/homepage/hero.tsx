@@ -94,7 +94,7 @@ export function Hero() {
                 </span>
               </span>
               <span className="font-mono text-[11px] tracking-[0.2em] text-hero-body uppercase sm:text-xs">
-                Product Designer &middot; 4 Years
+                Product Designer &middot; 4+ Years
               </span>
             </div>
 
