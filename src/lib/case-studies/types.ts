@@ -191,6 +191,10 @@ export type ContentBlock =
       categories: { label: string; before: number; after: number }[];
       headline: string;
       analysis: string;
+      /** Chart ceiling for the bars; defaults to 5 (a 1-5 self-rated scale). Set to 100 for percentage metrics. */
+      max?: number;
+      /** Value suffix — "%" for percentage metrics, omitted for a plain 1-5 rating. */
+      unit?: "%";
     }
   | {
       /** Dark "Results talk" testimonial card. Figma shows a 1/4 carousel but only one real quote exists — rendered as static chrome, matching the browserGallery precedent. */

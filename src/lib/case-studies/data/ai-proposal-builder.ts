@@ -5,9 +5,9 @@ export const aiProposalBuilder: CaseStudy = {
   category: "Roofing Proposal Management",
   client: "Priority Roofing",
   year: "2026",
-  title: "An AI Proposal Builder, Built Into the CRM",
+  title: "An AI Proposal Builder, Synced to the CRM",
   subtitle:
-    "The CRM gave every job one home in production, but proposals still lived in Roofr, a disconnected outside app. So we built a native proposal tool with an AI editor at its core, one that drafts and edits a proposal from a prompt, so reps never have to leave the CRM to sell a job.",
+    "The CRM gave every job one home in production, but proposals still lived in Roofr, a disconnected app where every proposal started from a blank page. So we built our own standalone proposal app, synced to the CRM through the same job and property address, with an AI editor at its center, one a rep can talk to: describe the job in a prompt, get a full draft back, then keep shaping it in conversation until it's ready to send.",
   meta: [
     { label: "Company", value: "Priority Roofing (USA)" },
     { label: "Timeline", value: "Jun 2026 - 3 weeks" },
@@ -20,12 +20,12 @@ export const aiProposalBuilder: CaseStudy = {
   outcomeHighlight: {
     eyebrow: "WHERE THIS IS TODAY",
     summary:
-      "Not a redesign of Roofr. A native module with an AI editor that drafts and edits a proposal from a prompt, without switching tools.",
+      "Not a redesign of Roofr. A standalone AI-first proposal app, synced to the CRM by job and address, built around one conversation: describe the job, get a complete draft, then keep refining it by talking to it, without retyping anything the CRM already has.",
     stats: [
       {
-        value: "1",
+        value: "40% → 60%",
         caption:
-          "AI editor that drafts a full proposal from a prompt and edits it in place",
+          "proposal drafting completion rate before and after the AI editor shipped",
       },
       {
         value: "2",
@@ -43,12 +43,12 @@ export const aiProposalBuilder: CaseStudy = {
       id: "background",
       number: "01",
       label: "BACKGROUND",
-      title: "The CRM Fixed Operations. Sales Still Ran Through Roofr.",
+      title: "Before the Agent, Every Proposal Was Typed From Scratch",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "Once the Roofing CRM shipped, a job had one home from the moment it was won to the moment it was paid. But a job had to be won first, and that entire front half, the assessment and the proposal, happened outside the CRM, inside a third-party tool called Roofr. Roofr did one job well: it measured roofs and built proposals. But it had no connection to the CRM. A rep who'd just qualified a prospect inside the CRM had to leave it, re-enter the same customer and job in Roofr, run the assessment there, and manually carry the result back once a homeowner approved. The CRM had solved a job's life after the sale. Its life before that still lived somewhere else.",
+            "Once the Roofing CRM shipped, a job had one home from the moment it was won to the moment it was paid. But a job had to be won first, and that entire front half, the assessment and the proposal, happened outside the CRM, inside a third-party tool called Roofr. Roofr had no intelligence in it anywhere. It measured roofs and handed a rep a form, one section, one line, one price, typed by hand, disconnected from every piece of data the CRM already held about that customer and that job. A rep who had just qualified a prospect inside the CRM left it entirely to author a proposal from nothing, with no system reading the job for them and no way to describe what they'd found and get a draft back.",
           ],
         },
         {
@@ -57,14 +57,14 @@ export const aiProposalBuilder: CaseStudy = {
             {
               name: "Roofr",
               subtitle: "Assessment & proposals",
-              held: "Roof measurements, damage assessment, and proposal generation.",
-              gap: "Fully disconnected from the CRM, and rigid about it. It couldn't bend to how Priority Roofing actually sold, which is what pushed us to build our own.",
+              held: "Roof measurements, damage assessment, and a manual proposal form.",
+              gap: "Fully disconnected from the CRM, and nothing in it drafted anything. Every proposal began blank, no matter how many times a rep had built one just like it.",
             },
             {
               name: "The CRM",
               subtitle: "Everything after a job is won",
               held: "Production, scheduling, materials, and commissions for a job already in motion.",
-              gap: "No way to receive a job before it existed. The front half of the sale happened somewhere else entirely.",
+              gap: "No way to receive a job before it existed, and nothing that could read a job and act on it. The front half of the sale happened somewhere else entirely.",
             },
           ],
         },
@@ -80,12 +80,12 @@ export const aiProposalBuilder: CaseStudy = {
       id: "problem",
       number: "02",
       label: "PROBLEM",
-      title: "The Same Disconnection, on the Other Side of the Job",
+      title: "Nothing Here Was Smart, and Reps Paid for It Every Time",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "This was the same problem the CRM had already solved, showing up again on the other side of the job. Four issues kept coming up.",
+            "This was the same problem the CRM had already solved, showing up again on the other side of the job. Not a missing integration, a missing layer of intelligence, nothing here could read a job and act on it. Five issues kept coming up.",
           ],
         },
         {
@@ -115,7 +115,19 @@ export const aiProposalBuilder: CaseStudy = {
               description:
                 "Every re-entry was a chance to introduce an error, and every manual handoff was time a rep or back-office spent not selling or building.",
             },
+            {
+              number: "05",
+              title: "Every proposal started from a blank page",
+              description:
+                "There was no faster way in, even a rep who'd built the same roof-system proposal fifty times still typed it from zero. The tool that was supposed to save time cost the same amount every single time.",
+            },
           ],
+        },
+        {
+          type: "callout",
+          eyebrow: "THE PATTERN UNDER ALL FIVE",
+          title:
+            "Every fix here needed the proposal to start already knowing the job, not a rep starting from nothing.",
         },
       ],
     },
@@ -123,12 +135,12 @@ export const aiProposalBuilder: CaseStudy = {
       id: "research-audit",
       number: "03",
       label: "RESEARCH & AUDIT",
-      title: "How We Traced One Proposal From Start to Finish",
+      title: "Testing Whether Reps Would Actually Trust an Agent to Draft for Them",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "Before designing a replacement for Roofr, I traced a real proposal from start to finish, from booking the assessment to the homeowner's signature, and talked to everyone involved. The goal wasn't to match Roofr feature-for-feature. It was to find exactly where the handoff to the CRM broke down.",
+            "Before designing a replacement for Roofr, I traced a real proposal from start to finish, from booking the assessment to the homeowner's signature, and talked to everyone involved. This wasn't a feature audit of Roofr. Two questions mattered more than any list of missing features: was there enough structured data across these tools to ground an AI agent in the job, and would a rep actually trust a machine-written draft enough to send it.",
           ],
         },
         {
@@ -151,24 +163,24 @@ export const aiProposalBuilder: CaseStudy = {
                 { label: "Tools", value: "CRM, Roofr, phone" },
                 { label: "Tech", value: "High, phone-first" },
               ],
-              bio: "Qualifies the lead inside the CRM, then leaves it to build the proposal in Roofr, retyping the customer and the job he just entered. Measures the roof, photographs the damage and wants the proposal out before he pulls off the driveway, because the homeowner is collecting quotes from two other companies this week.",
+              bio: "Qualifies the lead inside the CRM, then leaves it to build the proposal in Roofr, typing it from nothing. Measures the roof, photographs the damage, and wants the proposal out before he pulls off the driveway, because the homeowner is collecting quotes from two other companies this week. Skeptical that a machine could write something he'd actually send without rewriting it first.",
               motivations: [
                 "First good proposal in the door usually wins the job",
                 "Commission depends on closing, not on quoting",
-                "Wants selling time back from data entry",
+                "Wants a draft, not a form, to start from",
               ],
               goals: [
-                "Send a priced proposal before the homeowner's interest cools",
-                "Build it from the customer and job the CRM already holds",
-                "Know the moment a homeowner opens or signs it",
+                "Describe the job once and get a proposal back, not a blank one",
+                "Trust the draft enough to send it with light edits, not a rewrite",
+                "Stay in control of anything the agent changes",
               ],
               frustrations: [
-                "Re-entering into Roofr a customer he just entered in the CRM",
-                "Assessment photos stranded on his phone with no job to attach them to",
-                "Silence after sending, so follow-up is guesswork",
+                "Typing the same proposal shape from zero on every single job",
+                "Not knowing if he can trust a number he didn't calculate himself",
+                "Worried an AI draft would read generic instead of like his own pitch",
               ],
               quote:
-                "I've already told the system who this customer is. Then I open Roofr and it asks me all over again.",
+                "If it can write the first draft in the truck before I even get home, I'll try it. The second it gets a price wrong, I stop trusting it completely.",
             },
             {
               id: "homeowner",
@@ -185,7 +197,7 @@ export const aiProposalBuilder: CaseStudy = {
                 { label: "Tools", value: "Phone, email" },
                 { label: "Tech", value: "Casual, reads on mobile" },
               ],
-              bio: "Storm took half the shingles off a roof he has never had to replace before. He is comparing three quotes on his phone after work, none of which describe the same scope in the same words, and he is deciding on the largest single purchase this house has needed.",
+              bio: "Storm took half the shingles off a roof he has never had to replace before. He is comparing three quotes on his phone after work, none of which describe the same scope in the same words, and he is deciding on the largest single purchase this house has needed. He never knows a machine helped write what he's reading, and that was the point: it has to read like the rep wrote it for him, not like a form letter.",
               motivations: [
                 "Wants the roof fixed before the next storm",
                 "Needs to feel he is not being overcharged for work he cannot judge",
@@ -198,11 +210,11 @@ export const aiProposalBuilder: CaseStudy = {
               ],
               frustrations: [
                 "A PDF that fights him on a phone screen",
-                "Line items naming materials but not what they do",
+                "Language that reads generic, like nobody actually looked at his roof",
                 "No idea what happens, or when, after he signs",
               ],
               quote:
-                "It's the biggest thing I've bought for this house and I'm reading it on my phone at eleven at night. If I can't follow it, I'm calling the other guy.",
+                "It's the biggest thing I've bought for this house and I'm reading it on my phone at eleven at night. If it reads like a form letter, I'm calling the other guy.",
             },
             {
               id: "back-office",
@@ -219,24 +231,24 @@ export const aiProposalBuilder: CaseStudy = {
                 { label: "Tools", value: "CRM, email, Roofr" },
                 { label: "Tech", value: "Expert in the CRM" },
               ],
-              bio: "Starts the job once the homeowner signs. The signature happens inside Roofr, so she learns about it when a rep forwards the email, then opens the CRM and rebuilds a deal that was already fully specified somewhere else before she can schedule anything.",
+              bio: "Starts the job once the homeowner signs. The signature happens inside Roofr, so she learns about it when a rep forwards the email, then opens the CRM and rebuilds a deal that was already fully specified somewhere else before she can schedule anything. The most skeptical voice in the room on letting a machine touch pricing at all.",
               motivations: [
                 "Jobs that start on the date the homeowner was told",
                 "A scope she can trust without calling the rep to confirm it",
-                "Fewer things depending on someone remembering to tell her",
+                "Proof an AI draft can't quietly invent a price or a scope item",
               ],
               goals: [
                 "Learn a proposal was approved without being told",
-                "Open a signed deal as a job, not as a PDF to re-key",
-                "Find the assessment photos already attached to the job",
+                "Trust that anything an agent priced came from the real catalogue",
+                "See clearly when a number is a real quote versus a rough draft",
               ],
               frustrations: [
                 "Approval arrives as a forwarded email, or not at all",
-                "Re-typing a scope the rep already priced line by line",
-                "Chasing photos and documents across phones and inboxes",
+                "No way to tell a rep's price from a machine's guess",
+                "Worried an AI mistake would reach a homeowner before anyone catches it",
               ],
               quote:
-                "A deal can be signed for two days before it reaches me. By then the crew calendar has already moved on without it.",
+                "I'll trust it the day it can't price something that isn't in our own catalogue. Until then, I need to see exactly what it touched.",
             },
           ],
         },
@@ -245,24 +257,24 @@ export const aiProposalBuilder: CaseStudy = {
           eyebrow: "STAKEHOLDER SESSION",
           meta: "3 roles · 9 questions",
           description:
-            "I walked through each role's actual day instead of a documented process, anchoring every session on a few core questions.",
+            "Every session came back to the same underlying question, phrased differently for each role: could a system that reads the job and drafts on its own actually be trusted here.",
           items: [
             {
               role: "Sales Reps",
               detail: "Assessment → close",
               questions: [
-                "Walk me through everything that happens between booking an assessment and sending a proposal.",
-                "What do you re-type that you know already lives in the CRM?",
-                "Once a proposal is sent, how do you know what happens next?",
+                "If you described a job in a sentence and got a full draft back, would you send it, or rewrite it?",
+                "What would an AI-written proposal need to get right before you'd trust its price?",
+                "How much do you want to keep typing yourself versus handing to a system?",
               ],
             },
             {
               role: "Back Office",
               detail: "Approval, contracts, job creation",
               questions: [
-                "How do you find out a proposal has been approved?",
-                "What has to happen before a signed deal becomes a job you can schedule?",
-                "Where do assessment photos and documents end up once you need them?",
+                "What would you need to see to trust that a machine wrote this proposal correctly?",
+                "Where's the line on what an agent should be allowed to change without asking first?",
+                "What's the one AI mistake that would make you shut the whole thing off?",
               ],
             },
           ],
@@ -271,7 +283,7 @@ export const aiProposalBuilder: CaseStudy = {
           type: "image",
           image: {
             src: "/images/work/proposal-audit-roofr.webp",
-            alt: "Roofr's proposals list, the disconnected third-party tool we audited",
+            alt: "Roofr's manual proposal form, the blank starting point every rep faced with nothing read from the job",
           },
         },
         {
@@ -279,21 +291,21 @@ export const aiProposalBuilder: CaseStudy = {
           items: [
             {
               number: "01",
-              title: "The proposal was the CRM's blind spot",
+              title: "The data to ground an agent already existed, just scattered",
               description:
-                "Everything the CRM tracked so carefully (the job, the customer, the pipeline) didn't exist yet from Roofr's side. The two systems described the same deal, but had no shared language for it.",
+                "The job, the customer, the assessment, the catalogue, everything an agent would need to draft accurately was already captured somewhere. It just lived across three disconnected tools instead of one schema an agent could read.",
             },
             {
               number: "02",
-              title: "Approval was an event no system was listening for",
+              title: "Trust would live or die on the first wrong price",
               description:
-                "A homeowner's sign-off happened inside Roofr and stayed there until someone forwarded it. Nothing treated approval as a trigger.",
+                "Every rep and back-office session landed on the same line: one bad number, and they'd never trust a draft again. Confidence had to be earned before speed even mattered.",
             },
             {
               number: "03",
-              title: "Assessment data had nowhere permanent to live",
+              title: "Nobody wanted automation, they wanted a draft they could argue with",
               description:
-                "Photos and damage notes were only as safe as whoever's phone or laptop they were captured on, there was no job record yet to attach them to.",
+                "Reps didn't want a black box that sent proposals on its own. They wanted a starting draft and a way to talk back to it, the control had to stay visibly theirs.",
             },
           ],
         },
@@ -301,7 +313,7 @@ export const aiProposalBuilder: CaseStudy = {
           type: "callout",
           eyebrow: "THE GUIDING QUESTION",
           title:
-            "What if a job had one home from the first inspection, not just from the moment it was won?",
+            "What if a rep could describe a job in a sentence and actually trust what came back?",
         },
       ],
     },
@@ -309,12 +321,12 @@ export const aiProposalBuilder: CaseStudy = {
       id: "approach",
       number: "04",
       label: "APPROACH",
-      title: "Build It Into the CRM, Not Bolt It On",
+      title: "Build Our Own App, Not Bolt Onto Roofr",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "The first real decision wasn't a screen, it was whether to connect to Roofr's API or build assessment and proposals directly into the CRM. Connecting the two would have kept them in sync forever, but it wouldn't remove the seam, just automate it. We built a native module that shares the CRM's job record directly. A proposal isn't synced to a job, it is the job, just at an earlier stage.",
+            "The first real decision wasn't a screen, it was whether to integrate Roofr's API or build our own proposal app. Integrating Roofr would have synced the two systems, but reps would still be opening Roofr itself, blank forms and all, with no room to add the AI layer we actually wanted. We built our own standalone app instead, and kept it linked to the CRM the simple way: the same job and property address, so a rep never re-enters a customer or a job, even with two separate products open.",
           ],
         },
         {
@@ -330,9 +342,9 @@ export const aiProposalBuilder: CaseStudy = {
             {
               tag: "BUILD",
               tone: "neutral",
-              title: "A Proposal Management module on the CRM's own schema",
+              title: "A standalone Proposal Management app, synced by the job",
               description:
-                "Assessment, proposal, approval, and signing read and write the same job record the CRM already owns, nothing is synced, because nothing is duplicated.",
+                "Assessment, proposal, approval, and signing all live in their own app, but every one of them is linked back to the CRM by the same job and property address, so nothing a rep already entered has to be typed again.",
             },
             {
               tag: "EXTEND",
@@ -348,9 +360,14 @@ export const aiProposalBuilder: CaseStudy = {
           eyebrow: "THE CALL THAT SHAPED IT",
           rows: [
             {
-              label: "Share the schema, don't sync a copy",
+              label: "Put an AI agent inside the builder, not beside it",
+              before: "Drafting a proposal from scratch was the slowest part of a rep's day →",
+              after: "a prompt generates the full draft, and the same agent refines any section in place.",
+            },
+            {
+              label: "Sync by the job, don't duplicate the record",
               before: "Assessments and proposals had no link to the job that already existed →",
-              after: "built as an extension of the CRM's own data model.",
+              after: "linked to the CRM by the same job and property address, not copied into it.",
             },
             {
               label: "Make proposals dynamic, not just templated",
@@ -367,11 +384,6 @@ export const aiProposalBuilder: CaseStudy = {
               before: "An approved proposal used to become someone's manual task →",
               after: "signing happens inside the flow and creates the job directly.",
             },
-            {
-              label: "Put an AI agent inside the builder, not beside it",
-              before: "Drafting a proposal from scratch was the slowest part of a rep's day →",
-              after: "a prompt generates the full draft, and the same agent refines any section in place.",
-            },
           ],
         },
       ],
@@ -385,7 +397,7 @@ export const aiProposalBuilder: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "A prospect leaves the CRM's qualifying stage as a scheduled assessment, not as a \"won job\" that shows up later from somewhere else. It moves forward as the same record, through one flow, until a signed contract hands it to production.",
+            "A prospect leaves the CRM's qualifying stage as a scheduled assessment, not as a \"won job\" that shows up later from somewhere else. It moves forward as the same job, synced between the CRM and the proposal app by that job and its address, through one flow, until a signed contract hands it to production.",
           ],
         },
         {
@@ -424,12 +436,20 @@ export const aiProposalBuilder: CaseStudy = {
               tags: ["Assessment"],
             },
             {
-              title: "Proposal drafted, by template or by prompt",
+              title: "Proposal drafted from a prompt, or a template",
               actor: "SALES REP",
               actorTone: "muted",
               description:
-                "A rep starts from a template or describes the job to the AI agent and gets a full draft back, pulling from the linked assessment when there is one, then refines individual sections inline as needed.",
+                "A rep describes the job in a sentence or two and gets a full draft back, pulling from the linked assessment when there is one, or starts from a template when that's faster.",
               tags: ["Proposal", "Templates"],
+            },
+            {
+              title: "Rep refines it by talking to the draft",
+              actor: "SALES REP",
+              actorTone: "muted",
+              description:
+                "Instead of hand-editing every field, a rep asks for changes in plain language, re-price this, rewrite that section, add a note, and the agent applies just that change.",
+              tags: ["Proposal"],
             },
             {
               title: "Pricing built from the catalog",
@@ -468,15 +488,184 @@ export const aiProposalBuilder: CaseStudy = {
       ],
     },
     {
-      id: "the-system",
+      id: "ai-editor",
       number: "06",
-      label: "THE SYSTEM",
-      title: "Six Modules, Zero Separate Apps to Switch To",
+      label: "INSIDE THE AI EDITOR",
+      title: "The Feature the Whole App Was Built Around",
       blocks: [
         {
           type: "prose",
           paragraphs: [
-            "The navigation splits into daily selling work, the configuration behind it, and the admin layer that closes the loop. Every part reads and writes the same job the CRM already owns.",
+            "Every other module in this app exists to keep a job's data in one connected place instead of scattering it across tools, synced back to the CRM by the same job and address rather than merged into it. The AI editor is the reason that's actually faster than the old way, not the workflow around it. A rep doesn't fill out a form, they describe the job and keep talking to the draft until it's right, and that conversation only works if it drafts something trustworthy and lets a rep correct it fast when it isn't. That came down to three product decisions: what the agent is grounded in, what it hands back, and what it does when it doesn't have enough to work with.",
+          ],
+        },
+        {
+          type: "moduleHeader",
+          eyebrow: "DRAFTING",
+          title: "One prompt, grounded in the job, returns a full draft",
+          description:
+            "The slowest part of a rep's day was staring at a blank proposal after a long inspection. Now a rep describes the job in a prompt and gets a complete draft back, built from whatever the job already knows about itself.",
+        },
+        {
+          type: "video",
+          src: "/images/work/proposal-ai-generator.mp4",
+          poster: "/images/work/proposal-ai-generator.webp",
+          label:
+            "Screencast of the AI proposal generator drafting a complete proposal from a prompt, then refining individual sections inline",
+          caption: "AI Proposal generator.",
+          aspect: "2940 / 1594",
+        },
+        {
+          type: "definitionCards",
+          items: [
+            {
+              term: "Prompt to draft",
+              description:
+                "One prompt, informed by the job's own assessment data, produces a complete first draft, sections, scope language, and starting pricing already in place.",
+            },
+            {
+              term: "Inline refinement",
+              description:
+                "The rep keeps editing by hand or asks the agent to change one specific part, the agent never rewrites what wasn't asked for.",
+            },
+          ],
+        },
+        {
+          type: "taggedList",
+          items: [
+            {
+              tag: "GROUNDED",
+              tone: "neutral",
+              title: "Prompted with the job's own data, not typed from scratch",
+              description:
+                "The CRM and the proposal builder stay two separate tools, but the same job and property address link them, so the customer and job details a rep already entered in the CRM carry straight into the prompt. The agent assembles that alongside the linked assessment, roof type, measurements, and recorded damage, plus whatever the rep types. With no assessment linked, it drafts from the prompt alone and marks the pricing as provisional instead of pretending it measured the roof.",
+            },
+            {
+              tag: "STRUCTURED",
+              tone: "neutral",
+              title: "Outputs the builder's own schema, not paragraphs to paste in",
+              description:
+                "A draft comes back as sections, scope language, and catalogue-linked line items, the exact structure the proposal builder already edits. Nothing generates as prose that then has to be reformatted into the tool.",
+            },
+            {
+              tag: "SCOPED",
+              tone: "neutral",
+              title: "Every inline edit is a diff, never a silent rewrite",
+              description:
+                "Ask it to re-price one line or rewrite one section and it changes only that. Everything else in the proposal stays exactly what the rep left it as.",
+            },
+          ],
+        },
+        {
+          type: "keyValue",
+          title: "What a Draft Actually Returns",
+          variant: "card",
+          rows: [
+            {
+              label: "Sections",
+              value:
+                "Matched one-to-one to the builder's section types, so a draft opens as an editable proposal, not text to restructure by hand.",
+            },
+            {
+              label: "Line items",
+              value:
+                "Pulled only from the shared catalogue, itemized or roof-system, the agent can't invent a price outside it.",
+            },
+            {
+              label: "Confidence flag",
+              value:
+                "Set to provisional whenever a draft is built from the prompt alone, with no assessment measurements behind it.",
+            },
+            {
+              label: "Edit target",
+              value:
+                "A single section ID plus the requested change, not a full replacement proposal, is what an inline edit actually returns.",
+            },
+          ],
+        },
+        {
+          type: "darkCallout",
+          eyebrow: "WHAT CHANGED AFTER THE FIRST VERSION",
+          rows: [
+            {
+              label: "The first draft agent rewrote the whole proposal on every request",
+              before: "One tweak to a price meant re-reading the entire proposal to see what else moved →",
+              after: "edits scoped to a single section, a diff, not a rewrite.",
+            },
+            {
+              label: "Early drafts didn't say when they were guessing",
+              before: "A prompt-only draft looked exactly as confident as one built from a real assessment →",
+              after: "provisional pricing flagged the moment there's no assessment behind it.",
+            },
+            {
+              label: "The agent used to invent scope items that weren't in the catalogue",
+              before: "A generated line item with no matching price left a rep to catch it manually →",
+              after: "unmatched items get flagged for the rep instead of priced automatically.",
+            },
+          ],
+        },
+        {
+          type: "moduleHeader",
+          eyebrow: "RESTRUCTURING",
+          title:
+            "The same AI editor restructures the proposal, not just its wording",
+          description:
+            "Rewriting a paragraph was never the whole job. A proposal often needs a section added for something the homeowner asked about, one removed because it doesn't apply, or the order changed. The AI editor handles this the same way it handles wording: on request, in place, without the rep leaving the builder.",
+        },
+        {
+          type: "video",
+          src: "/images/work/proposal-ai-editor.mp4",
+          poster: "/images/work/proposal-ai-editor.webp",
+          label:
+            "Screencast of the AI proposal editor restructuring a proposal in place, adding, removing, and reordering sections, not just rewording",
+          caption: "AI Proposal editor.",
+          aspect: "2940 / 1594",
+        },
+        {
+          type: "taggedList",
+          items: [
+            {
+              tag: "NO MATCH",
+              tone: "negative",
+              title: "A referenced item isn't in the catalogue",
+              description:
+                "The agent flags the line for the rep to resolve instead of inventing a price or a scope item that doesn't exist in the system.",
+            },
+            {
+              tag: "MISSING DATA",
+              tone: "negative",
+              title: "No assessment is linked",
+              description:
+                "It still drafts from the prompt, but every price on that draft is marked provisional until a real assessment backs it.",
+            },
+            {
+              tag: "AMBIGUOUS ASK",
+              tone: "negative",
+              title: "An edit request doesn't map to one section",
+              description:
+                "Rather than guessing which part of the proposal to change, the agent asks the rep to point at the section instead of touching the wrong one.",
+            },
+            {
+              tag: "REVERSIBLE",
+              tone: "positive",
+              title: "Every AI edit can be undone",
+              description:
+                "Nothing the agent changes is final. A rep can step back to the version before any AI edit, drafting or refining, the same as undoing their own typing.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "the-system",
+      number: "07",
+      label: "THE SYSTEM",
+      title: "The Six Modules the Agent Reads From and Writes Into",
+      blocks: [
+        {
+          type: "prose",
+          paragraphs: [
+            "The AI editor doesn't work in isolation, it reads and writes through the same six modules a rep would use by hand. The navigation splits into daily selling work, the configuration that grounds and bounds the agent, and the admin layer that closes the loop.",
           ],
         },
         {
@@ -512,7 +701,7 @@ export const aiProposalBuilder: CaseStudy = {
           type: "moduleHeader",
           title: "Assessment",
           description:
-            "Inspect properties, record damage items, capture and organize photos, and upload supporting documents in one structured workflow.",
+            "Inspect properties, record damage items, capture and organize photos, and upload supporting documents in one structured workflow. This is the grounding data the AI agent drafts from, when a job has one linked.",
         },
         {
           type: "image",
@@ -548,7 +737,7 @@ export const aiProposalBuilder: CaseStudy = {
           type: "moduleHeader",
           title: "Templates",
           description:
-            "Templates keep a proposal within a specific category so it can be created faster. A rep can use one as-is, modify it, or create a new one from scratch.",
+            "The fallback for when a rep would rather start from a known shape than a prompt. Templates keep a proposal within a specific category, and a rep can use one as-is, modify it, or create a new one from scratch.",
         },
         {
           type: "video",
@@ -563,7 +752,7 @@ export const aiProposalBuilder: CaseStudy = {
           type: "moduleHeader",
           title: "Catalogue Management",
           description:
-            "The shared catalogue behind both estimate types: itemized, a line-by-line breakdown of items and price, and roof system, a build-specific estimate. Every catalogue entry carries its own set of instructions and price.",
+            "The AI agent's price ceiling: it can only price what's in here. The shared catalogue behind both estimate types, itemized, a line-by-line breakdown of items and price, and roof system, a build-specific estimate, and every entry carries its own instructions and price.",
         },
         {
           type: "image",
@@ -602,58 +791,11 @@ export const aiProposalBuilder: CaseStudy = {
           },
           caption: "Proposal Signing enabled for Customer.",
         },
-        {
-          type: "moduleHeader",
-          eyebrow: "INSIDE THE BUILDER",
-          title: "An AI agent that drafts the proposal, then stays to refine it",
-          description:
-            "The slowest part of a rep's day was never the pricing or the signature, it was staring at a blank proposal after a long inspection. Now a rep just describes the job in a prompt and gets a full draft back. The agent uses the assessment data when there is one, and works from the prompt alone when there isn't. From there it keeps working inline: a rep can ask it to rewrite one section, adjust the scope, or re-price a line item, without starting over.",
-        },
-        {
-          type: "video",
-          src: "/images/work/proposal-ai-generator.mp4",
-          poster: "/images/work/proposal-ai-generator.webp",
-          label:
-            "Screencast of the AI proposal generator drafting a complete proposal from a prompt, then refining individual sections inline",
-          caption: "AI Proposal generator.",
-          aspect: "2940 / 1594",
-        },
-        {
-          type: "definitionCards",
-          items: [
-            {
-              term: "Prompt to draft",
-              description:
-                "One prompt, informed by the job's own assessment data, produces a complete first draft, sections, scope language, and starting pricing already in place.",
-            },
-            {
-              term: "Inline refinement",
-              description:
-                "The rep keeps editing by hand or asks the agent to change one specific part, the agent never rewrites what wasn't asked for.",
-            },
-          ],
-        },
-        {
-          type: "moduleHeader",
-          title:
-            "The same AI editor restructures the proposal, not just its wording.",
-          description:
-            "Rewriting a paragraph was never the whole job. A proposal often needs a section added for something the homeowner asked about, one removed because it doesn't apply, or the order changed. The AI editor handles this the same way it handles wording: on request, in place, without the rep leaving the builder.",
-        },
-        {
-          type: "video",
-          src: "/images/work/proposal-ai-editor.mp4",
-          poster: "/images/work/proposal-ai-editor.webp",
-          label:
-            "Screencast of the AI proposal editor restructuring a proposal in place, adding, removing, and reordering sections, not just rewording",
-          caption: "AI Proposal editor.",
-          aspect: "2940 / 1594",
-        },
       ],
     },
     {
       id: "status",
-      number: "07",
+      number: "08",
       label: "STATUS & WHAT'S NEXT",
       title: "Shipped, and Still Being Refined",
       blocks: [
@@ -690,13 +832,34 @@ export const aiProposalBuilder: CaseStudy = {
         },
         {
           type: "titledList",
+          eyebrow: "IMPACT SINCE THE AI EDITOR SHIPPED",
+          items: [
+            {
+              title: "The blank page is gone",
+              description:
+                "Every new proposal starts from a draft now, not a template hunt or an empty section list. Reps open the builder and prompt first, template-first has become the exception.",
+            },
+            {
+              title: "Assessments turn into priced proposals same-day",
+              description:
+                "A draft that used to wait for a rep to sit down and write it from scratch now exists minutes after the inspection ends, still editable, but never starting from zero.",
+            },
+            {
+              title: "Roofr logins are already dropping off",
+              description:
+                "Reps default to our own proposal app even for jobs that don't strictly require it yet, nothing has to be retyped thanks to the CRM sync, and the AI draft is faster than anything Roofr offered, which was the entire bet behind building our own.",
+            },
+          ],
+        },
+        {
+          type: "titledList",
           eyebrow: "WHAT WE'VE LEARNED SO FAR",
           items: [
             {
               title:
-                "A shared schema beats a synced copy, even when it's slower to build",
+                "A light sync by the job beat a deep one, and it was enough",
               description:
-                "Integrating Roofr would have shipped faster. Building on the CRM's own job record took longer, but it removed the seam instead of automating it.",
+                "Integrating Roofr's API would have shipped faster and kept the two systems in sync. Building our own app took longer, but linking it to the CRM by nothing more than the job and property address was enough to remove the re-entry, without merging two products into one.",
             },
             {
               title:
@@ -716,6 +879,28 @@ export const aiProposalBuilder: CaseStudy = {
                 "Every module here had to work with production data the CRM already depended on daily, which meant shipping in a different order than a greenfield build would allow.",
             },
           ],
+        },
+        {
+          type: "pilotSurveyChart",
+          scaleNote: "% measured across the pilot sessions",
+          max: 100,
+          unit: "%",
+          categories: [
+            {
+              label: "Proposal drafting completion",
+              before: 40,
+              after: 60,
+            },
+            {
+              label: "Proposals with an AI edit",
+              before: 25,
+              after: 40,
+            },
+          ],
+          headline:
+            "Completion rose from 40% to 60%, and AI editing went from a rarely-touched feature to something used on 4 in 10 proposals.",
+          analysis:
+            "Reps were starting proposals and abandoning them before AI drafting existed, the blank page was the drop-off point. The inline editor added on top of that: once a rep had a full draft to react to instead of a form to fill in, editing it in conversation read as faster than typing changes by hand, which is what pulled both numbers up across the sessions. Volume moved with it, too: proposal drafts went from an average of 12 a day to about 30, a rough read based on job data rather than a formal count, but directionally consistent with the rest of the pilot.",
         },
       ],
     },

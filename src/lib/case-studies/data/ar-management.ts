@@ -526,7 +526,7 @@ export const arManagement: CaseStudy = {
             src: "/images/work/ar-denial-management.png",
             alt: "The denial management view showing denial trends, top denial reasons, and payer-level breakdowns",
           },
-          aspect: "2880 / 1924",
+          aspect: "2880 / 1668",
         },
         {
           type: "moduleHeader",

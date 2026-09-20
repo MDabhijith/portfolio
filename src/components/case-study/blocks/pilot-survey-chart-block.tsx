@@ -3,13 +3,18 @@ export function PilotSurveyChartBlock({
   categories,
   headline,
   analysis,
+  max = 5,
+  unit,
 }: {
   scaleNote: string;
   categories: { label: string; before: number; after: number }[];
   headline: string;
   analysis: string;
+  max?: number;
+  unit?: "%";
 }) {
-  const max = 5;
+  const format = (value: number) =>
+    unit === "%" ? `${Math.round(value)}%` : value.toFixed(1);
 
   return (
     <div className="flex flex-col gap-10">
@@ -34,7 +39,7 @@ export function PilotSurveyChartBlock({
               <div className="flex h-[170px] items-end gap-1.5">
                 <div className="flex w-6 flex-col items-center gap-1">
                   <span className="font-body text-xs font-medium text-[#727272]">
-                    {cat.before.toFixed(1)}
+                    {format(cat.before)}
                   </span>
                   <div
                     className="w-full rounded-t bg-[#d4d4d4]"
@@ -43,7 +48,7 @@ export function PilotSurveyChartBlock({
                 </div>
                 <div className="flex w-6 flex-col items-center gap-1">
                   <span className="font-body text-xs font-semibold text-positive">
-                    {cat.after.toFixed(1)}
+                    {format(cat.after)}
                   </span>
                   <div
                     className="w-full rounded-t bg-brand"

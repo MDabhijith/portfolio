@@ -111,6 +111,8 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
           categories={block.categories}
           headline={block.headline}
           analysis={block.analysis}
+          max={block.max}
+          unit={block.unit}
         />
       );
     case "testimonialCard":
