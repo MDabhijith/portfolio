@@ -29,7 +29,13 @@ import { VideoBlock } from "./video-block";
 import { WorkflowTimelineBlock } from "./workflow-timeline-block";
 import { BeforeAfterBlock } from "./before-after-block";
 import { PersonaSwitcherBlock } from "./persona-switcher-block";
+import { PersonaCardsBlock } from "./persona-cards-block";
+import { JourneyMapBlock } from "./journey-map-block";
+import { PhaseBoardBlock } from "./phase-board-block";
+import { UserFlowDiagramBlock } from "./user-flow-diagram-block";
 import { ZoomableImageBlock } from "./zoomable-image-block";
+import { BarChartBlock } from "./bar-chart-block";
+import { VisualPlaceholderBlock } from "./visual-placeholder-block";
 
 /** Renders a single case-study content block by its `type` discriminant. */
 export function BlockRenderer({ block }: { block: ContentBlock }) {
@@ -59,7 +65,7 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
     case "quote":
       return <PullQuote quote={block.quote} attribution={block.attribution} />;
     case "insightCards":
-      return <InsightCardsBlock items={block.items} />;
+      return <InsightCardsBlock items={block.items} variant={block.variant} />;
     case "taggedList":
       return <TaggedListBlock items={block.items} variant={block.variant} />;
     case "callout":
@@ -70,6 +76,24 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
           eyebrow={block.eyebrow}
           meta={block.meta}
           personas={block.personas}
+        />
+      );
+    case "personaCards":
+      return <PersonaCardsBlock items={block.items} />;
+    case "journeyMap":
+      return <JourneyMapBlock stages={block.stages} tone={block.tone} />;
+    case "phaseBoard":
+      return <PhaseBoardBlock stages={block.stages} />;
+    case "userFlowDiagram":
+      return (
+        <UserFlowDiagramBlock
+          steps={block.steps}
+          decision={block.decision}
+          rejectedLabel={block.rejectedLabel}
+          rejectedEnd={block.rejectedEnd}
+          approvedLabel={block.approvedLabel}
+          approvedSteps={block.approvedSteps}
+          successEnd={block.successEnd}
         />
       );
     case "qaPanel":
@@ -112,6 +136,8 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
           headline={block.headline}
           analysis={block.analysis}
           max={block.max}
+          beforeLabel={block.beforeLabel}
+          afterLabel={block.afterLabel}
           unit={block.unit}
         />
       );
@@ -137,7 +163,13 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
     case "statusCards":
       return <StatusCardsBlock items={block.items} />;
     case "titledList":
-      return <TitledListBlock eyebrow={block.eyebrow} items={block.items} />;
+      return (
+        <TitledListBlock
+          eyebrow={block.eyebrow}
+          variant={block.variant}
+          items={block.items}
+        />
+      );
     case "statCards":
       return <StatCardsBlock items={block.items} />;
     case "workflowTimeline":
@@ -163,6 +195,19 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
       );
     case "zoomableImage":
       return <ZoomableImageBlock image={block.image} />;
+    case "barChart":
+      return (
+        <BarChartBlock
+          orientation={block.orientation}
+          unit={block.unit}
+          note={block.note}
+          bars={block.bars}
+          headline={block.headline}
+          analysis={block.analysis}
+        />
+      );
+    case "visualPlaceholder":
+      return <VisualPlaceholderBlock label={block.label} />;
     default:
       return null;
   }

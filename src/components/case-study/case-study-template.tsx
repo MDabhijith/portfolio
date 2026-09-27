@@ -53,7 +53,7 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
             {/* The column matches the hero frame's width, which is far wider than
                 a readable measure — so running text is capped here, once, while
                 images, galleries and comparison grids keep the full width. */}
-            <div className="flex min-w-0 flex-1 flex-col gap-20 [&_p]:max-w-[68ch] sm:gap-28">
+            <div className="flex min-w-0 flex-1 flex-col gap-28 [&_p]:max-w-[68ch] sm:gap-36">
               {caseStudy.sections.map((section, index) => (
                 <Fragment key={section.id}>
                   {/* Key Decisions sit just before the closing section (Impact), matching Figma's order. */}
@@ -79,7 +79,7 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
 
                   <section
                     id={section.id}
-                    className="flex scroll-mt-32 flex-col gap-8"
+                    className="flex scroll-mt-32 flex-col gap-10"
                   >
                     <Reveal>
                       <SectionHeading
@@ -92,8 +92,8 @@ export function CaseStudyTemplate({ caseStudy }: { caseStudy: CaseStudy }) {
                       <Reveal key={gi}>
                         <div
                           className={cn(
-                            "flex flex-col gap-6",
-                            gi > 0 && "mt-8 sm:mt-12"
+                            "flex flex-col gap-8",
+                            gi > 0 && "mt-10 sm:mt-16"
                           )}
                         >
                           {group.map((block, bi) => (

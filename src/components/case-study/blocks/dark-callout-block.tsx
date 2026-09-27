@@ -3,7 +3,13 @@ export function DarkCalloutBlock({
   rows,
 }: {
   eyebrow: string;
-  rows: { label: string; before: string; after: string }[];
+  rows: {
+    label: string;
+    before: string;
+    after: string;
+    beforeEstimated?: boolean;
+    afterEstimated?: boolean;
+  }[];
 }) {
   return (
     <div className="flex flex-col gap-8 rounded-xl border border-line bg-gradient-to-br from-brand/10 via-white to-brand-secondary/10 p-8 sm:gap-12 sm:p-20">
@@ -24,8 +30,12 @@ export function DarkCalloutBlock({
               {row.label}
             </p>
             <p className="font-body text-body-sm leading-relaxed text-cs-label">
-              {row.before}{" "}
-              <span className="font-semibold text-cs-ink">{row.after}</span>
+              {row.before}
+              {row.beforeEstimated ? <sup>*</sup> : null}{" "}
+              <span className="font-semibold text-cs-ink">
+                {row.after}
+                {row.afterEstimated ? <sup>*</sup> : null}
+              </span>
             </p>
           </div>
         ))}

@@ -4,19 +4,26 @@ export function NumberedFindingsBlock({
   items: { number: string; title: string; description: string }[];
 }) {
   return (
-    <div data-reveal-stagger className="flex flex-col gap-8 sm:gap-[50px]">
+    <div data-reveal-stagger className="mt-6 flex flex-col sm:mt-10">
       {items.map((item, i) => (
-        <div key={i} className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
-          <div className="flex size-[72px] shrink-0 items-center justify-center rounded-full bg-[#f2f2f2] sm:size-[111px]">
-            <span className="font-heading text-[26px] font-semibold text-black sm:text-h5">
-              {item.number}
-            </span>
-          </div>
-          <div className="flex flex-col gap-2 sm:pt-2">
+        <div
+          key={i}
+          className="flex gap-5 border-t border-line py-8 first:border-t-0 first:pt-0 sm:gap-10"
+        >
+          <span
+            aria-hidden="true"
+            style={{
+              WebkitTextStroke: `1.5px ${i % 2 === 0 ? "var(--brand)" : "var(--brand-secondary)"}`,
+            }}
+            className="w-[56px] shrink-0 select-none font-heading text-[56px] leading-[0.85] font-semibold text-transparent sm:w-[88px] sm:text-[76px]"
+          >
+            {item.number}
+          </span>
+          <div className="flex flex-col gap-2 pt-1 sm:pt-2">
             <p className="font-body text-lg font-semibold text-cs-ink">
               {item.title}
             </p>
-            <p className="font-body text-base leading-relaxed text-cs-body">
+            <p className="font-body text-body-sm leading-relaxed text-cs-body">
               {item.description}
             </p>
           </div>

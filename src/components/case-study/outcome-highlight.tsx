@@ -27,6 +27,9 @@ export function OutcomeHighlight({
             <div key={stat.value} className="flex flex-col gap-[10px]">
               <p className="font-heading text-3xl font-semibold text-black sm:text-h4">
                 {stat.value}
+                {stat.estimated ? (
+                  <sup className="ml-0.5 text-[#626262]">*</sup>
+                ) : null}
               </p>
               <p className="font-body text-caption text-[#626262]">
                 {stat.caption}

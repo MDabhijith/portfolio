@@ -15,7 +15,11 @@ export function CaseStudyHeader({ caseStudy }: { caseStudy: CaseStudy }) {
           fill
           priority
           sizes="(min-width: 1280px) 1280px, 100vw"
-          className="object-contain"
+          className={
+            caseStudy.heroImageFit === "cover"
+              ? "object-cover"
+              : "object-contain"
+          }
         />
       </div>
 

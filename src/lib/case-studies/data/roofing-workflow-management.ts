@@ -37,8 +37,8 @@ export const roofingWorkflowManagement: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "I led product design on this CRM from a blank slate to a system seventeen modules deep, defining what it would own and how it would work, then validating it with a pilot before rollout, while developers built to spec.",
-            "Priority Roofing is a roofing contractor in the US. They handle everything: canvassing neighborhoods, closing deals, ordering materials, sending out crews, passing inspections, and settling insurance claims and commissions. As the business grew, its tools didn't keep up. Every job's information was split across different software, and no single place could tell you where a job actually stood.",
+            "I led product design on this CRM from a blank slate to a seventeen-module system, defining what it would own, then validating it with a pilot before rollout while developers built to spec.",
+            "Priority Roofing is a US roofing contractor: canvassing, closing deals, ordering materials, dispatching crews, inspections, insurance claims, and commissions. As the business grew, its tools didn't keep up, every job's info was split across different software, and no single place showed where a job stood.",
           ],
         },
         {
@@ -85,7 +85,7 @@ export const roofingWorkflowManagement: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "The tools themselves weren't the problem. The gaps between them were. Every handoff meant typing the same job into another system by hand, and every gap between tools was patched manually. Five problems kept showing up.",
+            "The tools weren't the problem, the gaps between them were. Every handoff meant retyping the same job by hand, patched manually at every seam. Five problems kept showing up.",
           ],
         },
         {
@@ -105,7 +105,7 @@ export const roofingWorkflowManagement: CaseStudy = {
               number: "02",
               title: "Re-typed at every handoff",
               description:
-                "The same job was typed into each tool in turn. Numbers and addresses drifted apart, and no version was ever the correct one.",
+                "The same job was typed into each tool in turn, numbers and addresses drifted apart, and no version was ever correct.",
               image: {
                 src: "/images/work/insight-rekeyed-handoff.svg",
                 alt: "",
@@ -142,7 +142,7 @@ export const roofingWorkflowManagement: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "Roofing-specific tools existed, but each one assumed a simpler operation than Priority Roofing actually had. Commission tracking, material management, and coordination between sales, back office, and production all needed to work together in one synced system. Every alternative meant stitching separate tools together instead of running the business from one place.",
+            "Roofing-specific tools existed, but each assumed a simpler operation than Priority Roofing had. Commission tracking, material management, and cross-team coordination all needed to work as one synced system, every alternative meant stitching separate tools together instead.",
           ],
         },
       ],
@@ -156,8 +156,8 @@ export const roofingWorkflowManagement: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "Priority Roofing was growing fast, more reps, more crews, more claims, but its tools hadn't kept up. Before designing anything, I needed to understand how a job actually made money, who touched it along the way, and where the current tools were costing time, accuracy, and trust.",
-            "Instead of relying on a documented process, I traced one real job from start to finish and talked to everyone who touched it: sales, back office, and production. I ran interviews with each role, audited the spreadsheets holding everything together, and watched the day-to-day work to see where the real process differed from the official one.",
+            "Priority Roofing was growing fast, more reps, more crews, more claims, but its tools hadn't kept up. Before designing anything, I needed to understand how a job actually made money and where the current tools cost time, accuracy, and trust.",
+            "Instead of relying on a documented process, I traced one real job start to finish and talked to everyone who touched it: sales, back office, production. I interviewed each role, audited the spreadsheets holding everything together, and watched the day-to-day work to see where reality diverged from the official process.",
           ],
         },
         {
@@ -165,7 +165,7 @@ export const roofingWorkflowManagement: CaseStudy = {
           eyebrow: "WHO WE NEEDED TO HEAR FROM",
           title: "Three Roles, Three Very Different Days",
           description:
-            "A job passes through a Sales Rep, a Project Manager, and Back Office before it's paid out. Each one experiences the same broken handoffs differently, so understanding the job meant understanding all three.",
+            "A job passes through a Sales Rep, a Project Manager, and Back Office before it's paid out, each experiencing the same broken handoffs differently. Understanding the job meant understanding all three.",
         },
         {
           type: "qaPanel",
@@ -228,7 +228,7 @@ export const roofingWorkflowManagement: CaseStudy = {
                 { label: "Tools", value: "Roofr, phone, texts" },
                 { label: "Tech", value: "High, phone-first" },
               ],
-              bio: "Three years canvassing storm-damaged neighbourhoods. Builds the proposal in Roofr on a tailgate, gets the signature, and hands the job off to whoever picks up the phone. Once it leaves him there is no record he can open, so when the homeowner calls a week later he calls the office to find out what happened.",
+              bio: "Three years canvassing storm-damaged neighbourhoods. Builds the Roofr proposal on a tailgate, gets the signature, and hands it off to whoever answers the phone. Once it leaves him there's no record he can open, so when the homeowner calls a week later, he has to call the office too.",
               motivations: [
                 "Commission is the job, and it only pays on a completed install",
                 "Referrals come from homeowners he kept informed",
@@ -267,7 +267,7 @@ export const roofingWorkflowManagement: CaseStudy = {
                 { label: "Tools", value: "Excel, phone, site visits" },
                 { label: "Tech", value: "Moderate, hates re-entry" },
               ],
-              bio: "Six years running production. Decides each morning which jobs are ready and which crew goes where, working from an Excel sheet somebody else updated and a mental map of who told him what. When a job is not actually ready, he finds out from a crew standing on a driveway.",
+              bio: "Six years running production. Decides each morning which jobs are ready and which crew goes where, from an Excel sheet someone else updated and a mental map of who told him what. When a job isn't ready, he finds out from a crew standing on the driveway.",
               motivations: [
                 "A crew that never gets sent to a job that is not ready",
                 "Installs finished on the date the homeowner was promised",
@@ -306,7 +306,7 @@ export const roofingWorkflowManagement: CaseStudy = {
                 { label: "Tools", value: "Excel, QuickBooks, Roofr" },
                 { label: "Tech", value: "Expert in spreadsheets" },
               ],
-              bio: "Five years holding the record together. She is the only person who knows which QuickBooks customer maps to which Roofr proposal and which Excel row, and she rebuilds that mapping by hand for every job. When she takes a week off, nobody else can answer where a job stands.",
+              bio: "Five years holding the record together. She's the only one who knows which QuickBooks customer maps to which Roofr proposal and Excel row, rebuilding that mapping by hand for every job. When she takes a week off, nobody else can answer where a job stands.",
               motivations: [
                 "Numbers that survive an audit without a week of reconciling",
                 "Ordering materials she will not have to re-order",
@@ -379,7 +379,7 @@ export const roofingWorkflowManagement: CaseStudy = {
               tone: "neutral",
               title: "Horizontal CRMs (Salesforce-style platforms)",
               description:
-                "Flexible enough to model almost anything, but that meant months of setup just to represent a job. Still nothing built for roofing-specific work like material orders or crew scheduling.",
+                "Flexible enough to model almost anything, but that meant months of setup just to represent a job, and still nothing built for roofing-specific work like material orders or crew scheduling.",
             },
             {
               tag: "PARTIAL",
@@ -414,7 +414,7 @@ export const roofingWorkflowManagement: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "The first big decision wasn't a screen, it was scope. Replacing everything at once would have been too costly and too risky. So we drew a clear line around what the new CRM would own.",
+            "The first big decision wasn't a screen, it was scope. Replacing everything at once was too costly and risky, so we drew a clear line around what the new CRM would own.",
           ],
         },
         {
@@ -466,7 +466,7 @@ export const roofingWorkflowManagement: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "The modules aren't a menu, they're a path. A lead comes in from the field and leaves as a paid job, and every handoff between roles happens inside the same system. Four phases, each owned by the people who do the work.",
+            "The modules aren't a menu, they're a path: a lead comes in from the field and leaves as a paid job, every handoff happening inside the same system. Four phases, each owned by the people who do the work.",
           ],
         },
         {
@@ -493,7 +493,7 @@ export const roofingWorkflowManagement: CaseStudy = {
               actor: "SALES REP",
               actorTone: "muted",
               description:
-                "The prospect moves through its pipeline, Contacted, Appointment Set, Inspection Complete, Proposal Sent, as a single status change, no request or paperwork re-entered at each step.",
+                "The prospect moves through its pipeline, Contacted, Appointment Set, Inspection Complete, Proposal Sent, as a single status change with no paperwork re-entered.",
               tags: ["Prospects"],
             },
             {
@@ -501,7 +501,7 @@ export const roofingWorkflowManagement: CaseStudy = {
               actor: "SALES REP",
               actorTone: "muted",
               description:
-                "The moment status flips to Job Won, the prospect is automatically routed into job submittal for review, it doesn't become a job on the rep's say-so alone.",
+                "The moment status flips to Job Won, the prospect routes automatically into job submittal for review, it doesn't become a job on the rep's say-so.",
               tags: ["Prospects"],
             },
             {
@@ -588,7 +588,7 @@ export const roofingWorkflowManagement: CaseStudy = {
           type: "moduleHeader",
           title: "Every Spreadsheet Became a Real Feature",
           description:
-            "Material management was the heaviest lift. Inventory, purchase orders, and reconciliation all ran by hand across tabs. Alongside fees, sales reps, PMs, and territory, each spreadsheet was replaced by a structured module tied back to the job.",
+            "Material management was the heaviest lift, inventory, purchase orders, and reconciliation all ran by hand across tabs. Alongside fees, sales reps, PMs, and territory, each spreadsheet became a structured module tied back to the job.",
         },
         {
           type: "video",
@@ -618,7 +618,7 @@ export const roofingWorkflowManagement: CaseStudy = {
           type: "moduleHeader",
           title: "The Job Cycle: One Pipeline Everyone Reads the Same Way",
           description:
-            'Every job runs on an eight-stage pipeline pinned to the top of its record. It replaced the Excel status column no one trusted: the current stage is unmistakable, each stage has a clear owner, and "Next Step" is a first-class field instead of something you deduce.',
+            'Every job runs on an eight-stage pipeline pinned to the top of its record, replacing the Excel status column no one trusted. The current stage is unmistakable, each stage has a clear owner, and "Next Step" is a first-class field instead of something you deduce.',
         },
         {
           type: "beforeAfter",
@@ -678,8 +678,8 @@ export const roofingWorkflowManagement: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "I built a design system so I wasn't solving the same design problem twice on different screens. Reusable components and patterns kept every screen consistent and made the product easier to maintain as it grew.",
-            "It also made it easier to work with developers. Clear components, variants, and guidelines meant less back-and-forth, fewer inconsistencies, and faster handoffs.",
+            "I built a design system so I wasn't solving the same problem twice across screens. Reusable components kept every screen consistent and made the product easier to maintain as it grew.",
+            "It also made working with developers easier: clear components and guidelines meant less back-and-forth and faster handoffs.",
           ],
         },
         {
@@ -696,18 +696,18 @@ export const roofingWorkflowManagement: CaseStudy = {
           title:
             "Before It Shipped Company-Wide, We Asked the Team If It Actually Worked",
           description:
-            "A system this important couldn't be judged by adoption numbers alone. Before the full rollout, we ran a two-week pilot with the three roles who use the CRM every day, and used what we learned to decide what shipped as-is, what changed, and what got cut.",
+            "A system this important couldn't be judged by adoption numbers alone. Before full rollout, we ran a two-week pilot with the three daily-user roles, and used what we learned to decide what shipped as-is, changed, or got cut.",
         },
         {
           type: "executiveSummary",
           title: "Executive summary",
           description:
-            "Priority Roofing's operations ran on three disconnected tools, patched together with spreadsheets no system owned. I traced one job end-to-end, audited the tools, and looked at four off-the-shelf CRMs before deciding a custom build was the only real option. We piloted it with the three roles who touch a job every day, measured their confidence before and after, and used that evidence, not just our own opinion, to greenlight the full rollout.",
+            "Priority Roofing's operations ran on three disconnected tools, patched together with spreadsheets no system owned. I traced one job end-to-end, audited the tools, and evaluated four off-the-shelf CRMs before deciding a custom build was the only real option. We piloted it with the three daily-user roles, measured their confidence before and after, and used that evidence, not just opinion, to greenlight the full rollout.",
         },
         {
           type: "moduleHeader",
           description:
-            "Before and after a two-week pilot, we asked every Sales Rep, Project Manager, and Back Office user to self-rate four things, 1-5. The gaps told us where the design was working and where it wasn't.",
+            "Before and after a two-week pilot, every Sales Rep, Project Manager, and Back Office user self-rated four things on a 1-5 scale, the gaps showed where the design was working and where it wasn't.",
         },
         {
           type: "pilotSurveyChart",
@@ -766,8 +766,9 @@ export const roofingWorkflowManagement: CaseStudy = {
     description:
       "How the Job Cycle went from a chronological activity feed to a seven-stage pipeline, the research, the usage data, and the rework.",
     image: {
-      src: "/images/work/job-module.webp",
-      alt: "Priority Roofing job management dashboard on laptop and phone",
+      src: "/images/work/job-module-card-cover-new.png",
+      alt: "The redesigned Priority Roofing job detail view open on a laptop, over a light blue-to-violet gradient",
     },
+    themeColor: "#001b3d",
   },
 };

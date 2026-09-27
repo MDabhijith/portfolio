@@ -53,7 +53,7 @@ export const arManagement: CaseStudy = {
             {
               label: "Why",
               value:
-                "Claims stalled at insurers with no single place to see what was needed to resolve them. About 80% of pending claims sat untouched, because the data needed to act on them lived in a spreadsheet, not in the system where the work actually happened.",
+                "Claims stalled at insurers with no single place to see what was needed to resolve them. About 80% sat untouched, because the data to act on them lived in a spreadsheet, not the system where the work happened.",
             },
             {
               label: "What",
@@ -121,7 +121,7 @@ export const arManagement: CaseStudy = {
           type: "moduleHeader",
           eyebrow: "JOBS TO BE DONE",
           description:
-            "Each job follows the same pattern: when this happens, I want to do this, so I can get that outcome, whether it's Priya resolving a claim, Marcus checking AR health, or the team handing one off.",
+            "Same pattern each time: when this happens, I want to do this, so I get that outcome, whether it's Priya resolving a claim, Marcus checking AR health, or a handoff between the two.",
         },
         {
           type: "image",
@@ -169,8 +169,8 @@ export const arManagement: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "Spectrum Health Solutions' Accounts Receivable team is the last step between a patient visit and the revenue it should bring in. When a claim stalled at an insurance company, the specialist calling to resolve it needed the full picture in one place: patient details, visit history, past claim status, and rejection reasons.",
-            "They didn't have it. The patient system held the clinical and billing record, but claim status, follow-up dates, and notes lived in spreadsheets updated by hand. Every insurer call meant checking two sources before the conversation could even start. With no single view of what was aging and why, nearly 80% of pending claims sat unresolved, revenue the business had already earned but couldn't collect.",
+            "Spectrum Health Solutions' AR team is the last step between a patient visit and the revenue it should bring in. When a claim stalled at an insurer, the specialist resolving it needed the full picture in one place: patient details, visit history, past claim status, rejection reasons.",
+            "They didn't have it. The patient system held the clinical and billing record; claim status, follow-up dates, and notes lived in spreadsheets updated by hand. Every insurer call meant checking two sources first. With no single view of what was aging and why, nearly 80% of pending claims sat unresolved, revenue already earned but uncollected.",
           ],
         },
         {
@@ -241,31 +241,31 @@ export const arManagement: CaseStudy = {
               number: "01",
               title: "Two sources of truth, always slightly out of sync",
               description:
-                "The patient management system held the clinical and billing record. Claim status, follow-up dates, and notes lived in Excel, kept current by whoever last remembered to update it.",
+                "The patient system held the clinical and billing record. Claim status, follow-up dates, and notes lived in Excel, kept current by whoever last remembered to.",
             },
             {
               number: "02",
               title: "No way to prioritize by urgency",
               description:
-                "Without aging visibility, the team worked whatever was on top of the list rather than the oldest or highest-value claims first.",
+                "Without aging visibility, the team worked whatever was on top of the list, not the oldest or highest-value claims first.",
             },
             {
               number: "03",
               title: "Rejection reasons were tribal knowledge",
               description:
-                "Why a claim was denied lived in someone's memory or a comment in a cell, not somewhere the next person touching that charge could find it.",
+                "Why a claim was denied lived in someone's memory or a cell comment, not somewhere the next person touching that charge could find it.",
             },
             {
               number: "04",
               title: "No record of what was said or done",
               description:
-                "A call to an insurer, a resubmission, a status change: none of it was logged anywhere a teammate or manager could review later.",
+                "A call to an insurer, a resubmission, a status change, none of it was logged anywhere a teammate or manager could review later.",
             },
             {
               number: "05",
               title: "Leadership had no visibility into AR health",
               description:
-                "There was no aggregate view of total outstanding, denial rates, or which payers were slow. Every question meant someone manually pulling numbers from the spreadsheet.",
+                "No aggregate view of total outstanding, denial rates, or slow payers existed. Every question meant someone manually pulling numbers from the spreadsheet.",
             },
           ],
         },
@@ -297,7 +297,7 @@ export const arManagement: CaseStudy = {
               tag: "01",
               tone: "positive",
               title:
-                "Built AR Management as a native module inside the existing patient management system, not a parallel tool.",
+                "Built AR Management as a native module inside the patient system, not a parallel tool.",
               description:
                 "Splitting data and action across two tools meant the team was always reconciling instead of working.",
             },
@@ -305,7 +305,7 @@ export const arManagement: CaseStudy = {
               tag: "02",
               tone: "positive",
               title:
-                "Charge list is bucketed by aging: 0-14, 14-30, 30-60, 60-90, 90-120, 120+ days, so the team triages oldest-first.",
+                "Charge list bucketed by aging, 0-14 through 120+ days, so the team triages oldest-first.",
               description:
                 "Working claims in no particular order meant the oldest, highest-risk revenue kept slipping further behind.",
             },
@@ -321,7 +321,7 @@ export const arManagement: CaseStudy = {
               tag: "04",
               tone: "positive",
               title:
-                "Added status-based claim processing that tracks each stage and the specific reason behind a rejection.",
+                "Added status-based claim processing that tracks each stage and the specific rejection reason.",
               description:
                 "Rejection reasons and claim stages existed only in memory or scattered notes.",
             },
@@ -329,7 +329,7 @@ export const arManagement: CaseStudy = {
               tag: "05",
               tone: "positive",
               title:
-                "Added a comment and status history on every charge, so any teammate can see exactly what happened and when.",
+                "Added a comment and status history on every charge, so any teammate can see what happened and when.",
               description:
                 "No record existed of what was said, changed, or decided on a charge.",
             },
@@ -337,9 +337,9 @@ export const arManagement: CaseStudy = {
               tag: "06",
               tone: "positive",
               title:
-                "Built an Analytics Dashboard as a real module, not an afterthought, surfacing denial trends by payer, aging totals, and CPT-level revenue so the business could act on AR instead of just tracking it.",
+                "Built an Analytics Dashboard as a real module, surfacing denial trends, aging totals, and CPT-level revenue.",
               description:
-                "Leadership had no visibility into AR health and kept requesting numbers no one could produce without hand-building a report.",
+                "Leadership had no visibility into AR health, and kept requesting numbers no one could produce without hand-building a report.",
             },
           ],
         },
@@ -453,14 +453,14 @@ export const arManagement: CaseStudy = {
           type: "moduleHeader",
           eyebrow: "WHY THE CHARGE LIST SITS AT THE CENTER",
           description:
-            "Every charge is grouped by how long it's been outstanding: 0-14, 14-30, 30-60, 60-90, 90-120, and 120+ days. That way the team works the oldest, highest-risk claims first, not whatever a spreadsheet happened to have open. Opening a charge shows everything at once: patient and visit details, insurance, payment details, and a full history of status changes and comments, so a call to the insurer starts already informed.",
+            "Every charge is grouped by how long it's been outstanding, 0-14 through 120+ days, so the team works the oldest, highest-risk claims first, not whatever a spreadsheet happened to have open. Opening a charge shows patient, visit, insurance, and payment details plus a full status history together, so an insurer call starts already informed.",
         },
         { type: "moduleHeader", eyebrow: "WHAT EACH MODULE DOES" },
         {
           type: "moduleHeader",
           title: "Charge List & Aging Buckets",
           description:
-            "Every charge gets sorted into an aging bucket the moment it's created. The list can be filtered by bucket, status, or insurer, so the team always knows what's oldest and most at risk.",
+            "Every charge is sorted into an aging bucket the moment it's created, filterable by bucket, status, or insurer, so the team always knows what's oldest and most at risk.",
         },
         {
           type: "image",
@@ -476,12 +476,12 @@ export const arManagement: CaseStudy = {
             {
               term: "The design decision",
               description:
-                "Early versions listed all charges in one flat table sorted by date created. It didn't surface urgency, so aging buckets were added as the primary way to slice the list.",
+                "Early versions listed all charges in one flat table sorted by date created. It didn't surface urgency, so aging buckets became the primary way to slice the list.",
             },
             {
               term: "The impact",
               description:
-                "The team could work oldest-and-highest-risk claims first instead of whatever happened to be visible, directly shrinking the backlog of aged claims.",
+                "The team could work oldest-and-highest-risk claims first instead of whatever was visible, directly shrinking the backlog of aged claims.",
             },
           ],
         },
@@ -489,7 +489,7 @@ export const arManagement: CaseStudy = {
           type: "moduleHeader",
           title: "Charge Details",
           description:
-            "Opening a charge shows everything a specialist needs before calling an insurer: insurance details, payment and patient balances, visit information, and a full history of status changes and comments.",
+            "Opening a charge shows everything a specialist needs before calling an insurer: insurance, payment and patient balances, visit info, and a full status and comment history.",
         },
         {
           type: "image",
@@ -505,12 +505,12 @@ export const arManagement: CaseStudy = {
             {
               term: "The design decision",
               description:
-                "Insurance, payment, and history were originally three separate tabs. Watching specialists flip between them mid-call on the phone with an insurer is what drove consolidating it into one page.",
+                "Insurance, payment, and history were originally three separate tabs. Watching specialists flip between them mid-call with an insurer drove consolidating it into one page.",
             },
             {
               term: "The impact",
               description:
-                "Specialists walked into insurer calls already informed, cutting the back-and-forth that used to stall a single follow-up call.",
+                "Specialists walked into insurer calls already informed, cutting the back-and-forth that used to stall a follow-up call.",
             },
           ],
         },
@@ -518,7 +518,7 @@ export const arManagement: CaseStudy = {
           type: "moduleHeader",
           title: "Denial Management",
           description:
-            "Denied claims are tracked with the exact rejection reason: missing information, incorrect patient info, coding errors, or expired eligibility, so the team can fix the actual cause instead of resubmitting blind.",
+            "Denied claims are tracked with the exact rejection reason, missing information, incorrect patient info, coding errors, expired eligibility, so the team fixes the actual cause instead of resubmitting blind.",
         },
         {
           type: "image",
@@ -532,7 +532,7 @@ export const arManagement: CaseStudy = {
           type: "moduleHeader",
           title: "Follow-Ups & Task Management",
           description:
-            "Follow-up dates and to-dos are tracked per charge and surface as due-on-date notifications, so nothing waiting on an insurer response gets forgotten.",
+            "Follow-up dates and to-dos are tracked per charge and surface as due-on-date notifications, so nothing waiting on an insurer gets forgotten.",
         },
         {
           type: "image",
@@ -546,7 +546,7 @@ export const arManagement: CaseStudy = {
           type: "moduleHeader",
           title: "Analytics Dashboard",
           description:
-            "The most important screen in the product: claim vs. paid, claim vs. denial, and claim vs. follow-up trends, total AR outstanding, top denial reasons, top CPT codes paid, and which payers deny the most, all in one view leadership can act on instead of a black box.",
+            "The most important screen in the product: claim vs. paid, denial, and follow-up trends, total AR outstanding, top denial reasons, top CPT codes paid, and which payers deny most, all in one actionable view.",
         },
         {
           type: "image",
@@ -562,12 +562,12 @@ export const arManagement: CaseStudy = {
             {
               term: "The design decision",
               description:
-                "Analytics wasn't part of the original scope. It came from leadership repeatedly asking for numbers no one could produce without manually working the spreadsheet. Once built, it became the module leadership opened most, so it kept growing: payer-level denial trends, top CPT codes paid, and top insurances paid were all added after launch.",
+                "Analytics wasn't in the original scope, it came from leadership repeatedly asking for numbers no one could produce without working the spreadsheet by hand. Once built, it became the module leadership opened most, so it kept growing: payer-level denial trends and top CPT/insurance breakdowns were added after launch.",
             },
             {
               term: "The impact",
               description:
-                "This module has the clearest line to revenue. Showing which payers deny most and why turned denial management from reactive to targeted, and gave leadership a live view of AR health instead of a monthly manual pull. It's the single biggest reason behind the 80% claim recovery number.",
+                "The clearest line to revenue in the product. Showing which payers deny most and why turned denial management from reactive to targeted, and gave leadership a live view of AR health instead of a monthly manual pull, the single biggest reason behind the 80% recovery number.",
             },
           ],
         },
@@ -616,7 +616,7 @@ export const arManagement: CaseStudy = {
               tone: "positive",
               title: "AR health, visible for the first time",
               description:
-                "Payer-level denial trends and aging totals let the team target the specific payers and rejection reasons costing the most revenue, instead of working claims in the dark.",
+                "Payer-level denial trends and aging totals let the team target the specific payers and rejection reasons costing the most revenue.",
             },
             {
               tag: "EFFICIENCY",
@@ -642,18 +642,18 @@ export const arManagement: CaseStudy = {
               title:
                 "The system of record has to include the workflow, not just the data",
               description:
-                "Holding the billing data wasn't enough without holding the workflow too, and that gap is exactly what Excel filled by default. Bringing the workflow into the same system removed the reason for a shadow tool to exist.",
+                "Holding the billing data wasn't enough without the workflow too, and that gap is exactly what Excel filled by default. Bringing the workflow into the same system removed the reason for a shadow tool to exist.",
             },
             {
               title: "Aging is the single most useful lens for triage",
               description:
-                "Of every way to slice the charge list, bucketing by days outstanding did the most to change behavior. It made the highest-risk work visible by default instead of requiring someone to go looking for it.",
+                "Of every way to slice the charge list, bucketing by days outstanding did the most to change behavior, making the highest-risk work visible by default instead of requiring someone to go looking for it.",
             },
             {
               title:
-                "The pain point behind analytics was as urgent as the one behind charge tracking",
+                "The pain point behind analytics was as urgent as charge tracking's",
               description:
-                "The dashboard wasn't in the original scope. But leadership couldn't see why 80% of claims were stuck, any more than the AR team could act on them. Both were the same visibility problem, just at a different level. Treating analytics as a real module instead of a bolted-on report is what made it the biggest lever on the recovery number.",
+                "The dashboard wasn't in the original scope, but leadership couldn't see why 80% of claims were stuck, any more than the AR team could act on them. Same visibility problem, different level. Treating analytics as a real module, not a bolted-on report, is what made it the biggest lever on the recovery number.",
             },
           ],
         },
@@ -667,8 +667,9 @@ export const arManagement: CaseStudy = {
     description:
       "Priority Roofing ran its entire operation across QuickBooks, Roofr, and a stack of Excel sheets, none of which talked to each other. We designed and built a single CRM that carries a job from a knock on the door to a paid commission.",
     image: {
-      src: "/images/work/roofing-card-cover.webp",
-      alt: "The Priority Roofing CRM dashboard on a laptop beside the mobile app on a phone",
+      src: "/images/work/roofing-card-cover-new.png",
+      alt: "The Priority Roofing CRM dashboard on a laptop beside the mobile app on a phone, over a dark iridescent gradient",
     },
+    themeColor: "#00113d",
   },
 };

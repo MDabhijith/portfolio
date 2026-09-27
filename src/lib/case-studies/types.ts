@@ -1,6 +1,8 @@
 export interface Stat {
   value: string;
   caption: string;
+  /** Marks this value as a placeholder pending real measurement — renders a superscript asterisk and is grep-able via this flag. */
+  estimated?: boolean;
 }
 
 export interface ImageRef {
@@ -14,7 +16,7 @@ export type ContentBlock =
   | {
       type: "keyValue";
       title?: string;
-      rows: { label: string; value: string }[];
+      rows: { label: string; value: string; estimated?: boolean }[];
       /** "card" wraps rows in a #f7f7f7 card with right-aligned values (Figma's spreadsheet-system table); "plain" (default) is bordered label/value rows. */
       variant?: "plain" | "card";
     }
@@ -49,6 +51,8 @@ export type ContentBlock =
   | { type: "quote"; quote: string; attribution: string }
   | {
       type: "insightCards";
+      /** "problem" renders each item as its own square card in a staggered collage grid, alternating light brand/brand-secondary gradients, instead of the default divided list. */
+      variant?: "default" | "problem";
       items: {
         number: string;
         title: string;
@@ -99,6 +103,57 @@ export type ContentBlock =
       }[];
     }
   | {
+      /** Persona card matching the "ring medallion" reference style: gradient-top
+       * card, PERSONA eyebrow, large title, a ringed icon medallion, and a legend
+       * of responsibility labels (no invented percentages — decorative only). */
+      type: "personaCards";
+      items: {
+        icon: "userCheck" | "shieldCheck" | "users" | "briefcase" | "fileCheck";
+        title: string;
+        legend: string[];
+      }[];
+    }
+  | {
+      /** Modern branching userflow diagram: a linear run of actor-tagged
+       * steps into a decision point, then two labeled branches (a short
+       * terminal exit and the continuing happy path to a success end). */
+      type: "userFlowDiagram";
+      steps: { actor: "USER" | "SYSTEM" | "ADMIN"; label: string }[];
+      decision: { actor: "USER" | "SYSTEM" | "ADMIN"; label: string };
+      rejectedLabel: string;
+      rejectedEnd: string;
+      approvedLabel: string;
+      approvedSteps: { actor: "USER" | "SYSTEM" | "ADMIN"; label: string }[];
+      successEnd: string;
+    }
+  | {
+      /** Phase-column board: stage labels connected by arrows along the top,
+       * each with a dashed-border card below holding its stacked task chips.
+       * A chip can be flagged (danger tone) to call out a pain point. */
+      type: "phaseBoard";
+      stages: {
+        label: string;
+        items: { label: string; flag?: boolean }[];
+      }[];
+    }
+  | {
+      /** UX-standard customer journey map matrix: a column per stage,
+       * rows for Touchpoints / Customer Process / Motivations / Emotions /
+       * Barriers. Scrolls horizontally on narrow viewports like any table. */
+      type: "journeyMap";
+      /** "after" tints the columns green instead of the default blue — use for
+       * the improved/positive side of a before/after pair. */
+      tone?: "before" | "after";
+      stages: {
+        label: string;
+        touchpoints: string;
+        process: string;
+        motivations: string;
+        emotions: string;
+        barriers: string;
+      }[];
+    }
+  | {
       type: "qaPanel";
       eyebrow: string;
       meta: string;
@@ -116,7 +171,13 @@ export type ContentBlock =
       /** Dark full-bleed card for "THE CALL THAT SHAPED IT" style before/after decision rows. */
       type: "darkCallout";
       eyebrow: string;
-      rows: { label: string; before: string; after: string }[];
+      rows: {
+        label: string;
+        before: string;
+        after: string;
+        beforeEstimated?: boolean;
+        afterEstimated?: boolean;
+      }[];
     }
   | {
       /** A small number (2–3) of distilled key decisions: a card per item
@@ -168,10 +229,17 @@ export type ContentBlock =
       items: { label: string; tone: "done" | "active"; bullets: string[] }[];
     }
   | {
-      /** Eyebrow + stacked title/description rows with dividers (Figma's "WHAT WE'VE LEARNED SO FAR"). */
+      /** Eyebrow + stacked title/description rows with dividers (Figma's "WHAT WE'VE LEARNED SO FAR").
+       * "cards" variant renders each row as its own light brand-gradient card with an icon badge instead. */
       type: "titledList";
       eyebrow?: string;
-      items: { title: string; description: string }[];
+      variant?: "default" | "cards";
+      items: {
+        title: string;
+        description: string;
+        /** Icon badge shown on "cards" variant rows; ignored by the default variant. */
+        icon?: "route" | "anchor" | "zap" | "briefcase" | "mapPin";
+      }[];
     }
   | {
       /** Grid of bordered impact cards, each a tag pill + large headline value (Relay Hub's EFFICIENCY/SPEED/… stats). */
@@ -188,11 +256,20 @@ export type ContentBlock =
       /** Before/after pilot-survey bar chart, plus the headline + analysis paragraph that follows it. */
       type: "pilotSurveyChart";
       scaleNote: string;
-      categories: { label: string; before: number; after: number }[];
+      categories: {
+        label: string;
+        before: number;
+        after: number;
+        beforeEstimated?: boolean;
+        afterEstimated?: boolean;
+      }[];
       headline: string;
       analysis: string;
       /** Chart ceiling for the bars; defaults to 5 (a 1-5 self-rated scale). Set to 100 for percentage metrics. */
       max?: number;
+      /** Legend labels; default to "Before pilot" / "After pilot" for the pilot-survey use case — override for other before/after measurements (e.g. "Week 0" / "Week 1"). */
+      beforeLabel?: string;
+      afterLabel?: string;
       /** Value suffix — "%" for percentage metrics, omitted for a plain 1-5 rating. */
       unit?: "%";
     }
@@ -233,6 +310,31 @@ export type ContentBlock =
       /** A large designed diagram (e.g. a full user-flow/process map) shown in a fixed-height viewport the reader can zoom/pan inside, so the outer card stays on-screen while the detail underneath can be explored. */
       type: "zoomableImage";
       image: ImageRef;
+    }
+  | {
+      /** Single-series bar chart — horizontal (ranked % bars) or vertical (grouped-by-category, one bar optionally highlighted as an outlier). Data-driven, no chart library. */
+      type: "barChart";
+      orientation: "horizontal" | "vertical";
+      /** Suffix appended to each value, e.g. "%" or " days". */
+      unit?: string;
+      /** Small note shown above the chart, e.g. "n = 28" or a scale description. */
+      note?: string;
+      bars: {
+        label: string;
+        value: number;
+        estimated?: boolean;
+        /** Renders this bar in the danger/outlier tone instead of the default brand tone. */
+        highlight?: boolean;
+        /** Small muted sub-label under the bar's name, e.g. the raw "68% → 18%" behind a computed % value. */
+        detail?: string;
+      }[];
+      headline?: string;
+      analysis?: string;
+    }
+  | {
+      /** Labeled placeholder for a visual that doesn't have a real asset yet — never a broken image. */
+      type: "visualPlaceholder";
+      label: string;
     };
 
 /** Silent, muted autoplay-loop screencast standing in for a static screenshot. */
@@ -275,8 +377,12 @@ export interface CaseStudy {
   year: string;
   title: string;
   subtitle: string;
-  meta: { label: string; value: string }[];
+  meta: { label: string; value: string; estimated?: boolean }[];
   heroImage: ImageRef;
+  /** "cover" fills the 1280/633 hero frame edge-to-edge (crops to fit) instead of the
+   * default letterboxed "contain" — use for a designed bleed shot (e.g. a laptop
+   * mockup) whose own aspect ratio doesn't match the frame. Defaults to "contain". */
+  heroImageFit?: "contain" | "cover";
   /** Boxed "outcome up front" summary shown right after the hero image — optional, only present where Figma has it. */
   outcomeHighlight?: OutcomeHighlight;
   sections: CaseStudySection[];
@@ -287,5 +393,8 @@ export interface CaseStudy {
     title: string;
     description: string;
     image?: ImageRef;
+    /** Dark tint matching the thumbnail's own background, used as the card's
+     * base color and gradient blend instead of a generic dark scrim. */
+    themeColor?: string;
   };
 }

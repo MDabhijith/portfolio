@@ -73,6 +73,21 @@ const caseStudies = [
       "Chat, documents and knowledge unified, scoped by who's allowed to see what.",
     tags: ["Product Design", "B2B SaaS", "Conversational AI", "AI UX"],
   },
+  {
+    href: "/work/preservation-services",
+    image: {
+      src: "/images/work/preservation-card-cover.png",
+      alt: "The Contractors Capital login page open on a laptop, over a dark purple gradient",
+    },
+    category: "Builder Warranty / Captive Insurance",
+    client: "Preservation Services",
+    year: "2024",
+    title:
+      "Turning Builder Warranty Claims Into a System Contractors Can Trust",
+    description:
+      "Coverage and claims out of phone calls and inboxes, into a self-serve portal.",
+    tags: ["Captive Insurance", "Product Design", "B2B SaaS", "Workflow"],
+  },
 ];
 
 export function SelectedWorkSection() {
@@ -84,7 +99,7 @@ export function SelectedWorkSection() {
             Selected work
           </h2>
           <span className="font-body text-[13.5px] text-ink-tertiary">
-            5 case studies
+            6 case studies
           </span>
         </div>
       </Reveal>

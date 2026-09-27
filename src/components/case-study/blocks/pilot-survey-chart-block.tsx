@@ -4,13 +4,23 @@ export function PilotSurveyChartBlock({
   headline,
   analysis,
   max = 5,
+  beforeLabel = "Before pilot",
+  afterLabel = "After pilot",
   unit,
 }: {
   scaleNote: string;
-  categories: { label: string; before: number; after: number }[];
+  categories: {
+    label: string;
+    before: number;
+    after: number;
+    beforeEstimated?: boolean;
+    afterEstimated?: boolean;
+  }[];
   headline: string;
   analysis: string;
   max?: number;
+  beforeLabel?: string;
+  afterLabel?: string;
   unit?: "%";
 }) {
   const format = (value: number) =>
@@ -23,23 +33,24 @@ export function PilotSurveyChartBlock({
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 font-body text-sm font-semibold text-black">
               <span className="size-2 rounded-sm bg-[#d4d4d4]" aria-hidden="true" />
-              Before pilot
+              {beforeLabel}
             </span>
             <span className="flex items-center gap-1.5 font-body text-sm font-semibold text-black">
               <span className="size-2 rounded-sm bg-brand" aria-hidden="true" />
-              After pilot
+              {afterLabel}
             </span>
           </div>
           <span className="font-body text-xs text-[#727272]">{scaleNote}</span>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div className="flex flex-wrap justify-center gap-x-10 gap-y-6">
           {categories.map((cat) => (
-            <div key={cat.label} className="flex flex-col items-center gap-3">
+            <div key={cat.label} className="flex w-[120px] flex-col items-center gap-3 sm:w-[140px]">
               <div className="flex h-[170px] items-end gap-1.5">
                 <div className="flex w-6 flex-col items-center gap-1">
                   <span className="font-body text-xs font-medium text-[#727272]">
                     {format(cat.before)}
+                    {cat.beforeEstimated ? <sup>*</sup> : null}
                   </span>
                   <div
                     className="w-full rounded-t bg-[#d4d4d4]"
@@ -49,6 +60,7 @@ export function PilotSurveyChartBlock({
                 <div className="flex w-6 flex-col items-center gap-1">
                   <span className="font-body text-xs font-semibold text-positive">
                     {format(cat.after)}
+                    {cat.afterEstimated ? <sup>*</sup> : null}
                   </span>
                   <div
                     className="w-full rounded-t bg-brand"

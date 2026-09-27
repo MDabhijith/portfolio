@@ -6,7 +6,7 @@ export function KeyValueBlock({
   variant = "plain",
 }: {
   title?: string;
-  rows: { label: string; value: string }[];
+  rows: { label: string; value: string; estimated?: boolean }[];
   variant?: "plain" | "card";
 }) {
   if (variant === "card") {
@@ -29,6 +29,9 @@ export function KeyValueBlock({
                 </span>
                 <span className="text-right font-body text-base text-primary-400">
                   {row.value}
+                  {row.estimated ? (
+                    <sup className="ml-0.5 text-cs-label">*</sup>
+                  ) : null}
                 </span>
               </div>
             </Fragment>
@@ -54,6 +57,9 @@ export function KeyValueBlock({
             </dt>
             <dd className="font-body text-[15px] leading-relaxed text-cs-body">
               {row.value}
+              {row.estimated ? (
+                <sup className="ml-0.5 text-cs-label">*</sup>
+              ) : null}
             </dd>
           </div>
         ))}

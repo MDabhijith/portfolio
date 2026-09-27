@@ -4,6 +4,7 @@ import { roofingWorkflowManagement } from "./data/roofing-workflow-management";
 import { aiProposalBuilder } from "./data/ai-proposal-builder";
 import { relayHub } from "./data/relay-hub";
 import { arManagement } from "./data/ar-management";
+import { preservationServices } from "./data/preservation-services";
 
 const registry: Record<string, CaseStudy> = {
   [roofingWorkflowManagement.slug]: roofingWorkflowManagement,
@@ -11,6 +12,7 @@ const registry: Record<string, CaseStudy> = {
   [aiProposalBuilder.slug]: aiProposalBuilder,
   [relayHub.slug]: relayHub,
   [arManagement.slug]: arManagement,
+  [preservationServices.slug]: preservationServices,
 };
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {

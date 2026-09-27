@@ -1,6 +1,7 @@
 export interface MetaItem {
   label: string;
   value: string;
+  estimated?: boolean;
 }
 
 /** Company / Timeline / Team row at the top of every case study. */
@@ -14,6 +15,7 @@ export function MetaRow({ items }: { items: MetaItem[] }) {
           </dt>
           <dd className="font-body text-base text-primary-400">
             {item.value}
+            {item.estimated ? <sup className="ml-0.5">*</sup> : null}
           </dd>
         </div>
       ))}

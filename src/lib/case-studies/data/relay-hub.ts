@@ -47,7 +47,7 @@ export const relayHub: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "A typical team uses separate tools for chat, for documents, and for AI. Each tool does its own job well, but none of them know about the others, and none of them know the company. The cost shows up in the gaps between tools. An employee asks a question in chat that a document already answered. A useful AI conversation disappears the moment the tab closes. A new hire spends their first weeks just finding where things live. And whenever leadership considered letting AI read company documents, the same question stalled everything: who is it allowed to see, and on whose behalf?",
+            "A typical team uses separate tools for chat, documents, and AI. Each does its job well, but none know about the others, or the company. The cost shows up in the gaps: an employee asks in chat what a document already answered, a useful AI conversation disappears the moment the tab closes, a new hire spends weeks just finding where things live. And whenever leadership considered letting AI read company documents, one question stalled everything: who's it allowed to see, and on whose behalf?",
           ],
         },
         {
@@ -67,7 +67,7 @@ export const relayHub: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "I researched chat tools, cloud storage, and standalone AI assistants. Each category solved one slice of the problem well. None of them treated knowledge, conversation, security, and AI as one connected system.",
+            "I researched chat tools, cloud storage, and standalone AI assistants. Each solved one slice of the problem well, but none treated knowledge, conversation, security, and AI as one connected system.",
           ],
         },
         {
@@ -77,31 +77,31 @@ export const relayHub: CaseStudy = {
               number: "01",
               title: "Chat tools hold conversations, not knowledge",
               description:
-                "Chat tools are great in the moment. None of them treat a conversation, or a meeting, as something the company can draw on again later.",
+                "Chat tools are great in the moment, but none treat a conversation or meeting as something the company can draw on later.",
             },
             {
               number: "02",
               title: "Documentation is scattered across drives no one tool can see",
               description:
-                "Cloud storage and docs tools each hold real, current company documents, but nothing connects a document to the conversation that needed it, or shows it before someone has to go looking.",
+                "Cloud storage and docs tools hold real, current documents, but nothing connects a document to the conversation that needed it, or surfaces it before someone goes looking.",
             },
             {
               number: "03",
               title: "Knowledge stays trapped inside one-off conversations",
               description:
-                "A good answer worked out in a thread or a meeting rarely turns into something the next person can find. It just becomes one more thing to ask about again.",
+                "A good answer worked out in a thread or meeting rarely survives for the next person to find, it just becomes one more thing to ask again.",
             },
             {
               number: "04",
               title: "AI assistants don't know the company",
               description:
-                "A standalone AI tool knows a lot about the internet and nothing about this company, its policies, its customers, or its own past answers.",
+                "A standalone AI tool knows the internet, not this company, its policies, its customers, or its own past answers.",
             },
             {
               number: "05",
               title: "Security wasn't built for AI",
               description:
-                "Existing permission systems control who can open a file. None of them answer the harder question: what should AI be allowed to say about that file, and to whom?",
+                "Existing permission systems control who can open a file, not the harder question: what should AI be allowed to say about it, and to whom?",
             },
           ],
         },
@@ -122,7 +122,7 @@ export const relayHub: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "The gap between tools is easy to describe and hard to feel. So instead of auditing the tools, I followed real questions through the company and watched what each role had to do to answer them. The same question cost a different amount of work depending on who was asking, and that difference is where the product needed to focus.",
+            "The gap between tools is easy to describe and hard to feel, so instead of auditing tools, I followed real questions through the company and watched what each role had to do to answer them. The same question cost different amounts of work depending on who asked, and that difference is where the product needed to focus.",
           ],
         },
         {
@@ -145,7 +145,7 @@ export const relayHub: CaseStudy = {
                 { label: "Tools", value: "Chat, docs, drives" },
                 { label: "Tech", value: "High, non-technical" },
               ],
-              bio: "Owns the policy documents and answers questions about them one thread at a time. The answers are all written down and have been for years; people ask her anyway, because asking her is faster than finding the current version across three drives.",
+              bio: "Owns the policy documents and answers questions one thread at a time. The answers have been written down for years; people ask her anyway, because it's faster than finding the current version across three drives.",
               motivations: [
                 "Wants her time back from questions she has already answered",
                 "Being the person new hires trust in their first week",
@@ -179,7 +179,7 @@ export const relayHub: CaseStudy = {
                 { label: "Tools", value: "Drives, docs, AI chat" },
                 { label: "Tech", value: "Expert, AI-native" },
               ],
-              bio: "Works across long documents and prior findings and already leans on AI for most of it. Every good answer is worked out in a private session that closes and takes the reasoning with it, so the same ground gets covered again next quarter by someone else.",
+              bio: "Works across long documents and prior findings, leaning on AI for most of it. Every good answer is worked out in a private session that closes and takes the reasoning with it, so the same ground gets covered again next quarter.",
               motivations: [
                 "Doing new work rather than re-deriving old work",
                 "Being able to show where a finding came from",
@@ -213,7 +213,7 @@ export const relayHub: CaseStudy = {
                 { label: "Tools", value: "Chat, summaries, email" },
                 { label: "Tech", value: "Moderate, time-poor" },
               ],
-              bio: "Needs the state of things without reading everything, and is the person who has to sign off before an AI goes anywhere near company documents. Every proposal to connect the drives stalls on the same unanswered question: what is it allowed to say, and to whom.",
+              bio: "Needs the state of things without reading everything, and signs off before AI goes near company documents. Every proposal to connect the drives stalls on the same question: what's it allowed to say, and to whom.",
               motivations: [
                 "Decisions made on current information, not last week's",
                 "Giving the team AI without owning a data-leak incident",
@@ -277,7 +277,7 @@ export const relayHub: CaseStudy = {
               number: "01",
               title: "The answer existed; finding it cost more than asking",
               description:
-                "Almost every question traced back to a document that already had the answer. The problem was never missing content, it was finding it, so the fix had to be a better way in, not more content.",
+                "Almost every question traced back to a document that already had the answer. The problem was never missing content, it was finding it, so the fix was a better way in, not more content.",
             },
             {
               number: "02",
@@ -310,7 +310,7 @@ export const relayHub: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "The product could have been a chat app with a search bar added on, or a wiki with a chatbot added on. Each decision below was really the same one, made again in a different part of the product: treat knowledge, conversation, and AI as one system, not three.",
+            "The product could have been a chat app with search bolted on, or a wiki with a chatbot bolted on. Each decision below is the same one, made in a different part of the product: treat knowledge, conversation, and AI as one system, not three.",
           ],
         },
         {
@@ -339,7 +339,7 @@ export const relayHub: CaseStudy = {
               title:
                 "Every recurring task gets its own agent, set up for that job and its documents.",
               description:
-                "One fixed assistant either tried to do every job at once, or fell short on tasks it wasn't built for.",
+                "One fixed assistant either tried to do every job, or fell short on tasks it wasn't built for.",
             },
             {
               tag: "04",
@@ -370,7 +370,7 @@ export const relayHub: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "An employee opens the agent built for the job, HR, onboarding, research, instead of a generic chat. The question carries their role and access before any search happens, so the agent only pulls from what that person is allowed to see: the Knowledge Base, past answers, and connected drives like Google Drive or Dropbox. For bigger questions, they can run the same prompt against two models side by side and pick the better answer.",
+            "An employee opens the agent built for the job, HR, onboarding, research, instead of a generic chat. The question carries their role and access before any search happens, so the agent only pulls from what they're allowed to see: the Knowledge Base, past answers, and connected drives. For bigger questions, they can run the same prompt against two models side by side and pick the better answer.",
           ],
         },
         {
@@ -397,7 +397,7 @@ export const relayHub: CaseStudy = {
               actor: "TASK AGENT",
               actorTone: "accent",
               description:
-                "The agent pulls only from documents that person is allowed to see, company policy, past answers, files in OneDrive, Google Drive, or Dropbox.",
+                "The agent pulls only from documents that person can see: company policy, past answers, files in OneDrive, Google Drive, Dropbox.",
               tags: ["Knowledge Base", "Cloud Integrations"],
             },
             {
@@ -421,7 +421,7 @@ export const relayHub: CaseStudy = {
               actor: "SYSTEM",
               actorTone: "accent",
               description:
-                "The exchange is kept with the project or department it belongs to, so the next person asking the same question finds it instead of starting over.",
+                "The exchange is kept with the project or department it belongs to, so the next person asking finds it instead of starting over.",
               tags: ["Hubs"],
             },
           ],
@@ -437,7 +437,7 @@ export const relayHub: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "The system splits into three parts: where people work day-to-day, where knowledge actually lives, and how collaboration stays governed. Every part feeds the same AI, instead of being three separate products sharing a login screen.",
+            "The system splits into three parts: where people work day-to-day, where knowledge lives, and how collaboration stays governed. Every part feeds the same AI, instead of being three separate products sharing a login screen.",
           ],
         },
         {
@@ -487,7 +487,7 @@ export const relayHub: CaseStudy = {
           eyebrow: "WHAT EACH MODULE DOES",
           title: "AI Workspace",
           description:
-            "A chat experience that already feels familiar from modern AI apps, built for a business. A teammate can talk to AI or a colleague in the same thread, continue a conversation across projects, share it with the team, pull in company knowledge, or hand off to a task agent, built to feel like a teammate, not a standalone chatbot.",
+            "A chat experience that already feels familiar from modern AI apps, built for a business, not a standalone chatbot. A teammate can talk to AI or a colleague in the same thread, continue it across projects, share it with the team, pull in company knowledge, or hand off to a task agent.",
         },
         {
           type: "image",
@@ -502,7 +502,7 @@ export const relayHub: CaseStudy = {
           type: "moduleHeader",
           title: "Knowledge Base",
           description:
-            "The structured home for SOPs, HR policy, onboarding guides, technical docs, research, customer information, and internal process, organized so AI can actually reason over it, not just index it as a pile of files.",
+            "The structured home for SOPs, HR policy, onboarding guides, technical docs, research, and customer information, organized so AI can reason over it, not just index it as a pile of files.",
         },
         {
           type: "image",
@@ -517,7 +517,7 @@ export const relayHub: CaseStudy = {
           type: "moduleHeader",
           title: "AI-Powered Knowledge Retrieval",
           description:
-            "Chat is the main way employees reach company knowledge. Instead of digging through folders, they ask a plain question and AI finds the relevant information, summarizes it, and answers in context.",
+            "Chat is the main way employees reach company knowledge. Instead of digging through folders, they ask a plain question and AI finds, summarizes, and answers in context.",
         },
         {
           type: "image",
@@ -532,7 +532,7 @@ export const relayHub: CaseStudy = {
           type: "moduleHeader",
           title: "Cloud Integrations",
           description:
-            "Direct connections to Google Drive and Dropbox. Instead of duplicating documents into a new system, AI pulls straight from wherever the company already keeps them, respecting each source's own permissions.",
+            "Direct connections to Google Drive and Dropbox. Instead of duplicating documents into a new system, AI pulls straight from wherever they already live, respecting each source's own permissions.",
         },
         {
           type: "image",
@@ -547,7 +547,7 @@ export const relayHub: CaseStudy = {
           type: "moduleHeader",
           title: "Task Agents",
           description:
-            "Instead of one generic assistant, a company sets up agents around its own recurring work: an HR agent for policy questions, an onboarding agent, a research agent. Each one is built for its task and scoped to the same permissions and documents as the person asking.",
+            "Instead of one generic assistant, a company sets up agents around its own recurring work: HR, onboarding, research. Each is built for its task and scoped to the same permissions and documents as the person asking.",
         },
         {
           type: "image",
@@ -562,7 +562,7 @@ export const relayHub: CaseStudy = {
           type: "moduleHeader",
           title: "Hubs",
           description:
-            "Dedicated spaces set up per project, a research hub, a client hub, any recurring body of work. Each one holds its own chats, documents, and agents, so context stays contained to what that project needs.",
+            "Dedicated spaces per project, a research hub, a client hub, any recurring body of work. Each holds its own chats, documents, and agents, so context stays contained to what that project needs.",
         },
         {
           type: "image",
@@ -599,7 +599,7 @@ export const relayHub: CaseStudy = {
         {
           type: "prose",
           paragraphs: [
-            "This is a working product, not a finished launch. The core flow is built and in use, and we're still refining it. So the honest version of \"impact\" here is a status report: what's shipped, what's being sharpened now, and what's still ahead.",
+            "This is a working product, not a finished launch, the core flow is built and in use, and we're still refining it. So the honest version of \"impact\" here is a status report: what's shipped, what's being sharpened, and what's still ahead.",
           ],
         },
         {
@@ -619,7 +619,7 @@ export const relayHub: CaseStudy = {
               title:
                 "Knowledge has to be the center, or the product just becomes another silo",
               description:
-                "Early versions treated the Knowledge Base as just one module among many. Once it became the shared foundation every other module read from, the product stopped feeling like a bundle of separate features.",
+                "Early versions treated the Knowledge Base as just one module among many. Once it became the shared foundation every other module read from, the product stopped feeling like a bundle of features.",
             },
             {
               title:
@@ -630,7 +630,7 @@ export const relayHub: CaseStudy = {
             {
               title: "Permission has to live inside retrieval, not just at login",
               description:
-                "Treating access control as something added after the AI works undersells how central it is. Permission became part of every search itself, not a filter added to the response afterward.",
+                "Treating access control as something bolted on after the AI works undersells how central it is. Permission became part of every search, not a filter on the response afterward.",
             },
           ],
         },
@@ -644,8 +644,9 @@ export const relayHub: CaseStudy = {
     description:
       "An add-on Accounts Receivable module built into a patient management system, giving the AR team one place to track claims, communicate with insurers, and recover stuck revenue.",
     image: {
-      src: "/images/work/ar-card-cover.webp",
-      alt: "The AR Management analytics dashboard, showing claim vs. paid trends, top denied reasons and top CPT codes paid",
+      src: "/images/work/ar-card-cover-new.png",
+      alt: "The AR Management analytics dashboard, showing claim vs. paid trends, top denied reasons and top CPT codes paid, on a light blue-to-violet gradient",
     },
+    themeColor: "#00213d",
   },
 };

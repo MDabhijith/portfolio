@@ -1,5 +1,8 @@
+import { cn } from "@/lib/utils";
+
 export function InsightCardsBlock({
   items,
+  variant = "default",
 }: {
   items: {
     number: string;
@@ -7,8 +10,48 @@ export function InsightCardsBlock({
     description: string;
     image?: { src: string; alt: string };
   }[];
+  variant?: "default" | "problem";
 }) {
   const hasImages = items.some((item) => item.image);
+
+  if (variant === "problem") {
+    return (
+      <div
+        data-reveal-stagger
+        className="grid grid-cols-1 gap-4 sm:grid-cols-3"
+      >
+        {items.map((item, i) => {
+          const accent = i % 2 === 0 ? "brand" : "brand-secondary";
+          return (
+            <div
+              key={i}
+              className={cn(
+                "flex flex-col gap-2 rounded-xl border border-line p-5",
+                accent === "brand"
+                  ? "bg-gradient-to-br from-brand/10 via-white to-white"
+                  : "bg-gradient-to-br from-brand-secondary/10 via-white to-white"
+              )}
+            >
+              <span
+                className={cn(
+                  "font-heading text-xl font-semibold",
+                  accent === "brand" ? "text-brand" : "text-brand-secondary"
+                )}
+              >
+                {item.number}
+              </span>
+              <p className="font-body text-sm font-semibold text-black">
+                {item.title}
+              </p>
+              <p className="font-body text-xs leading-relaxed text-cs-label">
+                {item.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
 
   if (hasImages) {
     return (
