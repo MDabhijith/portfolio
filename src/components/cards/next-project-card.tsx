@@ -39,19 +39,48 @@ export function NextProjectCard({
         <div className="h-px flex-1 bg-line" aria-hidden="true" />
       </div>
 
+      {/* Mobile: previous simple stacked layout (white text panel + image). */}
       <Link
         href={href}
         data-cursor-label="View case study"
-        style={{ backgroundColor: themeColor }}
-        className="group/next relative flex min-h-[380px] items-center overflow-hidden rounded-2xl border border-primary-200 outline-none transition-colors duration-[var(--duration-base)] hover:border-primary-300 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 sm:min-h-[440px]"
+        className="group/next flex flex-col overflow-hidden rounded-2xl border border-primary-200 outline-none transition-colors duration-[var(--duration-base)] hover:border-primary-300 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 sm:hidden"
       >
-        {image ? (
-          <div className="absolute inset-y-0 right-0 w-[58%] sm:w-[62%]">
+        <div className="flex flex-1 flex-col gap-2 bg-white p-8">
+          <p className="font-body text-sm text-ink-tertiary">{eyebrow}</p>
+          <h3 className="font-heading text-2xl font-semibold leading-tight text-primary-500">
+            {title}
+          </h3>
+          <p className="mt-2 font-body text-base leading-relaxed text-primary-400">
+            {description}
+          </p>
+        </div>
+        <div className="relative min-h-[220px] flex-1 overflow-hidden bg-surface">
+          {image ? (
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              sizes="(min-width: 1024px) 700px, 60vw"
+              sizes="100vw"
+              className="object-cover transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/next:scale-[1.02] motion-reduce:group-hover/next:scale-100"
+            />
+          ) : null}
+        </div>
+      </Link>
+
+      {/* Desktop: full-bleed themed hero. */}
+      <Link
+        href={href}
+        data-cursor-label="View case study"
+        style={{ backgroundColor: themeColor }}
+        className="group/next relative hidden min-h-[440px] items-center overflow-hidden rounded-2xl border border-primary-200 outline-none transition-colors duration-[var(--duration-base)] hover:border-primary-300 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 sm:flex"
+      >
+        {image ? (
+          <div className="absolute inset-y-0 right-0 w-[62%]">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="700px"
               className="object-cover object-center transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] group-hover/next:scale-[1.03] motion-reduce:group-hover/next:scale-100"
             />
           </div>
@@ -65,14 +94,14 @@ export function NextProjectCard({
           aria-hidden="true"
         />
 
-        <div className="relative z-[2] flex max-w-[480px] flex-col gap-3 p-6 sm:p-12">
+        <div className="relative z-[2] flex max-w-[480px] flex-col gap-3 p-12">
           <p className="font-body text-sm font-medium text-white/70">
             {eyebrow}
           </p>
-          <h3 className="line-clamp-3 font-heading text-xl font-semibold leading-tight text-white sm:text-2xl">
+          <h3 className="line-clamp-3 font-heading text-2xl font-semibold leading-tight text-white">
             {title}
           </h3>
-          <p className="line-clamp-2 max-w-[62ch] font-body text-sm leading-relaxed text-white/80 sm:text-base">
+          <p className="line-clamp-2 max-w-[62ch] font-body text-base leading-relaxed text-white/80">
             {description}
           </p>
           <span className="mt-2 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-white">
